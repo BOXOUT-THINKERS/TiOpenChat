@@ -17,18 +17,11 @@ userM.on('change',function(){
 
 	$.trigger('login:user', Alloy.Globals.user);
 
-	// 여러번 호출되는지 테스트
-	// var randomCode = Math.floor(Math.random()*9999);
-	// Ti.API.debug('User_sessionToken : ' + Alloy.Globals.settings.get('User_sessionToken') + ' / random : ' + randomCode);
-
 	userM.off('change',arguments.callee);
 });
 
 // 외부로 드러낼 인터페이스
 exports.requiredLogin = function() {
-	// userReCreate();
-	// return;
-
 	//로그인 안되어 있으면 로그인 창 띄움.
 	if(exports.isLogin()){
 		// 로그인 처리
@@ -36,58 +29,14 @@ exports.requiredLogin = function() {
 
 		// 메인 윈도우 열기
 		Alloy.Globals.navigation.open();
-		// 대기 화면 닫기
-		// if (Alloy.Globals.splashWin) {
-		// 	Alloy.Globals.splashWin.close();
-		// 	Alloy.Globals.splashWin = null;
-		// }
+
 		$.trigger('login:open');
 	}else{
 		Alloy.Globals.closeAllWindow();
 
 		Alloy.createController('join').getView().open();
-
-		// 대기 화면 닫기
-		// if (Alloy.Globals.splashWin) {
-		// 	Alloy.Globals.splashWin.close();
-		// 	Alloy.Globals.splashWin = null;
-		// }
 	}
 };
-
-// function userReCreate() {
-// 	Ti.API.error('userReCreate!!!');
-// 	Parse.Cloud.run('userFindFromContacts', null, {
-// 		success: function(result) {
-// 			Ti.API.debug('userReCreate Complete :');
-//
-// 			var userCreateArrary = result.userCreateArrary;
-//
-// 			nextUserCreate(0);
-//
-// 			function nextUserCreate(idx) {
-// 				Ti.API.debug("nextUserCreate function idx : ", idx);
-// 				if (idx > userCreateArrary.length -1) { return true; }
-//
-// 				var userInfo = userCreateArrary[idx];
-//
-// 				Parse.Cloud.run('userCreateFromInfo', userInfo, {
-// 					success: function(result) {
-// 						Ti.API.debug('nextUserCreate Success :', result);
-// 						nextUserCreate(idx + 1);
-// 					},
-// 					error: function(error) {
-// 						Ti.API.error('nextUserCreate Error :', error);
-// 						nextUserCreate(idx + 1);
-// 					}
-// 				});
-// 			}
-// 		},
-// 		error: function(error) {
-// 			Ti.API.error('userReCreate Error :', error);
-// 		}
-// 	});
-// }
 
 // 로긴 여부 판단
 exports.isLogin = function() {
