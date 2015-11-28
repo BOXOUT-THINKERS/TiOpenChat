@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Material Design -->
+        <item name="colorPrimary">@color/colorGreen</item>
+        <item name="colorPrimaryDark">@color/colorGreen</item>
+    </style>
+
+    <style name="Theme.NoActionBarPurple" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Material Design -->
+        <item name="colorPrimary">@color/colorPurble</item>
+        <item name="colorPrimaryDark">@color/colorPurble</item>
+    </style>
+
+    <style name="Theme.CustomActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <!-- <item name="android:windowBackground">@color/colorGreen</item> -->
+        <!-- <item name="android:windowTranslucentStatus">false</item> -->
+        <!-- <item name="android:windowTranslucentNavigation">false</item> -->
+        <!-- <item name="android:fitsSystemWindows">true</item> -->
+        <!-- <item name="android:windowActionBarOverlay">false</item> -->
+
+        <!-- Material Design -->
+        <item name="colorPrimary">@color/colorGreen</item>
+        <item name="colorPrimaryDark">@color/colorGreen</item>
+        <!-- <item name="android:textColorPrimary">#FFFFFF</item> -->
+        <!-- <item name="android:navigationcolorGreen">#FFFFFF</item> -->
+    </style>
+
+    <color name="colorGreen">#54EE92</color>
+    <color name="colorPurble">#8B61FF</color>
+</resources>
