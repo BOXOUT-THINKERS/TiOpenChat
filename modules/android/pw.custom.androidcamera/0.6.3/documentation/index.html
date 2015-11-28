@@ -1,0 +1,79 @@
+<h1>Android Camera Module</h1>
+<p>Latest Version: 0.6.1 (Dated: 20-05-2015)</p>
+<h2>Description</h2>
+<p>Titanium View with the background image sourced directly from the Android camera.</p>
+<h2>Accessing the custom-android-camera Module</h2>
+<p>To access this module from JavaScript, you would do the following:</p>
+<pre><code>var androidcamera = require("pw.custom.androidcamera");
+</code></pre>
+<p>The androidcamera variable is a reference to the Module object. </p>
+<h2>Reference</h2>
+<p>The cameraview takes the same properties and methods as the standard titanium view.</p>
+<h3>createCameraView <em>(method)</em></h3>
+<p>Create a new instance of the camera view. The method takes a dictionary of the following arguments: </p>
+<p><strong>arguments</strong> </p>
+<ul>
+<li>save_location - Directory to save the image to</li>
+<li>useFrontCamera - Boolean to indicate whether to use the front camera, or the back camera (default)</li>
+<li>pictureTimeout - Integer to indicate how long to wait (milliseconds) before restarting the preview after a picture has been taken. A negative number will result in the preview not restarting.</li>
+</ul>
+<h3>takePicture <em>(method)</em></h3>
+<p>Capture the image currently on screen and save to the filesystem</p>
+<h3>picture_taken <em>(event)</em></h3>
+<p>Returns a dictionary containing the following:</p>
+<ul>
+<li>path - location of the image on the filesystem</li>
+</ul>
+<h2>Usage</h2>
+<p>The following permissions need to be added to the manifest tag in tiapp.xml</p>
+<pre><code>&lt;!-- Camera Permissions --&gt;
+&lt;uses-permission android:name="android.permission.CAMERA"/&gt;
+&lt;uses-feature android:name="android.hardware.camera"/&gt;
+&lt;uses-feature android:name="android.hardware.camera.autofocus"/&gt;
+</code></pre>
+<p>Then, to use the module in app, do something like the following:</p>
+<pre><code>var win = Ti.UI.createWindow({
+    navBarHidden: true,
+    fullscreen: true,
+    backgroundColor:'white'
+});
+win.orientationModes = [Ti.UI.PORTRAIT];
+win.open();
+
+if( Ti.Media.isCameraSupported ) {
+    var androidcamera = require("pw.custom.androidcamera");
+    var camera = androidcamera.createCameraView({
+        save_location: "pharmacy"
+        useFrontCamera: false,
+        pictureTimeout: 1000
+    });
+
+    var btSnap = Ti.UI.createButton({
+        title: "Capture",
+        bottom: "10dp",
+        height: "80dp",
+        width: "80dp",
+        zIndex: 2
+    });
+
+    btSnap.addEventListener("click", function(){
+        camera.snapPicture();
+    });
+
+    camera.addEventListener("picture_taken", function(evt){
+        alert("Image saved to "+evt.path);
+    });
+
+    win.addEventListener("close", function(){
+        camera = null;
+    });
+
+    win.add(camera);
+    win.add(btSnap);
+} else {
+    alert("No camera found!");
+}
+</code></pre>
+<h2>Author</h2>
+<p>Michael Browne</p>
+<p><a href="http://www.twitter.com/brownemint">@brownemint</a></p>

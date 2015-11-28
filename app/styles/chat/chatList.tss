@@ -1,0 +1,194 @@
+//공통
+".font1":{ color:"white", font:{fontSize:12, fontWeight:"Regular"} }
+".font2":{ color:"white", font:{fontSize:15, fontWeight:"Bold"} }
+".font3":{ color:"white", font:{fontSize:17, fontWeight:"Regular"} }
+".font4":{ color:"white", font:{fontSize:18, fontWeight:"Medium"} }
+
+".fontBold":{ color:"black", font:{fontSize:18, fontWeight:"Bold"} }
+
+".leftZero":{left:0}
+".rightZero":{right:0}
+
+/*".ellip" : { ellipsize : true, wordWrap : false }*/
+
+".fillView":{
+	layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.FILL
+}
+".hFillView":{
+	layout:"horizontal", width : Titanium.UI.FILL,  height : Titanium.UI.SIZE, zIndex:5, top:0
+}
+".imageShadowWrap":{
+	backgroundColor:"#959595", opacity:0.1
+}
+
+/**/
+"#emptyImageWrap":{
+	layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+	visible:false, zIndex:10
+}
+"#emptyImageView":{
+	image : "/images/chatroomlist_emptyview.png"
+}
+"#emptyImageView2":{
+	image : "/images/chatroomlist_emptyview_txt.png",
+	//하단버튼 찍기 크기(패딩포함된 이미지의) 266/3 = 88    -5 정도 겹치게 내리고..
+	bottom:83
+}
+
+///////
+// chatList
+"#chatListWrapView":{
+	layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+	zIndex:1, top:"1px", right:"1px"
+}
+"#chatListView":{
+	showVerticalScrollIndicator:true, showHorizontalScrollIndicator: false,
+	layout:"horizontal", contentWidth:"100%",	width : "100%",  height : Titanium.UI.FILL,
+	top:0
+}
+// chatRow 공통
+
+".widthLine":{
+	backgroundColor:"white",
+	width: Ti.UI.FILL,
+	height: 1
+}
+".heightLine":{
+	backgroundColor:"white",
+	height: Ti.UI.FILL,
+	width: 1, zIndex:10
+}
+
+//editingView 관련
+".editingViewWrap":{
+	layout:"composite", width:Titanium.UI.FILL, height : Titanium.UI.FILL, zIndex:50,
+	visible:false
+}
+".oddEditingView":{
+	layout:"composite", width:Titanium.UI.FILL, height : Titanium.UI.FILL,
+	left:12,bottom:"31.1%"   //144-105+8
+}
+".oneEditingView":{
+	layout:"composite", width:Titanium.UI.FILL, height : Titanium.UI.FILL,
+	left:12,bottom:"9.9%"
+}
+".checkingImageView":{
+	width:Titanium.UI.SIZE, height : Titanium.UI.SIZE,
+	/*image: "/images/chatroomlist_exit_button.png",*/
+	zIndex:10,
+	left:0,top:12
+}
+".editingName":{
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color:"#484848",font:{fontSize:18, fontWeight:"Medium"},
+	width:"100%",height:24,
+	left:0, bottom:0
+}
+
+
+/// row padding
+// (100 - (1.5 *3))/2 = 47.75
+".oddPaddingRowView":{
+	layout:"composite", width : "49.99%",  height : 144,
+}
+".oddPaddingInnerRowView":{
+	backgroundColor:"#F6EE76",
+	layout:"composite", width:Titanium.UI.FILL, height : Titanium.UI.FILL,
+	left:"1px",top:"1px"
+
+}
+".oddPaddingImageView":{
+	width:Titanium.UI.SIZE, height : Titanium.UI.SIZE,
+	image:"/images/chatroomlist_defalt_img.png"
+}
+
+/////// row 각각.
+//(100 - 1.5*2) = 97
+".oneRowView":{
+	layout:"composite", width : "100%",  height : 144,
+}
+".innerOneRowView":{
+	layout:"composite", width:Titanium.UI.FILL, height : Titanium.UI.FILL,
+	left:"1px", top:"1px"
+
+}
+//odd
+".oddRowView":{
+	layout:"composite", width:"49.99%", height : 144,
+}
+".innerOddRowView":{
+	layout:"compostie", width:Titanium.UI.FILL, height : Titanium.UI.FILL,
+	left:"1px", top:"1px"
+
+}
+
+
+// 이미지 관련 영역
+".oneImageWrap":{
+	layout:"composite", width:"61.5%", height:Titanium.UI.FILL, left:0, zIndex:3
+}
+".oddImageWrap":{
+	layout:"composite", width:Titanium.UI.FILL, height:"100%"
+}
+
+".scaleWord" :{
+	top:6, left:9, zIndex:5
+}
+".checkedTime" :{
+	top:6, right:9, zIndex:5
+}
+//이름은 10자.
+".oddFriendName":{
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL, height:24,
+	left:12,bottom:"31.1%", zIndex:10
+
+}
+".oneFriendName":{
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL, height:24,
+	left:12,bottom:"9.9%", zIndex:10
+}
+
+// 메시지관련 영역
+".oddMessageWrap":{
+	layout:"composite", width:Titanium.UI.FILL, height:"27%",
+	bottom:0, zIndex:3
+}
+// TODO[faith]: 사진이 1픽셀 짤려서. 덮어버림. 0.1이면 최소 100이상이니..
+".oneMessageWrap":{
+	layout:"composite", width:"38.6%", height:Titanium.UI.FILL,
+	right:0, zIndex:10
+}
+
+".oddBottomLeft" :{ left:12 }
+".oddBottomRight" :{ right:10 }
+".oneRightTop" :{ right:10,top:10 }
+".oneRightBottom" :{ right:10, bottom:8 }
+".restMessageCountWrap":{
+	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+	zIndex:5
+}
+".restMessageCountOutline":{
+	width:25, height:25,
+	image: "/images/chatroomlist_push_circle_line.png"
+}
+".restMessageCount":{
+	backgroundColor:"white",
+	width:24, height:24, borderRadius:12,
+	zIndex:5
+}
+
+// font17 - 21
+".recentOddMessage":{
+	height: 21, width: Titanium.UI.FILL,
+	//25+12
+	left: 26, right:10,
+	zIndex:5
+}
+
+".recentOneMessage":{
+	height: 21, width:Titanium.UI.FILL,
+	right:10, bottom:8,
+	zIndex:5
+}

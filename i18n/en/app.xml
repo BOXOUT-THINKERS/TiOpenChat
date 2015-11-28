@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="appname">TiOpenChat</string>
+    <string name="NSLocationWhenInUseUsageDescription">Please allow to get the your location information for your friends.</string>
+</resources>

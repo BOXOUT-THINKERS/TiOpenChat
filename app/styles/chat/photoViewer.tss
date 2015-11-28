@@ -1,0 +1,56 @@
+".container":{
+	layout:'composite',width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+	backgroundColor:"white",
+	theme: "Theme.NoActionBar"
+}
+
+".fakeStatusbar[platform=ios]" : {
+	backgroundColor:"black",opacity:0.5,
+	height: 20,
+	top: 0, zIndex:1
+}
+
+//////////
+"#topView[platform=android]":{
+	backgroundColor:"black",opacity:0.5,
+	layout:'composite',width : Titanium.UI.FILL,  height : 48,
+	top:0, zIndex:1, visible: true
+}
+"#topView[platform=ios]":{
+	backgroundColor:"black",opacity:0.5,
+	layout:'composite',width : Titanium.UI.FILL,  height : 48,
+	top:20, zIndex:1, visible: true
+}
+"#closeBtn":{
+	color:"white", font:{fontWeight:"Regular", fontSize:15},
+	left:24
+}
+
+"#nameAndTime":{
+	color:"#9e9e9e", font:{fontWeight:"Regular", fontSize:13}
+}
+//////////
+"#centerView":{
+	layout:'vertical',width : Titanium.UI.SIZE,  height : Ti.UI.SIZE
+}
+"#currentImage" : {
+	width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+	zIndex:0
+}
+//////////
+"#bottomView":{
+	backgroundColor:"black",opacity:0.5,
+	layout:'composite',width : Titanium.UI.FILL,  height : 48,
+	bottom:0, zIndex:1,
+	visible: true
+}
+"#saveBtn":{
+	left:24, image:"/images/Picture_dnload_button.png"
+}
+"#exportBtn":{
+	image:"image/Picture_export_button.png"
+}
+/*"#deleteBtn":{
+	right:24, image:"/images/Picture_delete_button.png"
+}*/
+///////

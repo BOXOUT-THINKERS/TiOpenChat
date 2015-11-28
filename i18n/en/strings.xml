@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- COMMON -->
+	<string name="loadingMessage">loading...</string>
+
+	<string name="c_TiOpenChat">TiOpenChat</string>
+
+	<string name="c_friendList">Friends</string>
+	<string name="c_chatList">Chats</string>
+
+	<string name="c_myLocation">My location</string>
+	<string name="c_setting">Setting</string>
+	<string name="c_setBanTime">Do Not Disturb</string>
+	<string name="c_manageBanFriend">Hide/Block Friendslist</string>
+
+	<!-- // waitingmessage -->
+	<string name="c_waitingMsgDefault">Wait for a sec please.</string>
+
+	<string name="c_waitingMsgFirst">Wait for a sec please.</string>	<!-- 처음 실행시 나타나는 스피너 메시지 -->
+
+	<string name="c_waitingMsgFriend">Loading your friends...</string>
+	<string name="c_waitingMsgRemoveChatRoom">Deleting a chatroom...</string>
+	<!-- alerts -->
+	<!-- aappInfo & version -->
+	<string name="c_alertFailFetchAppInfo">Failed to bring the data of application. Please retry it again.</string>
+	<string name="c_alertRequestReinstall">It's not available version. Reset a application please.</string>
+	<string name="c_alertNewVersion">There are new version is available.</string>
+
+	<!-- version update -->
+	<string name="c_updateConfirmYes">Install</string>
+	<string name="c_updateConfirmNo">Cancle</string>
+	<string name="c_updateConfirmMessage">Would you like to install a new version?</string>
+
+	<!-- alert message -->
+	<string name="c_alertMsgOk">OK</string>
+	<string name="c_alertMsgDefault">Please retry it again.</string>
+	<string name="c_alertMsgFriend"> Cannot load your friends.</string>
+	<string name="c_alertReadyToOpen">Preparing...</string>
+
+	<!-- alert etc. -->
+	<string name="c_alertMsgFailSaveImage">Failed to save the image. Please retry it again.</string>
+	<string name="c_alertMsgFailSendEmail">Failed to save the E-mail. Please retry it again.</string>
+	<string name="c_alertMsgSendedEmail">Completed to send your E-mail.</string>
+
+	<string name="c_youWannaSendPhoto">Do you want to send photo?</string>
+	<string name="c_msgSendingPhoto">Be sending photo. Wait for a sec please.</string>
+
+	<!-- common etc. -->
+	<string name="c_emptyText">It's a blank text.</string>
+
+	<string name="c_edittingBtn">Edit</string>
+	<string name="c_completeBtn">Done</string>
+	<string name="c_cancle">Cancle</string>
+	<string name="c_manage">Manage</string>
+
+	<string name="c_photo">photo</string>
+
+	<string name="c_recentVersion">Latest Version</string>
+	<string name="c_currentVersion">Current Version</string>
+	<string name="c_updateRecentVersion">Latest Version Update</string>
+
+	<string name="c_copyright">Copyright @ BoxoutThinkers. 2015</string>
+
+	<!-- login -->
+	<string name="verifyPhoneShort">Check your phone number.</string>
+	<string name="verifyCodeSend">Sending a verification code...</string>
+	<string name="verifyCodeSendBtn">Send a verification code</string>
+	<string name="verifyCodeResendBtn">Resend a verification code</string>
+	<string name="verifyCodeSendSuccess">Successfully sent a verification code. Please check your SMS after a sec. </string>
+	<string name="verifyCodeCheck">Checking your verification code...</string>
+	<string name="verifyCodeFail">Wrong verification code. Please retry it.</string>
+	<string name="tryAgainAlert">Failed to request. Please retry after a while.</string>
+	<string name="accessAddressBookFail">Failed to add Friend.
+Please, Allow to access contacts. (Setting > TiOpenChat)</string>
+	<string name="joinNameLabel">Name</string>
+	<string name="joinNameMsgLabel">Please type the name to show your friends in 'TiOpenChat?'</string>
+	<string name="joinCompleteBtn">Join</string>
+	<string name="tryCodeSendCountMax">Verification code resend in 3 times. You can try it after 1 minutes.</string>
+	<string name="tryCodeSendBetweenLimit">Please be patient.</string>
+
+	<string name="l_welcomeLabel">Thank you for set 'TiOpenChat?'. 'Shortest way between you and I. TiOpenChat?'</string>
+	<string name="l_agreeLabel"></string>
+	<string name="l_verifyMsgLabel">Type the verification code from SMS. When code is not coming, tap the 'Resend' button.</string>
+	<string name="l_verifyMsgLabel_Fail">Wrong verification code. Please retype it. When code is not coming, tap the 'Resend' button.</string>
+
+	<!-- contacts, contactsBan -->
+	<string name="cb_friendTitle">Hide/Block Friendslist</string>  <!-- title -->
+
+	<string name="cb_banFriend">Completed blocking friend.</string><!-- alarm -->
+	<string name="cb_hideFriend">Completed hiding friend.</string><!-- alarm -->
+
+	<string name="cb_banFriendBtn">Block Friendlist.</string><!-- button -->
+	<string name="cb_hideFriendBtn">Hide Friendlist</string><!-- button -->
+
+	<string name="cb_zzixgiFriendBtn">Shot</string><!-- button -->
+	<string name="cb_inviteFriendBtn">Invite</string><!-- button -->
+
+	<!-- contacts listve header -->
+	<string name="cb_profileTitle">My Profile</string><!-- button -->
+	<string name="cb_favoriteTitle">Favorite</string><!-- button -->
+	<string name="cb_friendHeaderTitle">Friends</string><!-- button -->
+	<string name="cb_searchTitle">Invite Friends</string><!-- button -->
+
+	<string name="cb_friendSearchLabel">Where is my friend?</string>
+	<string name="cb_friendSearch">Search</string>
+
+	<!--  sms confirm alarm -->
+	<string name="cb_smsOk">Invite</string><!-- confirm alert ok button -->
+	<string name="cb_smsCancle">Cancle</string><!-- confirm alert cancle button -->
+	<string name="cb_smsMessage">It might pay the price because using SMS of communications company</string><!-- confirm alert content -->
+	<string name="cb_smsTitle">Invite Friend</string><!-- confirm alert title -->
+	<string name="cb_smsZzixgiTitle">Send Shot</string><!-- confirm alert title -->
+	<string name="cb_smsZzixgiOk">Shot</string><!-- confirm alert allow button -->
+
+	<string name="cb_smsContent">TiOpenChat? http://www.TiOpenChat.com/</string><!-- sms contecnt-->
+
+	<!-- sms after send -->
+	<string name="cb_smsSent">SMS sent.</string>
+	<string name="cb_smsFailed">Failed to send SMS.</string>
+	<string name="cb_cancelled">Canclled to send SMS.</string>
+	<string name="cb_smsDelivered">SMS sent.</string>
+
+	<string name="c_doingSyncMsgFriend">Finding your friends. Please wait.</string>
+	<string name="c_doingSyncMsgFriendCount">Finding your friends : </string>
+	<string name="c_doingSyncMsgFindFriend">New TiOpenChat friends added!</string>
+
+	<string name="ci_topTitle">Finding friends</string>
+	<string name="ci_msgTitile">Message Write</string>
+	<string name="ci_btnSelect">Selected Friends</string>
+
+	<!-- etc -->
+	<string name="p_registerFavoriteFriend">Register to favorite friend.</string>
+	<string name="p_cancelFavoriteFriend">Relieve from favorite friend.</string>
+
+	<string name="p_nonFriendAdd">Friends</string>
+	<string name="p_nonfriendDescribeText">Friends Select</string>
+	<string name="p_selectBtnText">Add to Receiver</string>
+
+	<!--  sms confirm alarm-->
+	<string name="p_smsOk">Add</string><!-- confirm alert allow button -->
+	<string name="p_smsCancle">Cancel</string><!-- confirm alert cancle button -->
+	<string name="p_smsMessage">Non TiOpenChat Member Friend might pay the price because using SMS of communications company</string><!-- confirm alert content -->
+	<string name="p_smsTitle">Add to Receiver</string><!-- confirm alert title -->
+
+	<!-- photoViewer -->
+	<string name="pv_closeBtn">Close</string>
+
+	<!-- chatRoom -->
+	<string name="cr_failSendPhotoMessage">Failed to send a picture.</string>
+	<string name="cr_send">Send</string>
+
+	<string name="cr_chatAfterAddFriend">Chat after add as friend.</string>
+	<string name="cr_banFriend">Block</string>
+	<string name="cr_justChat">Just want to chat.</string>
+
+	<!-- chatlist -->
+	<string name="cl_exitText">Exit</string>  <!-- exit button-->
+
+	<!-- edit mode exit button clicked confirm alert -->
+	<string name="cl_exitConfirmOkBtn">OK</string>
+	<string name="cl_exitConfirmCancleBtn">Cancle</string>
+	<string name="cl_exitConfirmMessage">Do you really want to exit?</string>
+
+	<!-- settings  -->
+	<!-- setting -->
+	<string name="s_nameTitle">Name</string>
+	<string name="s_commentTitle">Comment</string>
+
+	<string name="s_notifyAndSound">Notification</string>
+	<string name="s_friendManage">Hide / Block friendlists</string>
+	<string name="s_connectSNS">Connect with SNS account</string>
+	<string name="s_versionInfo">Version Info</string>
+	<string name="s_helpPrivate">Customer Support</string>
+
+	<string name="s_privateAndSNS">Personal Info and SNS</string>
+	<string name="s_phone">Phone Number</string>
+	<string name="s_question">Ask</string>
+	<string name="s_faivoriteQuestion">FAQ</string>
+	<string name="s_saveReceivedPhoto">Save a recieving photo</string>
+
+	<!-- photo choose -->
+	<string name="s_selectPhotoByAlbum">Choose a photo from gallery</string>
+	<string name="s_selectPhotoByCamera">Take a photo</string>
+
+	<!-- help Private -->
+	<string name="s_hp_question">Ask a question</string>
+	<string name="s_hp_faivoriteQuestion">FAQ</string>
+	<string name="s_hp_usingLaw"></string>
+	<string name="s_hp_dealWithPrivate"></string>
+	<string name="s_hp_withdrawal">Delete my account</string>
+
+	<string name="s_hp_emailSubject">Write a title.</string>
+	<string name="s_hp_emailContent">Write a question.</string>
+
+	<!-- profileEditing -->
+	<string name="s_enter">Enter</string>
+	<string name="s_explanaionWord">Please enter.</string>
+	<!-- validate -->
+	<string name="s_alertEmptyName">Type a name.</string>
+	<string name="s_alertEmptyComment">Type a comment.</string>
+
+	<!-- private info -->
+	<string name="sp_banList">Block list</string>
+	<string name="sp_SNSList">Connect with SNS account.</string>
+	<string name="sp_withdrawal">Delete my account.</string>
+
+	<!-- confirm withdraw -->
+	<string name="sp_confirm">Confirm</string>
+	<string name="sp_cancle">Cancle</string>
+	<string name="sp_help">help</string>
+	<string name="sp_message">Do you want to delete your account?</string>
+	<string name="sp_title">Delete my account</string>
+
+	<!--  withdraw confirm alarm -->
+	<string name="sp_alertWithdrawal">Your account is deleted.</string>
+	<string name="sp_alertCancle">Canclled</string>
+	<string name="sp_alertHelp">We will prepare for help.</string>
+
+	<!-- notifyAndSound alarm -->
+	<string name="sn_notifyMessage">Message Notification</string>
+	<string name="sn_notifyPush">Push alram</string>
+	<string name="sn_previewMessage">Message Preview</string>
+	<string name="sn_sound">Sound</string>
+	<string name="sn_notifyEventAndNotice">Event / Notice Notification</string>
+	<string name="sn_banTime">Time of Do Not Disturb</string>
+	<string name="sn_banTimeStart">Start Time</string>
+	<string name="sn_banTimeEnd">End Time</string>
+
+	<!-- banManager -->
+	<string name="sb_hideFriendTitle">Hided Friend Manage</string>
+	<string name="sb_banFriendTitle">Bloced Friend Manage</string>
+
+	<string name="sb_hideFriend">Hide Friend</string>
+	<string name="sb_banFriend">Block Friend</string>
+	<string name="sb_cancleHideOrBan">cancle Hide / Block</string>
+	<string name="sb_ban">Block</string>
+	<string name="sb_changeBlocktToHidden">Change to Hide friend</string>
+
+	<string name="sb_cancleBanFriend">Show on a friendlist again</string>
+
+	<!-- black/hide alarm -->
+	<string name="sb_alertBan">Completed to hide</string>
+	<string name="sb_alertCancleBan">Canclled the Hide / Block</string>
+
+	<!-- photo service -->
+	<string name="ps_successSavePhoto">Success to save photo</string>
+	<string name="ps_failSavePhoto">Fail to save photo. Please, retry it.</string>
+
+	<string name="ps_failGetPhoto">Please, retry it.</string>
+	<string name="ps_failNotPhoto">It's not Photo</string>
+	<string name="ps_failCancle">Cancle photo</string>
+	<string name="ps_failNotSuportCamera">The device is not suported camera</string>
+</resources>

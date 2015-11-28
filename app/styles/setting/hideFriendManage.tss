@@ -1,0 +1,46 @@
+
+// 로우
+".rowTemplate":{
+	backgroundColor:"white",
+	layout:"composite", height:56.67, width:Ti.UI.FILL
+}
+".rowTemplate[platform=ios]" : {
+	selectionStyle : Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE
+}
+//왼쪽
+".rowLeftView":{
+	layout:"horizontal", height:Ti.UI.SIZE, width:Ti.UI.SIZE,
+	left: 13
+}
+".profileImageWarp" : {
+	left:0,	height:40, width:40
+}
+".profileImageOutline":{
+	height:40, width:40,
+	image : '/images/friendlist_profile_pic_outline.png'
+}
+".profileImage":{
+	height:38, width:38, borderRadius:19,
+	font: { fontFamily: "Ionicons", fontSize:30 },
+	color : '#77787f', backgroundColor: '#bebfc3'
+}
+".profileName":{
+	left:13,
+	font : { fontWeight: 'Medium', fontSize:16	}, color:"#3a3a3a"
+}
+
+//오른쪽
+".rowRightView":{
+	layout:"composite", height:Ti.UI.SIZE, width:'55%',
+	right:13
+}
+".rowRightBtnWrap":{
+	layout:"composite", width:Titanium.UI.SIZE, height:Titanium.UI.SIZE,
+	backgroundColor:"#D9D9D9",
+	borderRadius:10,
+	right:0
+}
+".rowRightBtnLabel":{
+	left:6,right:6,top:3,bottom:3,
+	color:"#6C6C6C"
+}

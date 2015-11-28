@@ -1,0 +1,10 @@
+TI_VERSION=5.1.1
+TI_SDK_DIR=/Users/InGrowth/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION).GA/iphone
+TI_APPID=com.boxoutthinkers.tiopenchat
+JSCORE_LD_FLAGS=-weak_framework JavaScriptCore
+TICORE_LD_FLAGS=-weak-lti_ios_profiler -weak-lti_ios_debugger -weak-lTiCore
+OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) $(TICORE_LD_FLAGS)
+OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) $(TICORE_LD_FLAGS)
+OTHER_LDFLAGS[sdk=iphoneos9.*]=$(inherited) -weak_framework Contacts -weak_framework ContactsUI -weak_framework WatchConnectivity -weak_framework CoreSpotlight
+OTHER_LDFLAGS[sdk=iphonesimulator9.*]=$(inherited) -weak_framework Contacts -weak_framework ContactsUI -weak_framework WatchConnectivity -weak_framework CoreSpotlight
+#include "module"

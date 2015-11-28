@@ -1,5 +1,30 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
-	</Window>
+	<Widget src="kr.yostudio.drawer"
+		onDraweropen="onDrawerOpen"
+		onDrawerclose="onDrawerClose">
+		<View class="menuWrap" role="leftView">
+			<Require id="menuC" src="menu">
+			</Require>
+		</View>
+		<Window platform="ios" id="centerWindow" title="L('c_odizzo')" role="centerWindow" exitOnClose="true" onOpen="onOpen" onClose="onClose">
+			<LeftNavButton>
+				<View>
+					<Button class="ion-android-menu menuBtn" onClick="onMenuButtonClick"/>
+				</View>
+			</LeftNavButton>
+			<RightNavButton id="rightMenu">
+			</RightNavButton>
+			<Require src="blank" id="mainC">
+			</Require>
+		</Window>
+		<Window platform="android" id="centerWindow" role="centerWindow" exitOnClose="true" onAndroid:back="indexBackButton" onOpen="onOpen" onClose="onClose">
+			<ActionBar id="actionBar" title="L('c_odizzo')" onHomeIconItemSelected="onMenuButtonClick"></ActionBar>
+			<Menu id="rightMenu">
+			</Menu>
+			<Require src="blank" id="mainC">
+			</Require>
+		</Window>
+
+
+	</Widget>
 </Alloy>

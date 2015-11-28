@@ -1,0 +1,128 @@
+'TextField': {
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TextField[platform=android]': {
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TableView': {
+	backgroundColor: '#f7f7f7',
+	separatorColor : "transparent",
+	separatorInsets : { left : 0, right : 0 }
+}
+'TableViewRow': {
+	backgroundColor: '#f7f7f7',
+	height : 43
+}
+'Label' : {
+	font : { fontSize:16 },
+	color : "#3a3a3a"
+}
+
+".rightArrow" : {
+	width : 40,
+	height : 40,
+	right : 18
+}
+
+".purpleline" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5
+}
+
+".purplelineBottom" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5,
+	bottom : 0
+}
+
+".purplelineBottomShort" : {
+	backgroundColor: "#CACACA",
+	width: "90%",
+	height: 0.5,
+	bottom : 0,
+	right : 0
+}
+
+".marginBetweenView" : {
+	backgroundColor: "#eeeeee",
+	width: Ti.UI.FILL,
+	height: 33
+}
+
+".leftMargin" : {
+	left : 36
+}
+
+".leftMargin2" : {
+	left : 58
+}
+
+".rightMargin" : {
+	right : 29
+}
+
+".rightMargin2" : {
+	right : 55,
+	font : { fontSize:16 },
+	color : "#8b61ff"
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+".left2":{ left: 5 }
+
+
+".noUseColor":{
+	color : "#A6A6A6"
+}
+
+
+"#versionInfoView":{
+	width:230, height: Titanium.UI.SIZE,
+	top:30,
+	layout:"vertical"
+}
+
+"#topViewWrap":{
+	width:Titanium.UI.FILL, height: 80,
+	layout:"composite"
+}
+"#appImageViewWrap":{
+	width:"30%", height: Titanium.UI.SIZE,
+	left:0, top:0
+}
+
+"#appImageView":{
+	width:Titanium.UI.SIZE, height: Titanium.UI.SIZE,
+	image:"/appicon.png",
+}
+
+"#infoWrap":{
+	layout:"vertical", width:"70%", height: Titanium.UI.SIZE,
+	right:0
+}
+".infoRow":{
+	layout:"horizontal", width:Titanium.UI.SIZE, height: "50%",
+	right:0
+}
+
+"#moveChatRoomBtn":{
+	color:"#29a658", font:{fontWeight:"Bold", fontSize:18},
+	borderRadius:10, borderColor:"#29a658", borderWidth:1
+}
+"#bottomViewWrap":{
+	layout:"composite", width:Titanium.UI.FILL, height:Titanium.UI.SIZE,
+	backgroundColor:"#54EF91",
+	borderRadius:10,
+	top:15
+}
+
+"#updateBtn":{
+	top:10,bottom:10,
+	color:"white", font:{fontWeight:"Bold", fontSize:18},
+}

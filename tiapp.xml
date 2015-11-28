@@ -84,7 +84,15 @@
 		<theme>default</theme>
 	</mobileweb>
 	<modules>
-	</modules>
+        <module platform="android">com.boxoutthinkers.parseandroid</module>
+        <module platform="android">com.tripvi.drawerlayout</module>
+        <module platform="iphone">com.leftlanelab.firebase</module>
+        <module platform="android">com.boxoutthinkers.ti.firebase</module>
+        <module platform="iphone">ti.imagefactory</module>
+        <module platform="android">ti.imagefactory</module>
+        <module platform="android">fh.imagefactory</module>
+        <module platform="android">pw.custom.androidcamera</module>
+    </modules>
 	<deployment-targets>
 		<target device="android">true</target>
 		<target device="ipad">false</target>

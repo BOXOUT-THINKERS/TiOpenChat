@@ -1,0 +1,103 @@
+".container":{}
+
+".bottomText":{
+	color:"white", font: {fontSize:10},
+	bottom: 15
+}
+
+".verticalWrap":{
+	backgroundColor:"#54EE92",
+	layout:"vertical", width:Titanium.UI.FILL, height:Titanium.UI.FILL
+}
+////////////
+//profileWrap 관련
+".profileWrap":{
+	layout:"vertical", width:Titanium.UI.FILL, height:Titanium.UI.SIZE,
+}
+".profileImageWrap":{
+	layout:"composite", width:Titanium.UI.FILL, height:Titanium.UI.SIZE,
+	 top:"7",
+}
+"#profileImage":{
+	width:82, height:82, zIndex:0,
+ 	borderRadius: 41
+}
+"#profileImageOutline":{
+	width:85, height:85,
+	image:"/images/navidrawer_profile_outline.png",
+	zIndex:5
+}
+
+"#profileName":{
+	top:"4",
+	color:"white", font: {fontSize:20, fontWeight:"Bold"}
+}
+"#editProfile":{
+	width:104.67, height: 31,
+	top:7,
+	image:"/images/navidrawer_profile_edit_button.png"
+
+}
+//센터...버튼들관련
+
+".mainBtnWrap":{
+	layout:"horizontal", width:Titanium.UI.FILL, height: Titanium.UI.SIZE,
+	top:15
+}
+".eachBtn":{
+	backgroundColor:"#fd9091",
+	layout:"composite", width:65, height: 65,
+}
+".leftPadding":{
+	left:1
+}
+//나머지.
+".etcBtnWrap":{
+	layout:"vertical", width:Titanium.UI.FILL, height: 210,
+	top:13
+}
+".eachEtcBtn":{
+	backgroundColor:"#8b61ff",
+	layout:"composite", width:Titanium.UI.FILL, height: 40
+}
+".eactEtcFont":{
+	color:"white", font: {fontSize:14, fontWeight:"Regular"}
+}
+
+".bottomLine":{
+	backgroundColor:"white",
+	width:"90%", height:1,
+	bottom:0
+}
+
+
+////////////////////
+"#listView" : {
+  	backgroundColor:'black',
+  	defaultItemTemplate: 'menuItem',
+	canScroll: false
+}
+
+".menuItem": {
+	height : 50,
+  	backgroundColor:'black'
+}
+
+".iconLabel": {
+	font: {
+		fontFamily: "Ionicons",
+		fontSize: 15
+	},
+	text: '',
+	color: 'white',
+	left: 10
+}
+
+".titleLabel": {
+	font: {
+		fontSize: 15
+	},
+	left: 28,
+	text: 'Menu 1',
+	color: 'white'
+}

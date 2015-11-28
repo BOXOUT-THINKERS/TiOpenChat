@@ -1,0 +1,9 @@
+<Alloy>
+	<ItemTemplate name="profileTemplate" height="100">
+		<ImageView bindId="profileImg" height="100" width="100" left="10"/>
+		<View class=".vgroup">
+			<Label  bindId="name"/>
+			<Label  bindId="word"/>
+		</View>
+	</ItemTemplate>
+</Alloy>

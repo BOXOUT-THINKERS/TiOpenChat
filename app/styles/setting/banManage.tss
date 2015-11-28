@@ -1,0 +1,75 @@
+'TextField': {
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TextField[platform=android]': {
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TableView': {
+	backgroundColor: '#f7f7f7',
+	separatorColor : "transparent",
+	separatorInsets : { left : 0, right : 0 }
+}
+'TableViewRow': {
+	backgroundColor: '#f7f7f7',
+	height : 43
+}
+'Label' : {
+	font : { fontSize:16 },
+	color : "#3a3a3a"
+}
+
+
+
+".rightArrow" : {
+	width : 40,
+	height : 40,
+	right : 18
+}
+
+".purpleline" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5
+}
+
+".purplelineBottom" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5,
+	bottom : 0
+}
+
+".purplelineBottomShort" : {
+	backgroundColor: "#CACACA",
+	width: "90%",
+	height: 0.5,
+	bottom : 0,
+	right : 0
+}
+
+".marginBetweenView" : {
+	backgroundColor: "#eeeeee",
+	width: Ti.UI.FILL,
+	height: 33
+}
+
+".leftMargin" : {
+	left : 36
+}
+
+".leftMargin2" : {
+	left : 58
+}
+
+".rightMargin" : {
+	right : 29
+}
+
+".rightMargin2" : {
+	right : 55,
+	font : { fontSize:16 },
+	color : "#8b61ff"
+}

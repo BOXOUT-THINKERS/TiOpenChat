@@ -1,0 +1,7 @@
+<Alloy autoStyle="true">
+  <Window id="window" class="nlFokkezbToast_window" platform="ios" />
+  <View id="view" class="nlFokkezbToast_view" onClick="hide">
+    <Label id="label" class="nlFokkezbToast_label" />
+  </View>
+  <Notification id="notification" class="nlFokkezbToast_notification" platform="android" />
+</Alloy>

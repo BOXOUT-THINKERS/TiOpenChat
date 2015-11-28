@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1.3
+apiversion: 2
+architectures: armeabi armeabi-v7a x86
+description: Native Android Firebase Titanium Module
+author: Boxout Thinkers Inc. (original by Michael Labieniec)
+license: GPL
+copyright: Copyright (c) 2015 Boxout Thinkers Inc & Michael Labieniec
+
+# these should not be edited
+name: titanium-firebase
+moduleid: com.boxoutthinkers.ti.firebase
+guid: e7273529-285c-4ea4-bf68-1e72a6127b77
+platform: android
+minsdk: 3.5.1.GA

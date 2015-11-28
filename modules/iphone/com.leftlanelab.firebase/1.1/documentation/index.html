@@ -1,0 +1,68 @@
+<h1>Firebase iOS Module for Titanium</h1>
+<p>Native iOS Module for using Firebase with Titanium apps.</p>
+<h2>Compatibility</h2>
+<p>Module has been tested with the following versions of the Titanium SDK:</p>
+<ul>
+<li>Titanium 3.2.1</li>
+<li>Titanium 3.3.0</li>
+<li>Titanium 3.4.0</li>
+</ul>
+<h2>Installation</h2>
+<ul>
+<li>Download the latest build from the <a href="https://github.com/LeftLaneLab/firebase-titanium/releases">releases page</a>.</li>
+<li>Use <a href="http://docs.appcelerator.com/titanium/3.0/#!/guide/Using_a_Module">these instructions</a> from Appcelerator to install the module file.</li>
+</ul>
+<h2>Documentation</h2>
+<p>This module is constructed to mimic the official <a href="https://www.firebase.com/docs/javascript/firebase/index.html">Firebase JavaScript Library</a>. All functions available with the official library are also available on this module. All methods take the same arguments and return the same values where applicable.</p>
+<p><strong>The only difference is the syntax for creating a new Firebase reference.</strong></p>
+<p>```JavaScript
+var Firebase = require('com.leftlanelab.firebase');</p>
+<p>// WRONG: Official Firebase JavaScript library method
+var firebaseReference = new Firebase('https://l3-appcelerator-demo.firebaseio.com/users');</p>
+<p>// CORRECT: Method to use with this module
+var firebaseReference = Firebase.new('https://l3-appcelerator-demo.firebaseio.com/users');</p>
+<p>// CORRECT: ... when com.leftlanelab.firebase.forge is set in tiapp.xml
+var firebaseReference = Firebase.new('/users');
+```</p>
+<h2>Tutorials</h2>
+<p>Traverse a Firebase location, and write some data.</p>
+<p>```JavaScript
+var Firebase = require('com.leftlanelab.firebase');</p>
+<p>var sampleChatRef = Firebase.new('https://l3-appcelerator-demo.firebaseio.com');
+var fredNameRef = sampleChatRef.child('users/fred/name');
+fredNameRef.set({first: 'Fred', last: 'Flintstone'});
+```</p>
+<p>Now read the data back (and get notified whenever it changes).</p>
+<p><code>JavaScript
+fredNameRef.on('value', function (nameSnapshot) {
+  var y = nameSnapshot.val();
+  // y now contains the object { first: 'Fred', last: 'Flintstone' }.
+});</code></p>
+<p>Let's add a new chat message child to the message_list location.</p>
+<p><code>JavaScript
+var messageListRef = sampleChatRef.child('message_list');
+messageListRef.push({'user_id': 'fred', 'text': 'Yabba Dabba Doo!'});</code></p>
+<p>And let's listen for new children added to the message_list location. We'll be notified of our 'Yabba Dabba Doo!' message as well as any other messages that were added in the past, and any new messages that get added in the future.</p>
+<p><code>JavaScript
+messageListRef.on('child_added', function(newMessageSnapshot) {
+  var userId = newMessageSnapshot.child('user_id').val();
+  var text = newMessageSnapshot.child('text').val();
+  // Do something with user_id and text.
+});</code></p>
+<h2>Global Properties (tiapp.xml)</h2>
+<p>Global configuration options can be defined in the <code>tiapp.xml</code> file.</p>
+<p><em>NOTE: These are optional</em></p>
+<h4>Properties</h4>
+<ul>
+<li><strong>forge</strong> : base value for new Firebase references. This value can always be overridden by specifying an absolute URL when calling <code>Firebase.new( )</code>.</li>
+<li><strong>persistence</strong> : Enables the Firebase iOS Disk Persistence feature (default: <code>false</code>)</li>
+</ul>
+<h4>Usage</h4>
+<p><code>XML
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ti:app xmlns:ti="http://ti.appcelerator.org"&gt;
+  ...
+  &lt;property name="com.leftlanelab.firebase.forge" type="string"&gt;https://l3-appcelerator-demo.firebaseio.com/&lt;/property&gt;
+  &lt;property name="com.leftlanelab.firebase.persistence" type="bool"&gt;true&lt;/property&gt;
+  ...
+&lt;/ti:app&gt;</code></p>

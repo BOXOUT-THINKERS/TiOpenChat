@@ -1,0 +1,25 @@
+<Alloy>
+	<Window id="container" class="container">
+
+		<TableView>
+			<TableViewSection>
+
+				<TableViewRow onClick="moveHideFriendManage">
+					<Label id="hideFriendTitle" class="leftMargin" />
+					<View class="rightArrow">
+						<ImageView image="/images/setting_arrow.png"/>
+					</View>
+					<View class="purplelineBottom" />
+				</TableViewRow>
+				<TableViewRow onClick="moveBanFriendManage">
+					<Label id="banFriendTitle" class="leftMargin" />
+					<View class="rightArrow">
+						<ImageView image="/images/setting_arrow.png"/>
+					</View>
+					<View class="purplelineBottom" />
+				</TableViewRow>
+
+			</TableViewSection>
+		</TableView>
+	</Window>
+</Alloy>

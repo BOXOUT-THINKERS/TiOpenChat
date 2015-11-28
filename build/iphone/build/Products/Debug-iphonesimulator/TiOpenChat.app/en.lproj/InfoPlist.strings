@@ -1,0 +1,7 @@
+/**
+ * Appcelerator Titanium
+ * this is a generated file - DO NOT EDIT
+ */
+
+"CFBundleDisplayName" = "TiOpenChat";
+"NSLocationWhenInUseUsageDescription" = "Please allow to get the your location information for your friends.";

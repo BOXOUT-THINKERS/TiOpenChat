@@ -1,0 +1,15 @@
+<Alloy autoStyle="true">
+	<View id="centerTitle" backgroundColor="white">
+
+		<View id="emptyImageWrap">
+			<ImageView id="emptyImageView"/>
+			<ImageView id="emptyImageView2"/>
+		</View>
+		<!--  chat -->
+		<View id="chatListWrapView">
+			<ScrollView id="chatListView"  onScroll="scrollHandler"/>
+		</View>
+
+		<!-- bottom editing -->
+	</View>
+</Alloy>

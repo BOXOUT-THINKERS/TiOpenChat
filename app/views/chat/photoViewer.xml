@@ -1,0 +1,17 @@
+<Alloy>
+	<Window id="window" class="container" title="photo">
+		<View class="fakeStatusbar" platform="ios" />
+		<View id="topView">
+			<Button id="closeBtn" />
+			<Label id="nameAndTime"  />
+		</View>
+		<View id="centerView">
+			<ImageView id="currentImage" />
+		</View>
+		<View id="bottomView">
+			<ImageView id="saveBtn" title="save"/>
+			<ImageView id="exportBtn" />
+			<!-- <ImageView id="deleteBtn" /> -->
+		</View>
+	</Window>
+</Alloy>

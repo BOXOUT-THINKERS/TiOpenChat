@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.10.0
+apiversion: 2
+architectures: armeabi armeabi-v7a x86
+description: Titanium module wrapping the Parse Android SDK.
+author: Boxout Thinkers Inc. (original by Timan Rebel)
+license: MIT
+copyright: Copyright (c) 2015 Boxout Thinkers Inc & Rebelcorp
+
+# these should not be edited
+name: parse-android
+moduleid: com.boxoutthinkers.parseandroid
+guid: eff73598-e640-493d-8889-0cf868539199
+platform: android
+minsdk: 3.5.1.GA

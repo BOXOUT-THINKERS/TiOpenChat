@@ -1,0 +1,349 @@
+'Window[platform=android]': {
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
+}
+
+'.container' : {
+	layout:'composite',
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	backgroundColor: "white",
+	theme: "Theme.NoActionBar"
+}
+
+".fakeStatusbar[platform=ios]" : {
+	backgroundColor: "#54EE92",
+	height: 20,
+	top: 0
+}
+
+'.mainWrap[platform=android]':{
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	scrollingEnabled: false,
+	top: 0
+}
+
+'.mainWrap[platform=ios]':{
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	scrollingEnabled: false,
+	top: 20
+}
+
+'.viewWrap':{
+	layout:'composite',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+}
+
+".fakeNavbar[platform=ios]" : {
+	top : 0,
+	backgroundColor: "#54EE92",
+	width: Ti.UI.FILL,
+	height: 40
+}
+
+'.formWrap[platform=ios]': {
+	top : 40,
+	bottom : 85,
+	layout: 'vertical',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+}
+
+".fakeNavbar[platform=android]" : {
+	top : 0,
+	backgroundColor: "#54EE92",
+	width: Ti.UI.FILL,
+	height: 46
+}
+
+'.formWrap[platform=android]': {
+	top : 46,
+	bottom : 85,
+	layout: 'vertical',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+}
+
+".backBtn" : {
+	width : 40,
+	height : 40,
+	left : 0
+}
+
+".bottomView" : {
+	bottom: 0,
+	height: 85
+}
+
+".navTitle" : {
+	color: "white"
+}
+
+".middleView" : {
+	layout: 'vertical',
+	width : 294,
+	height : 181
+}
+
+".heightView" : {
+	top : 20,
+	layout:'horizontal',
+	width: 294,
+	height: 40
+}
+
+".bottomLineView" : {
+	width: 294,
+	height: 2,
+	backgroundColor: "#FB8F8F"
+}
+
+".bottomLineView2" : {
+	width: 294,
+	height: 1,
+	backgroundColor: "#ADADAD"
+}
+
+".numpadView" : {
+	top : 10,
+	bottom : 10,
+	layout:'vertical',
+	width: 274.33,
+	height: Ti.UI.FILL
+}
+
+".numpadRow" : {
+	layout:'horizontal',
+	width: Ti.UI.FILL,
+	height: "25%"
+}
+
+".numpadNumber" : {
+	layout : 'composite',
+	width : 86,
+	height : Ti.UI.FILL
+}
+
+".yellowLine" : {
+	width : 7,
+	height : Ti.UI.FILL,
+	backgroundImage : "/images/signin_dot_line.png",
+	backgroundRepeat : true
+}
+
+".yellowLine2" : {
+	width : 274.33,
+	height : 7,
+	backgroundImage : "/images/signin_dot_line.png",
+	backgroundRepeat : true
+}
+
+".yellowLineDummy" : {
+	width : 274.33,
+	height : 7
+}
+
+".bottomBtn" : {
+	width: 325,
+	height: 53,
+	borderRadius: 5,
+	color: "white",
+	font: { fontSize: 18, fontWeight: 'bold' },
+	backgroundColor: "#8B61FF"
+}
+
+'TextField': {
+	//keyboardType: Titanium.UI.KEYBOARD_PHONE_PAD,
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	//textAlign : Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 0,
+	borderWidth: 0
+}
+
+'TextField[platform=android]': {
+	borderRadius: 0,
+	borderWidth: 0
+}
+
+".localNmView" : {
+	width: 70,
+	height: 38,
+	layout : 'composite'
+}
+
+"#localNm" : {
+	borderRadius: 5,
+	width: 70,
+	height: 38,
+	color : "white",
+	font: { fontSize: 18, fontWeight: 'bold' },
+	backgroundColor: "#FB8F8F",
+	zIndex : 5
+}
+
+".localNmBottom" : {
+	bottom : 0,
+	width: 70,
+	height: 20,
+	backgroundColor: "#FB8F8F"
+}
+
+"#phoneNm" : {
+	width: 200,
+	left: 12, right: 12,
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	font: { fontSize: 18, fontWeight: 'bold' },
+	color : "#C5C5C5"
+}
+
+"#gpsImage" : {
+	left : 10
+}
+
+"#countryLabel" : {
+	left : 10,
+	height : 40,
+	font: { fontSize: 15, fontWeight: 'bold' },
+	color : "#5D5D5D"
+}
+
+"#agreeLabel" : {
+	left : 27,
+	width : 240,
+	font: { fontSize: 12 },
+	color : "#C5C5C5"
+}
+
+"#phoneNmLabel" : {
+	font: { fontSize: 20, fontWeight: 'bold' },
+	color : "white"
+}
+
+"#verifyCodeView" : {
+	width : 294,
+	height : 121
+}
+
+"#verifyMsgView" : {
+	width : 294,
+	height : 60
+}
+
+"#verifyCode" : {
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 0,
+	borderWidth: 0,
+	top : 50,
+	width : 135,
+	height : 65,
+	font: { fontSize: 50, fontWeight: 'bold' },
+	color : "#5FEEA3"
+}
+
+"#verifyStatusImage" : {
+	right: 40, top: 75
+}
+
+"#bottomLineVerify" : {
+	top : 107,
+	width : 130,
+	height : 5,
+	backgroundColor : "#5FEEA3"
+}
+
+"#bottomLineVerifyFail" : {
+	top : 107,
+	width : 130,
+	height : 5,
+	backgroundColor : "#ea4e4e",
+	visible : false
+}
+
+"#verifyMsgLabel" : {
+	left : 27,
+	width : Ti.UI.FILL,
+	font: { fontSize: 13 },
+	color : "#C5C5C5"
+}
+
+"#verifyFailMsgLabel" : {
+	left : 27,
+	width : Ti.UI.FILL,
+	font: { fontSize: 13 },
+	color : "#ea4e4e",
+	visible : false
+}
+
+"#retryBtn" : {
+	backgroundColor : '#FB8F8F'
+}
+
+"#nameView" : {
+	top : 40,
+	width : Ti.UI.FILL, height : 80,
+	zIndex: 50
+}
+
+"#nameLabel" : {
+	left : 0, top : 0,
+	font : { fontSize : 16, fontWeight : 'bold' },
+	color : '#8b61ff'
+}
+"#nameLimitLabel" : {
+	right : 0, top : 0,
+	font : { fontSize : 10, fontWeight : 'Bold' },
+	color : '#bebebe'
+}
+
+"#nameInput" : {
+	top : 19, left : 0,
+	width : Ti.UI.FILL, height : 54,
+	font : { fontSize : 30, fontWeight : 'bold' },
+	color : '#8b61ff'
+}
+//안드로이드 텍스트 필드 보더 없에기.
+"#nameInput[platform=android]" : {
+	backgroundColor: 'transparent', borderWidth: 0, borderColor: 'transparent'
+}
+
+".bottomLineNameWhite" : {
+	top : 59,
+	width : Ti.UI.FILL, height : 3,
+	backgroundColor : 'white'
+}
+
+".bottomLineName" : {
+	top : 62,
+	width : Ti.UI.FILL, height : 3,
+	backgroundColor : '#8b61ff'
+}
+
+"#nameMsgView" : {
+	width : Ti.UI.FILL, height : 30
+}
+
+"#nameMsgLabel" : {
+	top : 0,
+	font : { fontSize : 13, fontWeight : 'bold' },
+	color : '#676767'
+}
+
+"#agreeMsgView" : {
+	bottom : 0,
+	width : Ti.UI.FILL, height : Ti.UI.SIZE
+}
+
+"#agreeMsgLabel" : {
+	bottom : 85,
+	width : 294,
+	font : { fontSize : 13, fontWeight : 'bold' },
+	color : '#8b61ff'
+}
+
+"#joinBtn" : {
+	bottom : 16,
+	zIndex: 55
+}

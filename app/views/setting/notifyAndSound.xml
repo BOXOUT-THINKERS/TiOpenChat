@@ -1,0 +1,45 @@
+<Alloy>
+	<Window id="mainView">
+		<TableView id="tableView">
+
+			<TableViewSection>
+				<TableViewRow>
+					<Label id="sn_notifyPush" class="leftMargin" />
+					<Switch class="rightMargin" id="permission_push_switch"/>
+					<View class="purplelineBottom" />
+				</TableViewRow>
+				<TableViewRow>
+					<Label id="sn_notifyEventAndNotice" class="leftMargin" />
+					<Switch class="rightMargin" id="Installation_channels_eventSwitch"/>
+					<View class="purplelineBottom" />
+				</TableViewRow>
+			</TableViewSection>
+
+			<TableViewSection>
+				<TableViewRow class="timerViewRow">
+					<View class="timerViewWrap">
+						<View class="timerView">
+							<Label id="sn_banTime" class="leftMargin" />
+							<Switch  class="rightMargin" id="isStopNoticeTimeSwitch"/>
+							<View class="purplelineBottom" />
+						</View>
+						<View id="isStopNoticeTimeSubSection">
+							<View class="timerViewSubRow"  onClick="onOpenBanStartTimePicker">
+								<Label id="sn_banTimeStart" class="leftMargin2" />
+			        			<Label  id="banStartTime" class="rightMargin" />
+							</View>
+			        		<View class="purplelineBottom leftMargin" />
+
+							<View class="timerViewSubRow"  onClick="onOpenBanEndTimePicker">
+								<Label id="sn_banTimeEnd" class="leftMargin2" />
+								<Label  id="banEndTime" class="rightMargin" />
+							</View>
+							<View class="purplelineBottom" />
+						</View>
+					</View>
+				</TableViewRow>
+			</TableViewSection>
+		</TableView>
+
+	</Window>
+</Alloy>

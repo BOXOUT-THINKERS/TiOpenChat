@@ -1,0 +1,173 @@
+'TextField': {
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TextField[platform=android]': {
+	borderRadius: 0,
+	borderWidth: 0
+}
+'TableView': {
+	backgroundColor: '#f7f7f7',
+	separatorColor : "transparent",
+	separatorInsets : { left : 0, right : 0 }
+}
+'TableViewRow': {
+	backgroundColor: '#f7f7f7',
+	height : 43
+}
+'Label' : {
+	font : { fontSize:16 },
+	color : "#3a3a3a"
+}
+
+".rightArrow" : {
+	width : 40,
+	height : 40,
+	right : 18
+}
+
+".purpleline" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5
+}
+
+".purplelineBottom" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5,
+	bottom : 0
+}
+
+".purplelineBottomShort" : {
+	backgroundColor: "#CACACA",
+	width: "90%",
+	height: 0.5,
+	bottom : 0,
+	right : 0
+}
+
+".marginBetweenView" : {
+	backgroundColor: "#eeeeee",
+	width: Ti.UI.FILL,
+	height: 33
+}
+
+".leftMargin" : {
+	left : 36
+}
+
+".rightMargin" : {
+	right : 29
+}
+
+".rightMargin2" : {
+	right : 55,
+	font : { fontSize:16 },
+	color : "#8b61ff"
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+".noUseColor":{
+	color : "#A6A6A6"
+}
+
+
+////////////
+//
+".verticalWrap":{
+	width:Titanium.UI.FILL, height:Titanium.UI.SIZE, layout:"vertical"
+}
+
+".rowView": {
+	backgroundColor: '#f7f7f7',
+	height : 43,	width:Titanium.UI.FILL,
+	layout:"composite"
+}
+
+
+".profileImageRow":{
+	width:Titanium.UI.FILL, height:Titanium.UI.SIZE, layout:"composite"
+}
+"#profileImageWrap": {
+ 	width:Titanium.UI.FILL, height:Titanium.UI.SIZE, layout:"composite",
+ 	top:10, bottom:10
+ }
+ "#profileImage":{
+ 	height: 130,	width: 130,
+ 	borderRadius: 65
+ }
+"#profileImageOutline":{
+	height: 131,	width: 131,
+	image : "/images/setting_profile_outline.png"
+}
+
+"#settingView":{
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+	layout:'vertical'
+}
+
+
+".rightArrowProfile" : {
+	width : 40,
+	height : 40,
+	right : 0
+}
+
+"#tableView[platform=android]" : {
+	width : Titanium.UI.FILL, height : Titanium.UI.SIZE
+}
+"#tableView[platform=ios]" : {
+	width : Titanium.UI.FILL, height : Titanium.UI.SIZE,
+	scrollable : false
+}
+
+ "#profileComment" : {
+	ellipsize : true, wordWrap : false,
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+ 	width : "50%", height : 22
+ }
+
+
+
+// //프로필관련   이전것.
+// "#profileView": {
+// 	width : Titanium.UI.FILL, height : 85, layout:'composite'
+// }
+// "#profileImageWrap":{
+// 	height: Titanium.UI.FILL, width: 55.33, left:15
+// },
+// "#profileContentView":{
+// 	width: Titanium.UI.FILL,
+// 	height : Titanium.UI.SIZE,
+// 	layout:'vertical',
+// 	left : 85,
+// 	right : 50
+// }
+// "#profileName" : {
+// 	width : 205,
+// 	height : Titanium.UI.SIZE,
+// 	font : { fontSize:16 },
+// 	color : "#3a3a3a",
+// 	left : 0
+// }
+// "#profileCommentWrap" : {
+// 	left : 0,
+// 	width : 205, height : 29,
+// 	borderRadius: 7,
+// 	borderWidth: 1,
+// 	borderColor : "#d4d4d4",
+// 	backgroundColor: "white"
+// }
+// "#profileComment" : {
+// 	width : Titanium.UI.FILL, height : Titanium.UI.SIZE,
+// 	font : { fontSize:10 },
+// 	color : "#77787f"
+// }
+// "#profileImage": {
+// 	height: 55,
+// 	width: 55,
+// 	borderRadius: 27.5, borderWidth: 1, borderColor: "#8b61ff"
+// }

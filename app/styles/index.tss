@@ -1,5 +1,9 @@
 ".container": {
-	backgroundColor:"white"
+	exitOnClose: true
+}
+
+'#centerWindow[platform=ios]': {
+	//translucent : true
 }
 
 "Label": {
@@ -12,4 +16,23 @@
 	font: {
 		fontSize: 12
 	}
+}
+
+".menuBtn": {
+	left: -5,
+	backgroundColor: '#54EE92',
+	font : {
+		fontSize: 25
+	}
+}
+
+".menuWrap": {
+	top: 64
+}
+
+//하단버튼
+"#bottomButtonsWrap":{
+	backgroundColor:"red",
+	width: Ti.UI.FILL,	height: 300,
+	zIndex:20
 }

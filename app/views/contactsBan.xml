@@ -1,0 +1,28 @@
+<Alloy>
+	<Window id="container" class="container">
+		<ListView id="listView">
+			<Templates>
+				<ItemTemplate name="rowTemplate" class="rowTemplate">
+					<View class="rowLeftView">
+						<ImageView bindId="checkIcon" class="checkIcon" />
+						<View class="profileImageWarp">
+							<ImageView bindId="profileImage" class="profileImage" />
+							<ImageView class="profileImageOutline" />
+						</View>
+						<Label bindId="profileName" class="profileName"  />
+					</View>
+				</ItemTemplate>
+			</Templates>
+			<ListSection id="section"></ListSection>
+			<FooterView>
+				<View class="dummyfooterView">
+				</View>
+			</FooterView>
+		</ListView>
+		<View id="footerView">
+			<View class="footerViewLIne" />
+			<Button id="blockBtn" onClick="blockContacts" />
+			<Button id="hiddenBtn" onClick="hiddenContacts" />
+		</View>
+	</Window>
+</Alloy>

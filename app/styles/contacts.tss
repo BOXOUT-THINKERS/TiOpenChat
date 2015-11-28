@@ -1,0 +1,132 @@
+"#container" : {
+}
+
+
+".lineTop[platform=android]" : {
+	visible : false
+}
+".lineTop[platform=ios]" : {
+	backgroundColor: "#CACACA",
+	width: Ti.UI.FILL,
+	height: 0.5,
+	top : 0
+}
+
+// 친구목 리스트뷰에 대해.
+"#listView":{
+	width:Titanium.UI.FILL,
+	height:Titanium.UI.FILL
+}
+// 헤더
+".headerView":{
+	backgroundColor:"#eeeeee", height:23.33
+}
+".headerTitle":{
+	left: 13, color:"#bebfc3", font : { fontWeight: 'Medium', fontSize:11	}
+}
+
+// 로우
+".rowTemplate":{
+	backgroundColor:"#f7f7f7",
+	layout:"composite", height:56.67, width:Ti.UI.FILL
+}
+".rowTemplate[platform=ios]" : {
+	selectionStyle : Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE
+}
+//왼쪽
+".rowLeftView":{
+	layout:"horizontal", height:Ti.UI.SIZE, width:Ti.UI.SIZE,
+	left: 13
+}
+".profileImageWarp" : {
+	left:0,	height:40, width:40
+}
+".profileImageOutline":{
+	height:40, width:40,
+	image : '/images/friendlist_profile_pic_outline.png'
+}
+".profileImage":{
+	height:38, width:38, borderRadius:19,
+	font: { fontFamily: "Ionicons", fontSize:30 },
+	color : '#77787f', backgroundColor: '#bebfc3'
+}
+".profileName":{
+	left:13,
+	font : { fontWeight: 'Medium', fontSize:16	}, color:"#3a3a3a"
+}
+
+//오른쪽
+".rowRightView":{
+	layout:"vertical", height:Ti.UI.SIZE, width:'55%',
+	right:13
+}
+
+//오른쪽 위
+
+".commentWrapView":{
+	width:"60%", height:Ti.UI.SIZE,
+	right:0
+}
+".commentBox":{
+	backgroundColor:"#f9faff",
+	borderColor:"#d4d4d4", borderRadius:8, borderWidth:"1px",
+	height:22, width:Ti.UI.SIZE, right:0
+}
+//TODO[faith]: 이 경우 안드로이드에서 말줄임표가 안생김.
+
+".profileComment":{
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	ellipsize : true, wordWrap : true,
+	left:7,right:7,
+	width: Ti.UI.SIZE, height:15,
+	font : { fontWeight: 'Regular', fontSize:12 },color:"#63656d"
+}
+// 오른쪽 아래
+".profileEtcInfoWrapView":{
+	layout:"horizontal", height:12, width:Ti.UI.SIZE,
+	top:4,right:0
+}
+".locationIcon":{ height:9, width:7 , image:"/images/friendlist_map_icn.png"}
+".locationText":{ left:9, height:12 , color:"#63656d", font : { fontWeight: 'Medium', fontSize:10 } }
+
+".unregisteredFriendRightView":{
+	layout:"horizontal", height:Ti.UI.SIZE, width:Ti.UI.SIZE,
+	right:13
+}
+".friendInviteWarp" : {
+	right: 0,
+	height:36.66, width:45, borderRadius:5,
+	backgroundColor: '#9670FE'
+}
+".friendInvite" : {
+	height:Ti.UI.FILL, width:Ti.UI.SIZE,
+	font: { fontSize:13, fontWeight:'bold' },
+	color : 'white'
+}
+
+".friendSearchView":{
+	backgroundColor:"#f7f7f7",
+	layout:"composite", height:56.67, width:Ti.UI.FILL
+}
+"#friendSearchLabel":{
+	left:30,
+	color:"#8b61ff",
+	font:{ fontSize:16, fontWeight:'bold'}
+}
+".friendSearchWarp" : {
+	right: 0,
+	height:36.66, width:Ti.UI.SIZE, borderRadius:5,
+	backgroundColor: '#FD787C',
+	layout : 'horizontal'
+}
+".friendSearchIcon" : {
+	left : 13, top: 8.33,
+	height:20, width:20,
+	image : '/images/friendlist_friend_search_icn.png'
+}
+".friendSearch" : {
+	left: 8, right:13,
+	height:Ti.UI.FILL, width:Ti.UI.SIZE,
+	font: { fontSize:14, fontWeight:'bold' },
+	color : 'white'
+}
