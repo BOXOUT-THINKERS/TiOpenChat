@@ -187,13 +187,6 @@ function _changeContenViewHeight() {
 		//안드로이드는 자동조절.
 	}
 
-	//쪼기화면일경우 특화
-	if(exports.openLevel == 98){
-		$.chatViewInnerBackgroud.backgroundColor = "#a0f5c8";
-	}else{
-		$.chatViewInnerBackgroud.backgroundColor = "#dbf1ea";
-	}
-
 	$.chatViewInnerBackgroud.backgroundColor = "#dbf1ea";
 	$.chatView.height = Titanium.UI.FILL;
 

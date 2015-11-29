@@ -92,7 +92,6 @@ Please, Allow to access contacts. (Setting > TiOpenChat)</string>
 	<string name="cb_banFriendBtn">Block Friendlist.</string><!-- button -->
 	<string name="cb_hideFriendBtn">Hide Friendlist</string><!-- button -->
 
-	<string name="cb_zzixgiFriendBtn">Shot</string><!-- button -->
 	<string name="cb_inviteFriendBtn">Invite</string><!-- button -->
 
 	<!-- contacts listve header -->
@@ -109,9 +108,7 @@ Please, Allow to access contacts. (Setting > TiOpenChat)</string>
 	<string name="cb_smsCancle">Cancle</string><!-- confirm alert cancle button -->
 	<string name="cb_smsMessage">It might pay the price because using SMS of communications company</string><!-- confirm alert content -->
 	<string name="cb_smsTitle">Invite Friend</string><!-- confirm alert title -->
-	<string name="cb_smsZzixgiTitle">Send Shot</string><!-- confirm alert title -->
-	<string name="cb_smsZzixgiOk">Shot</string><!-- confirm alert allow button -->
-
+	
 	<string name="cb_smsContent">TiOpenChat? http://www.TiOpenChat.com/</string><!-- sms contecnt-->
 
 	<!-- sms after send -->
