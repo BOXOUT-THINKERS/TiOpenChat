@@ -11,6 +11,7 @@ $.headerTitle4.text = L('cb_searchTitle');
 
 var contactsCol = Alloy.Collections.instance('contacts');
 var messageCollection = Alloy.Collections.instance('message');
+var chatRoomCol = Alloy.Collections.instance('chatRoom');
 
 var favoriteFriends = [];
 var friends = [];
