@@ -10,6 +10,9 @@ If you have any questions, please use github issue.
 - MBaaS : Parse.com + Firebase.com
 - SMS Verification : Twillio.com
 
+# Code Review
+- https://goo.gl/EWa1oG
+
 # How to Run
 1. Parse.com & Firebase.com & Twillio.com subscribe to trial plan, prepare and select the api key.
 2. Fill the empty api key into tiapp.xml.
@@ -32,13 +35,13 @@ It has not yet fully handle the runtime error.
   1. https://github.com/gimdongwoo/firebase-titanium
   2. https://github.com/yomybaby/kr.yostudio.drawer
   3. https://github.com/gimdongwoo/ti.imagefactory
-  
+
 - Widget
   1. https://github.com/yomybaby/kr.yostudio.drawer
   2. https://github.com/danielhanold/danielhanold.pickerwidget
   3. https://github.com/FokkeZB/nl.fokkezb.loading
   4. https://github.com/FokkeZB/nl.fokkezb.toast
-  
+
 # License
 - Apache 2 License
 - http://www.apache.org/licenses/LICENSE-2.0
