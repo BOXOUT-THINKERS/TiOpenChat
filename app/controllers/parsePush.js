@@ -1,4 +1,4 @@
-var ParsePush = (OS_IOS) ? require('services/iosPushService') : require('com.boxoutthinkers.parseandroid');
+var ParsePush = (OS_IOS) ? require('services/iosPushService') : require('eu.rebelcorp.parse');
 var userM = Alloy.Models.instance('user');
 var installation = Alloy.Models.instance('installation');
 var chatRoomCollection = Alloy.Collections.instance('chatRoom');

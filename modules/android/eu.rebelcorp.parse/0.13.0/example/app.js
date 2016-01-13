@@ -1,4 +1,4 @@
-var Parse = require('com.boxoutthinkers.parseandroid');
+var Parse = require('eu.rebelcorp.parse');
 
 Parse.start();
 

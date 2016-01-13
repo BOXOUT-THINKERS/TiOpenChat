@@ -84,7 +84,7 @@
 		<theme>default</theme>
 	</mobileweb>
 	<modules>
-        <module platform="android">com.boxoutthinkers.parseandroid</module>
+        <module platform="android">eu.rebelcorp.parse</module>
         <module platform="android">com.tripvi.drawerlayout</module>
         <module platform="iphone">com.leftlanelab.firebase</module>
         <module platform="android">com.boxoutthinkers.ti.firebase</module>
