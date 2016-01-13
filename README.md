@@ -16,7 +16,8 @@ If you have any questions, please use github issue.
 # How to Run
 1. Parse.com & Firebase.com & Twillio.com subscribe to trial plan, prepare and select the api key.
 2. Fill the empty api key into tiapp.xml.
-3. build a development environment available in Titanium.
+3. Fill the api key into Cloude_Code/cloud/main.js and deploy to parse
+4. build a development environment available in Titanium.
 
 # TODO
 - build possible, but do not guarantee normal operation.
@@ -24,7 +25,7 @@ It has not yet fully handle the runtime error.
 
 # Modules used
 - Android
-  1. https://github.com/gimdongwoo/Ti.Parse-Android
+  1. https://github.com/gimdongwoo/Parse
   2. https://github.com/gimdongwoo/ti-firebase
   3. https://github.com/manumaticx/Ti.DrawerLayout
   4. https://github.com/gimdongwoo/ti.imagefactory
