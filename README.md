@@ -16,7 +16,7 @@ If you have any questions, please use github issue.
 # How to Run
 1. Parse.com & Firebase.com & Twillio.com subscribe to trial plan, prepare and select the api key.
 2. Fill the empty api key into tiapp.xml.
-3. Fill the api key into Cloude_Code/cloud/main.js and deploy to parse
+3. Fill the twillio api key into Cloude_Code/cloud/main.js and deploy to parse
 4. build a development environment available in Titanium.
 
 # TODO
