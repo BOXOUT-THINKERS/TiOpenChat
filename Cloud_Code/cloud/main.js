@@ -39,30 +39,50 @@ Parse.Cloud.define("getInstallationByRandomId", function(request, response) {
 
 // send VerificationCode using twilio
 Parse.Cloud.define("sendVerificationCode", function(request, response) {
-	var verificationCode = Math.floor(Math.random()*8999) + 1000;
-	var user = Parse.User.current();
-	user.set("phoneVerificationCode", verificationCode);
-	user.set("isWithdraw", false);
+    // demo account
+    if(request.params.phoneNumber.indexOf("0000") > -1) {
+        var user = Parse.User.current();
+        if (!user) {
+            response.error();
+            return;
+        }
+        user.set("phoneVerificationCode", 0000);
+        user.set("isWithdraw", false);
+        //추가 요소 저장
+        user.set("timezoneOffset",request.params.timezoneOffset);
+        user.set("currentLanguage", request.params.currentLanguage);
+        user.save().then(function(userM) {
+            response.success("Success");
+        }, function(err) {
+            response.error(err);
+        });
+    } else {
+        // normal code
+        var verificationCode = Math.floor(Math.random()*8999) + 1000;
+    	var user = Parse.User.current();
+    	user.set("phoneVerificationCode", verificationCode);
+    	user.set("isWithdraw", false);
 
-    // add info
-    user.set("timezoneOffset",request.params.timezoneOffset);
-    user.set("currentLanguage", request.params.currentLanguage);
-	user.save();
+        // add info
+        user.set("timezoneOffset",request.params.timezoneOffset);
+        user.set("currentLanguage", request.params.currentLanguage);
+    	user.save();
 
-    var msgBody = "";
-    msgBody = "TiOpenChat's Verification Code is " + verificationCode + " .";
+        var msgBody = "";
+        msgBody = "TiOpenChat's Verification Code is " + verificationCode + " .";
 
-	twilio.sendSms({
-		From: "",
-		To: request.params.phoneNumber,
-		Body: msgBody
-	}, function(err, responseData) {
-		if (err) {
-			response.error(err);
-		} else {
-			response.success("Success");
-		}
-	});
+    	twilio.sendSms({
+    		From: "",
+    		To: request.params.phoneNumber,
+    		Body: msgBody
+    	}, function(err, responseData) {
+    		if (err) {
+    			response.error(err);
+    		} else {
+    			response.success("Success");
+    		}
+    	});
+    }
 });
 
 // verify PhoneNumber
