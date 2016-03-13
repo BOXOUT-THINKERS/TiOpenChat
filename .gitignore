@@ -4,6 +4,8 @@ build.log
 build
 npm-debug.log
 tmp
+temp
+package
 .map
 .project
 .settings
