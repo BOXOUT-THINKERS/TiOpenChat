@@ -1,34 +1,78 @@
 exports.definition = {
   config : {
-    adapter: {
-      type: "parse"
+    // https://api.parse.com/1/classes/users
+    "URL": "https://api.parse.com/1/users",
+    //"debug": 1,
+    "adapter": {
+      "type": "restapi",
+      "collection_name": "users",
+      "idAttribute": "objectId"
+    },
+    "headers": { // your custom headers
+      "X-Parse-Application-Id" : Ti.App.Properties.getString('Parse_AppId'),
+      "X-Parse-REST-API-Key" : Ti.App.Properties.getString('Parse_RestKey'),
+      "Content-Type" : "application/json"
     }
-    // table schema and adapter information
   },
-
   extendModel: function(Model) {
     _.extend(Model.prototype, {
       // Extend, override or implement Backbone.Model
       _parse_class_name: "users",
+      save: function (attributes, options) {
+        var options = options || {};
+        this.set(attributes);
+        Parse.Cloud.run('userModify', attributes, {
+          success: function (result) {
+            APP.log("debug", 'User Save Success : ' + JSON.stringify(result));
+            options.success && options.success();
+
+          },
+          error: function (error) {
+            APP.log("error", 'User Save Fail : ' + JSON.stringify(error));
+            options.error && options.error();
+          }
+        });
+      },
+      reset: function (user) {
+        Ti.API.debug('user reset : ' + user.id + ' ' + user.get("name"));
+        this.clear({silent:true});  // if value changing exist to null
+        this.set(_.extend({id: user.id, objectId: user.id}, user.attributes));  // change event avoid
+      },
       login: function(options){
         var thisModel = this;
+        var failCount = 0;
         var errorFn = function(error) {
-          Ti.API.error(error);
           // 101 : invaild session
           // 209 : invaild session token
-          if (error.code == '101' || error.code == '209') {
+          if (error && error.code && (error.code == '101' || error.code == '209')) {
+            // sessiontoken discard, login username & password
+            Parse.User.logOut();
             Alloy.Globals.settings.set('User_sessionToken', undefined).save();
-            Alloy.Globals.loginC.requiredLogin();
-          } else {
+            options || (options = {});
+            options.username = thisModel.get('username');
+            options.password = thisModel.get("username") + Ti.App.Properties.getString('Parse_PwdFix');
+            // retry
+            Ti.API.error('Login Fail / retry using username : ' + JSON.stringify(error));
+            loginParse();
+          } else if (error && failCount < 3) {
             // 로긴을 계속 재시도
+            failCount++;
+            Ti.API.error('Login Fail / retry ' + i + ' : ' + JSON.stringify(error));
             setTimeout(loginParse, 100);
+          } else {
+            // fail
+            Alloy.Globals.settings.set('User_sessionToken', undefined).save();
+            Ti.API.error('Login Fail : ' + JSON.stringify(error));
+            thisModel.trigger("login:fail");
           }
         }
         var withdrawChk = function(user) {
+          Ti.API.debug("login successful, withdrawChk");
           if (user.get("isWithdraw") == true) {
             errorFn();
           } else {
-            thisModel.set(user);
+            thisModel.reset(user);
+            thisModel.trigger("login:init");
           }
         }
 
@@ -55,7 +99,7 @@ exports.definition = {
           } else {
             Ti.API.error("User Login Faild");
             Alloy.Globals.settings.set('User_sessionToken', undefined).save();
-            Alloy.Globals.loginC.requiredLogin();
+            thisModel.trigger("login:fail");
           }
         }
         // options.success && options.success();

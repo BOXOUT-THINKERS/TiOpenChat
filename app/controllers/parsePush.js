@@ -84,7 +84,7 @@ exports.push = function(type, message, toUserIds) {
   };
 
   var data = {
-    title : L("c_odizzo"),
+    title : L("c_TiOpenChat"),
     //TODO[faith] : 유저의 별칭을 보여줘야할까? 이름을보여줘야할까? 어떻게 판단해야하지?
     alert : (currentUser.name) ? currentUser.name + " : " + messageText : messageText,
     badge : "Increment",

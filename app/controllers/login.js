@@ -1,39 +1,43 @@
 var args = arguments[0] || {};
 
 // User 객체 셋팅하는 코드. 이후 Parse의 User도 설정해줘야함. Parse.User.current에 대응하기 위해서.
-var userM = Alloy.Models.instance('user');
-var settingsM = Alloy.Models.instance('settings');
-var contactsCol = Alloy.Collections.instance('contacts');
+var userM = Alloy.createModel('user');
+// var settingsM = Alloy.Models.instance('settings');
+// var contactsCol = Alloy.Collections.instance('contacts');
 
 exports.doingSyncAddress = false;
 
-// 로그인 처리되면 userM이 fetch되고 나서 그 정보를 바탕으로 처리하는 이벤트들
-userM.on('change',function(){
-  // 로그인 정보 저장
-  Alloy.Globals.settings.set('User_sessionToken', userM.get('_sessionToken')).save();
-
-  // 전역객체화
-  Alloy.Globals.user = userM;
-
+// then restore or normal login, open main window
+userM.on('login:init', function() {
+  Ti.API.debug("User login:init : ", userM.id, userM.get("name"));
+  // to singleton
+  Alloy.Models.user = userM;
+  // to global exist
+  Alloy.Globals.user = Alloy.Models.instance('user');
+  // login complete event
   $.trigger('login:user', Alloy.Globals.user);
-
-  userM.off('change',arguments.callee);
+});
+// then login fail, open login view
+userM.on('login:fail', function() {
+  exports.requiredLogin();
 });
 
 // 외부로 드러낼 인터페이스
 exports.requiredLogin = function() {
   //로그인 안되어 있으면 로그인 창 띄움.
   if(exports.isLogin()){
+    Ti.API.debug("run userM.login");
     // 로그인 처리
     userM.login();
 
     // 메인 윈도우 열기
     Alloy.Globals.navigation.open();
 
+    // join controller close
     $.trigger('login:open');
   }else{
+    Ti.API.error("no sessiontoken, requiredLogin");
     Alloy.Globals.closeAllWindow();
-
     Alloy.createController('join').getView().open();
   }
 };

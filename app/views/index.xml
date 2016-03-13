@@ -6,7 +6,7 @@
       <Require id="menuC" src="menu">
       </Require>
     </View>
-    <Window platform="ios" id="centerWindow" title="L('c_odizzo')" role="centerWindow" exitOnClose="true" onOpen="onOpen" onClose="onClose">
+    <Window platform="ios" id="centerWindow" title="L('c_TiOpenChat')" role="centerWindow" exitOnClose="true" onOpen="onOpen" onClose="onClose">
       <LeftNavButton>
         <View>
           <Button class="ion-android-menu menuBtn" onClick="onMenuButtonClick"/>
@@ -18,7 +18,7 @@
       </Require>
     </Window>
     <Window platform="android" id="centerWindow" role="centerWindow" exitOnClose="true" onAndroid:back="indexBackButton" onOpen="onOpen" onClose="onClose">
-      <ActionBar id="actionBar" title="L('c_odizzo')" onHomeIconItemSelected="onMenuButtonClick"></ActionBar>
+      <ActionBar id="actionBar" title="L('c_TiOpenChat')" onHomeIconItemSelected="onMenuButtonClick"></ActionBar>
       <Menu id="rightMenu">
       </Menu>
       <Require src="blank" id="mainC">

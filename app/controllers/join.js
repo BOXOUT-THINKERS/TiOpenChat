@@ -22,10 +22,6 @@ if (Alloy.Globals.is.shortPhone || Titanium.Platform.osname == 'ipad') {
   $.nameMsgView.height = 30;
 }
 
-// User 객체 셋팅하는 코드. 이후 Parse의 User도 설정해줘야함. Parse.User.current에 대응하기 위해서.
-var userM = Alloy.Models.instance('user');
-var settingsM = Alloy.Models.instance('settings');
-
 // 키보드 높이에 따른 레이아웃 조절
 Ti.App.addEventListener('keyboardframechanged', function(e) {
   $.tryCodeBtnView.bottom = e.keyboardFrame.height;

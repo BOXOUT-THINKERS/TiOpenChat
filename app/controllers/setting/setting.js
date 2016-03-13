@@ -39,7 +39,7 @@ exports.rightBtn = function() {
 registerListerners();
 function registerListerners() {
   // 스위치 변경에 대한 값 동기화
-  var userM = Alloy.Models.instance('user');
+  var userM = Alloy.Globals.user;
   userM.on('change:profile', updateUserData);
 
   $.notifyAndSound.addEventListener('click', moveWindow.bind(null,'notifyAndSound'));
@@ -200,7 +200,7 @@ function changeProfileImage() {
 
 // onTouchmove 이벤트 핸들러
 function scrollHandler(e) {
-  
+
 }
 
 

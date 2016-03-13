@@ -19,6 +19,7 @@ exports.fetchContactsCount = 0;
 
 // 로긴후 contacts, chatRoom, message fetch
 exports.fetchInitialData =  function (mode) {
+  Ti.API.debug("fetchInitialData", mode);
   // 주소록 먼저
   contactsColfetch(mode);
 
@@ -982,18 +983,7 @@ function _createChatViewCollection(){
   }
   //그리기 처리 완료 후 해야할 작업이 있다면 수행함.
   chatViewCol.afterDraw = function() {
-    //현재 상태 확인하여. 빈상태일 경우만 emptyImage를 보여줌.
-    if(!this._orderedChatView || this._orderedChatView.length == 0){
-      $.emptyImageWrap.visible = true;
-
-      // short phone (iphone4) 일때 + ipad 일때
-      if (Alloy.Globals.is.shortPhone || Titanium.Platform.osname == 'ipad') {
-        $.emptyImageView.bottom = 150;
-      }
-    }else{
-      $.emptyImageWrap.visible = false;
-    }
-
+    //
   }
 
   chatViewCol.reorderChatViewToTop = function (_chatView) {
@@ -1204,11 +1194,3 @@ function _createChatViewCollection(){
   ///////////////////
   return chatViewCol;
 }
-
-
-//이미지 한영 변환 작업.
-// (function(){
-  $.emptyImageView.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/chatroomlist_emptyview.png" : "/images/chatroomlist_emptyview_en.png";
-  $.emptyImageView2.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/chatroomlist_emptyview_txt.png" : "/images/chatroomlist_emptyview_txt_en.png";
-
-// })();

@@ -21,20 +21,6 @@
   backgroundColor:"#959595", opacity:0.1
 }
 
-/**/
-"#emptyImageWrap":{
-  layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
-  visible:false, zIndex:10
-}
-"#emptyImageView":{
-  image : "/images/chatroomlist_emptyview.png"
-}
-"#emptyImageView2":{
-  image : "/images/chatroomlist_emptyview_txt.png",
-  //하단버튼 찍기 크기(패딩포함된 이미지의) 266/3 = 88    -5 정도 겹치게 내리고..
-  bottom:83
-}
-
 ///////
 // chatList
 "#chatListWrapView":{

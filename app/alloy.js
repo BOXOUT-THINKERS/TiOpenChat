@@ -40,13 +40,6 @@ Alloy.Globals.error = function(msg) {
   }).error(toastMessage);   // applies the 'error' theme
 }
 
-// for test code
-// Alloy.createCollection('settings').cleanup();
-
-// setting fetch
-Alloy.Globals.settings = Alloy.Models.instance('settings');
-Alloy.Globals.settings.fetch();
-
 // default set
 Ti.UI.backgroundColor = '#8B61FF';
 Alloy.Globals.DATE_FORMAT = 'YYYY/MM/DD HH:mm:ss.SSS';
