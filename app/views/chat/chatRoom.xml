@@ -154,7 +154,7 @@
       <View class="sendGalleryBtn" onClick="onClickSendGallery">
         <ImageView class="sendGalleryBtnImage"/>
       </View>
-      <Button id="sendBtn" onClick="onClickSend"/>
+      <Button id="sendBtn" onClick="onClickSend" title="L('cr_send')" />
     </View>
 
 

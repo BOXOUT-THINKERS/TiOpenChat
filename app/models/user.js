@@ -107,17 +107,15 @@ exports.definition = {
       },
       //기초데이터
       getInfo : function() {
-        var userM = this.attributes;
-
         var id = this.get('id');
-        var imageUrl = userM.get('profileImage') ? userM.get('profileImage').url() : "" ;
-        var name = userM.get('name') || "";
+        var imageUrl = this.get('profileImage') ? this.get('profileImage').url() : "" ;
+        var name = this.get('name') || "";
 
         return {
           id : id,
           name : name,
           imageUrl :imageUrl,
-          comment : userM.get('comment') || ''
+          comment : this.get('comment') || ''
         }
       }
     });

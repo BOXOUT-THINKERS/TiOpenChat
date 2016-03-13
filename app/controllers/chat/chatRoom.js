@@ -1,13 +1,6 @@
 var args = arguments[0] || {};
 var Q = require('q');
 
-// $.notifyMeBtn.title = L('nm_notifyMe');
-$.innerLeftText.text = L('ri_sir');
-$.innerRightText.text = L('ri_pecking');
-$.sendBtn.title = L('cr_send');
-$.cityMsg1_1.text = L("nm_cityMsg1");
-// $.cityMsg1_2.text = L("nm_cityMsg1");
-
 /**************************************************************************************************************
  * 채팅 관련 변수
  **************************************************************************************************************/
@@ -16,6 +9,7 @@ exports.roomId      = args.roomId;
 exports.inUserIds   = args.inUserIds;
 var chatRoomCollection = Alloy.Collections.instance('chatRoom');
 var chatRoomM = null;
+var yourLastMessageTime = null;
 exports.chatRoomM = null;
 exports.refeshLinkToChatRoomM = function() {
   var refreshedChatRoomM = chatRoomCollection.getBy(exports.roomId);
@@ -60,6 +54,7 @@ var friendId = _.without(exports.inUserIds, currentUserId)[0];
 var friendContactM = null;
 var imageUrlBefore = null;
 exports.refeshLinkToContactsM = function() {
+  Ti.API.debug("chatRoom refeshLinkToContactsM", exports.roomId)
   if (friendContactM) {
     friendContactM.off('fetch', friendContactMChange);
   }
@@ -186,9 +181,6 @@ function _changeContenViewHeight() {
     $.contentViewWrap.bottom = VIEW_HEIGHT.inputMsgView;
     //안드로이드는 자동조절.
   }
-
-  $.chatViewInnerBackgroud.backgroundColor = "#dbf1ea";
-  $.chatView.height = Titanium.UI.FILL;
 
   // 스크롤 복원하기
   if (listVisibleItemIndex) {
@@ -328,12 +320,12 @@ exports.remove = function(){
 //---------------------------------사진 및 카메라 관련 끝
 
 function _updateFriendRoomData(friendInfo){
-  $.friendName.text = friendInfo.name;
   $.roomTitle.text = friendInfo.name;
 }
 
 //---------------------------------메시지 컬렉션 변화에 의한 뷰의 메시지 추가 관련 시작
 function messageAdded(messageModel) {
+  Ti.API.debug("messageAdded", JSON.stringify(messageModel))
   // 특정 챗룸에 전달하니 isEqualRoom으로 확인안해도됨.
   // if(_isEqualRoom(messageModel)) {
     // 상대의 메시지 시간

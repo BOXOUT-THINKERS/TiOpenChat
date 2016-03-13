@@ -47,7 +47,7 @@
 
 ///////////////// 채팅뷰 영역 ///////////////////////////
 "#chatView" : {
-  layout:'vertical', width : Titanium.UI.FILL,  height : "30%", //처음보이고 조율되는부분
+  layout:'vertical', width : Titanium.UI.FILL,  height: Titanium.UI.FILL,
   bottom:0, zIndex:50
 }
 
