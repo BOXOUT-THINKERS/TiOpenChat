@@ -103,7 +103,7 @@
   </deployment-targets>
   <sdk-version>5.2.0.GA</sdk-version>
   <plugins>
-        <plugin version="1.7.11">ti.alloy</plugin>
+        <plugin version="1.7.35">ti.alloy</plugin>
     </plugins>
   <property name="Firebase_AppUrl" type="string"></property>
     <property name="Parse_AppId" type="string"></property>

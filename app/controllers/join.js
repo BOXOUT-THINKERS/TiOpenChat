@@ -197,17 +197,17 @@ function parseSMSVerification(local, phone) {
             // 로그인 해서 인증코드 발송
             parseSMSVerificationLoginTemp(user);
           },
-          error: function(user, error) {
+          error: function(error) {
             // Show the error message somewhere and let the user try again.
-            Ti.API.error(error);
+            Ti.API.error("parseSMSVerification / user create", error);
 
             Alloy.Globals.alert('tryAgainAlert');
           }
         });
       }
     },
-    error: function(results, error) {
-      Ti.API.error(error);
+    error: function(error) {
+      Ti.API.error("parseSMSVerification / user query", error);
 
       Alloy.Globals.alert('tryAgainAlert');
     }
@@ -223,9 +223,9 @@ function parseSMSVerificationLoginTemp(user) {
 
       parseSMSVerificationCloudCode(user.get("local") + user.get("phone"));
     },
-    error: function(user, error) {
+    error: function(error) {
       // The login failed. Check error to see why.
-      Ti.API.error(error);
+      Ti.API.error("parseSMSVerificationLoginTemp", error);
 
       Alloy.Globals.alert('tryAgainAlert');
     }
@@ -246,17 +246,18 @@ function parseSMSVerificationCloudCode(phoneNm) {
     {
       success: function(result) {
         //Ti.API.debug(result);
-
-        Alloy.Globals.alert('verifyCodeSendSuccess').then(function() {
-          // 인증코드 확인창으로 스크롤
-          $.phoneNmLabel.text = phoneNm;
-          $.phoneNm.blur();
-          $.scrollView.scrollToView($.verifyView);
-          $.verifyCode.focus();
+        Alloy.Globals.alert('verifyCodeSendSuccess').then(function () {
+          setTimeout(function () {
+            $.verifyCode.focus();
+          }, 100);
         });
+        // 인증코드 확인창으로 스크롤
+        $.phoneNmLabel.text = phoneNm;
+        $.phoneNm.blur();
+        $.scrollView.scrollToView($.verifyView);
       },
       error: function(error) {
-        Ti.API.error(error);
+        Ti.API.error("sendVerificationCode", error);
 
         Alloy.Globals.alert('tryAgainAlert');
       }
@@ -294,7 +295,7 @@ function checkVerifyCode() {
         $.nameInput.focus();
       },
       error: function(error) {
-        Ti.API.error(error);
+        Ti.API.error("verifyPhoneNumber", error);
 
         $.verifyStatusImage.image = '/images/signin_x_box.png';
         $.verifyMsgLabel.visible = false;
@@ -328,21 +329,21 @@ function userNameUpdateAndLogin(userName) {
     success: function(result) {
       //세션 토큰 저장
       Alloy.Globals.settings.set('User_sessionToken', Parse.User.current().getSessionToken()).save(null, {
-        success: function (model, result) {
+        success: function (result) {
           Alloy.Globals.stopWaiting();
           // // 로그인 처리
           // userM.login();
           Alloy.Globals.loginC.requiredLogin();
         },
-        error: function (model, error) {
-          Ti.API.error(error);
+        error: function (error) {
+          Ti.API.error("User_sessionToken save", error);
 
           Alloy.Globals.alert('tryAgainAlert');
         }
       });
     },
     error: function(error) {
-      Ti.API.error(error);
+      Ti.API.error("userModify", error);
 
       Alloy.Globals.alert('tryAgainAlert');
     }

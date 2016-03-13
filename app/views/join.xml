@@ -43,7 +43,7 @@
         <View class="formWrap" id="formWrap">
             <View id="middleView2" class="middleView">
             <View id="verifyCodeView">
-              <TextField id="verifyCode" text="" class="phoneKBD" />
+              <TextField id="verifyCode" text="" class="phoneKBD" onChange="onChangeVerifyCode" />
               <ImageView id="verifyStatusImage" image="/images/signin_check_box.png" />
               <View id="bottomLineVerify" />
               <View id="bottomLineVerifyFail" />

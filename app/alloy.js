@@ -5,8 +5,10 @@ Alloy.Globals.appStartProcess = true;
 // Parse
 require("tiparsejs_wrapper")({
   applicationId: Ti.App.Properties.getString('Parse_AppId'),
-  javaScriptKey: Ti.App.Properties.getString('Parse_JsKey')
+  javascriptkey: Ti.App.Properties.getString('Parse_JsKey')
 });
+// use RevocableSession
+Parse.User.enableRevocableSession();
 
 // modules
 Alloy.Globals.currentLanguage = Titanium.Locale.getCurrentLanguage().toLowerCase().substr(0, 2) || "en";
@@ -136,8 +138,8 @@ Alloy.Globals.util = {
 };
 
 // alerts
-Alloy.Globals.alert = function(msg) {
-  var Q = require('q');
+var Q = require('q');
+Alloy.Globals.alert = function(_msg, _title) {
   var deferred = Q.defer();
 
   var msg = _msg ? L(_msg, _msg) : L('c_alertMsgDefault');
