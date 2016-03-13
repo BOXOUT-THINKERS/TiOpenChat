@@ -1,9 +1,9 @@
 <Alloy autoStyle="true">
   <View id="centerTitle" backgroundColor="white">
-    
+
     <!--  chat -->
     <View id="chatListWrapView">
-      <ScrollView id="chatListView"  onScroll="scrollHandler"/>
+      <ScrollView id="chatListView"/>
     </View>
 
     <!-- bottom editing -->

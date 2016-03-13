@@ -193,18 +193,6 @@ function changeProfileImage() {
     }
   }
 }
-
-
-
-
-
-// onTouchmove 이벤트 핸들러
-function scrollHandler(e) {
-
-}
-
-
-
 //////////////
 
 //private helper

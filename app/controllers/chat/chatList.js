@@ -321,11 +321,6 @@ function _getRandomColor(){
   return color;
 }
 
-// onTouchmove 이벤트 핸들러
-function scrollHandler(e) {
-
-}
-
 /////////////////////////////////////////////////////////////////////////////////
 //////////////////////////// ChatView, ChatViewCollection 클래스 정의문 ///////////
 //클래스 ChatView

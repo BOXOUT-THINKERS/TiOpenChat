@@ -1,6 +1,6 @@
 <Alloy>
   <View id="container">
-    <ScrollView id="settingView" class="verticalWrap" onScroll="scrollHandler">
+    <ScrollView id="settingView" class="verticalWrap">
       <!-- <View > -->
           <View onClick="changeProfileImage" class="profileImageRow">
             <View  id="profileImageWrap">

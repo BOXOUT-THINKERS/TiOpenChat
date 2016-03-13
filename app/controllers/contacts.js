@@ -91,9 +91,6 @@ function drawContactRow() {
   ufIndex = 0;
 
   listViewLoadMore();
-
-  //스크롤 이벤트 초기화
-  scrollHandler({ y: 0, type: 'scroll' });
 }
 
 function drawProfileRow() {
@@ -163,6 +160,7 @@ exports.rightBtn = function() {
 // 열렸을 때 할일 들
 var nowOpen = false;
 exports.openFn = function() {
+  Ti.API.debug("contact openFn");
   nowOpen = true;
 
   //다시 뿌려보자

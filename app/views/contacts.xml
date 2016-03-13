@@ -1,5 +1,5 @@
 <Alloy>
-  <View id="container" onTouchmove="scrollHandler">
+  <View id="container">
     <!-- 디자인만 추가한것 -->
     <ListView id="listView">
       <!-- 템플릿 -->
@@ -76,7 +76,7 @@
             <View  class="lineTop" />
             <Label id="friendSearchLabel" text="L('cb_friendSearchLabel')" />
             <View class="rowRightView">
-              <View class="friendSearchWarp" onClick="openFriendInvite">
+              <View class="friendSearchWarp">
                 <ImageView class="friendSearchIcon" />
                 <Label text="L('cb_friendSearch')" class="friendSearch" />
               </View>
