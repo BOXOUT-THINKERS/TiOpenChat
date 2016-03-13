@@ -1,6 +1,6 @@
 <Alloy>
-	<ItemTemplate name="rowTemplate">
-		<Label id="title" bindId="title" class="left-buffer"/>
-		<Button id="detail" bindId="detail" class="right-buffer"/>
-	</ItemTemplate>
+  <ItemTemplate name="rowTemplate">
+    <Label id="title" bindId="title" class="left-buffer"/>
+    <Button id="detail" bindId="detail" class="right-buffer"/>
+  </ItemTemplate>
 </Alloy>

@@ -1,145 +1,145 @@
 ".cSize" :{
-	layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
 }
 
 // main
 "#mainView" : {
-	backgroundColor:'white',
-	layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
-	theme: "Theme.NoActionBar",
-	navBarHidden: true
+  backgroundColor:'white',
+  layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  theme: "Theme.NoActionBar",
+  navBarHidden: true
 }
 "#contentViewWrap":{
-	layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
-	zIndex: 10
+  layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  zIndex: 10
 }
 
 ".customNavbar" :{
-	width: Ti.UI.FILL,
-	zIndex:98
+  width: Ti.UI.FILL,
+  zIndex:98
 }
-".customNavbar[platform=ios]" : {	top : 20,	height: 40 }
-".customNavbar[platform=android]" : {	top : 0,	height: 46 }
+".customNavbar[platform=ios]" : {  top : 20,  height: 40 }
+".customNavbar[platform=android]" : {  top : 0,  height: 46 }
 
 ".btnWarpLeft" : {
-	left: 0,
-	width: 40,
-	/*height: 40*/
-	height: Titanium.UI.FILL
+  left: 0,
+  width: 40,
+  /*height: 40*/
+  height: Titanium.UI.FILL
 }
 
 ".btnWarpRight" : {
-	right: 0,
-	width: 40,
-	/*height: 40*/
-	height: Titanium.UI.FILL
+  right: 0,
+  width: 40,
+  /*height: 40*/
+  height: Titanium.UI.FILL
 }
 ".roomTitleWrap":{
-	layout:"composite", width : Titanium.UI.SIZE,	height: Titanium.UI.FILL
+  layout:"composite", width : Titanium.UI.SIZE,  height: Titanium.UI.FILL
 }
 "#roomTitleInnerView" :{
-	layout:"horizontal", width : Titanium.UI.SIZE,	height: Titanium.UI.SIZE
+  layout:"horizontal", width : Titanium.UI.SIZE,  height: Titanium.UI.SIZE
 }
 ".roomTitle" : {
-	color: "#8b61ff",
-	font:{ fontWeight: "bold", fontSize: 17 }
+  color: "#8b61ff",
+  font:{ fontWeight: "bold", fontSize: 17 }
 }
 
 ///////////////// 채팅뷰 영역 ///////////////////////////
 "#chatView" : {
-	layout:'vertical', width : Titanium.UI.FILL,  height : "30%", //처음보이고 조율되는부분
-	bottom:0, zIndex:50
+  layout:'vertical', width : Titanium.UI.FILL,  height : "30%", //처음보이고 조율되는부분
+  bottom:0, zIndex:50
 }
 
 /////////////////// 채팅영역 ///////////////
 "#chatViewInnerViewWrap" : {
-	layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
 }
 "#chatViewInnerView" : {
-	layout:'vertical', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
-	zIndex:50
+  layout:'vertical', width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  zIndex:50
 }
 
 "#chatViewInnerBackgroud" : {
-	backgroundColor : "#dbf1ea",
-	/*backgroundColor : "#82e2af",*/
-	width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
-	zIndex:49
+  backgroundColor : "#dbf1ea",
+  /*backgroundColor : "#82e2af",*/
+  width : Titanium.UI.FILL,  height : Titanium.UI.FILL,
+  zIndex:49
 }
 
 // 채팅이 전체창일 경우 나타나는 로케이션바 fackeNav + fa..line1+2 + locInner, + locLine1+2
 "#locationBar[platform=ios]" : {
-	layout:'vertical', width : Titanium.UI.FILL,  height : 105,
-	backgroundColor: "#dbf1ea",
-	zIndex:55
+  layout:'vertical', width : Titanium.UI.FILL,  height : 105,
+  backgroundColor: "#dbf1ea",
+  zIndex:55
 }
 "#locationBar[platform=android]" : {
-	layout:'vertical', width : Titanium.UI.FILL,  height : 91,
-	backgroundColor: "#dbf1ea",
-	zIndex:55
+  layout:'vertical', width : Titanium.UI.FILL,  height : 91,
+  backgroundColor: "#dbf1ea",
+  zIndex:55
 }
 ".fakeNavbar[platform=ios]" : {
-	width: Ti.UI.FILL,
-	height: 60,
-	backgroundColor: '#dbf1ea'
+  width: Ti.UI.FILL,
+  height: 60,
+  backgroundColor: '#dbf1ea'
 }
 ".fakeNavbar[platform=android]" : {
-	width: Ti.UI.FILL,
-	height: 46,
-	backgroundColor: '#dbf1ea'
+  width: Ti.UI.FILL,
+  height: 46,
+  backgroundColor: '#dbf1ea'
 }
 ".fakeNavbarLine" : {
-	backgroundColor: "#b6d8cc",
-	width: Ti.UI.FILL,
-	height: '1px'
+  backgroundColor: "#b6d8cc",
+  width: Ti.UI.FILL,
+  height: '1px'
 }
 ".fakeNavbarLine2" : {
-	backgroundColor: "white",
-	width: Ti.UI.FILL,
-	height: 2
+  backgroundColor: "white",
+  width: Ti.UI.FILL,
+  height: 2
 }
 ".locationBarInner" : {
-	layout:'composite', width : Titanium.UI.FILL,  height : 40
+  layout:'composite', width : Titanium.UI.FILL,  height : 40
 }
 
 "#locationLine" : {
-	backgroundColor: "#8eb9ab",
-	width: Ti.UI.FILL,
-	height: '1px'
+  backgroundColor: "#8eb9ab",
+  width: Ti.UI.FILL,
+  height: '1px'
 }
 "#locationLine2" : {
-	backgroundColor: "#b3e1cf",
-	width: Ti.UI.FILL,
-	height: '1px'
+  backgroundColor: "#b3e1cf",
+  width: Ti.UI.FILL,
+  height: '1px'
 }
 
 
 //메시지뷰 영역
 "#messageView" : {
-	width: Ti.UI.FILL, height: Ti.UI.FILL,
-	separatorColor : 'transparent',
-	backgroundColor : 'transparent',
-	top: 0,
-	zIndex: 55,
-	"defaultItemTemplate" : "rowSystemTemplate"
+  width: Ti.UI.FILL, height: Ti.UI.FILL,
+  separatorColor : 'transparent',
+  backgroundColor : 'transparent',
+  top: 0,
+  zIndex: 55,
+  "defaultItemTemplate" : "rowSystemTemplate"
 }
 //////////// 공통된것들
 ".readCountView":{
-	width: 16, height: 16,
-	bottom: 13,//3.4+10.5
-	color:"#ff8b8b", font: { fontFamily: "Ionicons", fontSize: 8, fontWeight: 'bold' },
-	shadowColor: 'white',	shadowOffset: {x:0.5, y:0.5},
-	zIndex:50
+  width: 16, height: 16,
+  bottom: 13,//3.4+10.5
+  color:"#ff8b8b", font: { fontFamily: "Ionicons", fontSize: 8, fontWeight: 'bold' },
+  shadowColor: 'white',  shadowOffset: {x:0.5, y:0.5},
+  zIndex:50
 
 }
 ".timeView": {
-	width: 44, height : 21,
-	bottom: 3.4,
-	verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
-	color:"#363636", font: { fontSize: 8},
-	shadowColor: 'white',
-	shadowOffset: {x:0.5, y:0.5},
-	shadowRadius: 3
+  width: 44, height : 21,
+  bottom: 3.4,
+  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+  color:"#363636", font: { fontSize: 8},
+  shadowColor: 'white',
+  shadowOffset: {x:0.5, y:0.5},
+  shadowRadius: 3
 }
 ".left0" : {left:0}
 ".right0" : {right:0}
@@ -147,214 +147,214 @@
 ".rightM1" : {right:-4}
 // row박스
 ".messageViewRow" : {
-	backgroundColor : 'transparent',
-	layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.SIZE
+  backgroundColor : 'transparent',
+  layout:'composite', width : Titanium.UI.FILL,  height : Titanium.UI.SIZE
 }
 //////////////시스템메시지
 ".systemTextBoxLimit":{
-	backgroundColor : 'transparent',
-	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	top:3, bottom:3
+  backgroundColor : 'transparent',
+  layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  top:3, bottom:3
 }
 ".systemTextBox":{
-	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	backgroundColor : "#d0bfff", borderRadius:12,
-	right: 37 //시간뷰 크기+ 패딩.
+  layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  backgroundColor : "#d0bfff", borderRadius:12,
+  right: 37 //시간뷰 크기+ 패딩.
 }
 ".systemTextBoxWrap":{
-	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
 }
 ".systemTextBoxInner":{
-	layout:"compoiste", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	top:5, bottom:5, left:12, right:12 //padding
+  layout:"compoiste", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  top:5, bottom:5, left:12, right:12 //padding
 }
 /*".systemTitle":{
-	left:0,
-	color:"#7a7a7a", font: { fontSize: 13, fontWeight: 'bold' }
+  left:0,
+  color:"#7a7a7a", font: { fontSize: 13, fontWeight: 'bold' }
 }*/
 ".systemContent":{
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	color:"white", font: { fontSize: 12},
-	/*width:"auto", height :"auto",*/
-	width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color:"white", font: { fontSize: 12},
+  /*width:"auto", height :"auto",*/
+  width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
 }
 
 
 ///////////// 왼쪽메시지
 ".leftTextBoxLimit" :{
-	backgroundColor : 'transparent',
-	layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.SIZE,
-	top:3, bottom:3, left:10, right:20 //padding
+  backgroundColor : 'transparent',
+  layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.SIZE,
+  top:3, bottom:3, left:10, right:20 //padding
 }
 
 // 이미지
 ".leftImageWrap" : {
-	layout:"composite", width: Ti.UI.SIZE, height: Ti.UI.SIZE,
-	left:0
+  layout:"composite", width: Ti.UI.SIZE, height: Ti.UI.SIZE,
+  left:0
 }
 ".imageOutline":{
-	image : "/images/chatroom_profile_outline.png",
-	height: 36, width: 36,
-	zIndex:55
+  image : "/images/chatroom_profile_outline.png",
+  height: 36, width: 36,
+  zIndex:55
 }
 ".leftImage" : {
-	height: 36, width: 36,
-	borderRadius: 18,
-	zIndex:54
-	//borderWidth: 1, borderColor: "#8b61ff",
+  height: 36, width: 36,
+  borderRadius: 18,
+  zIndex:54
+  //borderWidth: 1, borderColor: "#8b61ff",
 
 }
 ".leftTailImage":{
-	image:"/images/chatroom_bubble_tail.png",
-	left:39, //패딩 + 이미지사이즈
-	bottom:4, zIndex:55
+  image:"/images/chatroom_bubble_tail.png",
+  left:39, //패딩 + 이미지사이즈
+  bottom:4, zIndex:55
 }
 
 ".leftTextBoxWrap" : {
-	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	left:45 //왼쪽 패딩. 꼬리위치+크기.
+  layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  left:45 //왼쪽 패딩. 꼬리위치+크기.
 }
 
 ".leftTextBox" : {
-	width:Titanium.UI.SIZE, height:Titanium.UI.SIZE,
-	backgroundColor : "white",
-	borderColor: "#d0d0d0",
-	borderWidth : 1, borderRadius:6,
-	zIndex:50
+  width:Titanium.UI.SIZE, height:Titanium.UI.SIZE,
+  backgroundColor : "white",
+  borderColor: "#d0d0d0",
+  borderWidth : 1, borderRadius:6,
+  zIndex:50
 }
 //시간뷰 크기+ 패딩.
 ".leftTextBoxPadding[platform=android]":{ right:35 }
 ".leftTextBoxPadding[platform=ios]":{ right:38 }
 
 ".leftMessageText" : {
-	textAlign:Ti.UI.TEXT_AUTOCAPITALIZATION_ALL,
-	width:"auto", height:"auto",
-	top:7, left:7, right:7, bottom:7,
-	color : "#8b61ff",
-	font: { fontSize: 14, fontWeight: 'bold' }
+  textAlign:Ti.UI.TEXT_AUTOCAPITALIZATION_ALL,
+  width:"auto", height:"auto",
+  top:7, left:7, right:7, bottom:7,
+  color : "#8b61ff",
+  font: { fontSize: 14, fontWeight: 'bold' }
 }
 
 // 이미지 메시지 관련
 ".sizeHorizon":{
-	layout:"horizontal", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE
+  layout:"horizontal", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE
 }
 ".messageImage" : {
-	top:3,left:3,right:3,bottom:3,
-	width:70, height:70
+  top:3,left:3,right:3,bottom:3,
+  width:70, height:70
 }
 
 ///////////// 오른쪽 메시지
 ".rightTextBoxLimit" :{
-	layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.SIZE,
-	top:3, bottom:3, left:20, right:10 //padding
+  layout:"composite", width : Titanium.UI.FILL,  height : Titanium.UI.SIZE,
+  top:3, bottom:3, left:20, right:10 //padding
 }
 ".rightTextBoxWrapWrap" : {
-	layout:"composite", width :Titanium.UI.FILL,  height : Titanium.UI.SIZE,
+  layout:"composite", width :Titanium.UI.FILL,  height : Titanium.UI.SIZE,
 }
 ".rightTextBoxWrap" : {
-	layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	right:6
+  layout:"composite", width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  right:6
 }
 ".rightTextBox" : {
-	layout:"composite",
-	width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
-	backgroundColor : "#8b61ff",
-	borderColor: "#8b61ff", borderWidth : 1, borderRadius:6,
-	zIndex:50
+  layout:"composite",
+  width : Titanium.UI.SIZE,  height : Titanium.UI.SIZE,
+  backgroundColor : "#8b61ff",
+  borderColor: "#8b61ff", borderWidth : 1, borderRadius:6,
+  zIndex:50
 }
 //시간뷰 크기+ 패딩.
 ".rightTextBoxPadding[platform=android]":{ left:35}
 ".rightTextBoxPadding[platform=ios]":{ left:38 }
 ".rightTailImage":{
-	image:"/images/chatroom_bubble_tail_indigo.png",
-	right:0, bottom:3.8, zIndex:55
+  image:"/images/chatroom_bubble_tail_indigo.png",
+  right:0, bottom:3.8, zIndex:55
 }
 
 ".rightMessageText" : {
-	top:7, left:7, right:7, bottom:7,
-	textAlign:Ti.UI.TEXT_AUTOCAPITALIZATION_ALL,
-	width: "auto", height :"auto",
-	color : "white",
-	font: { fontSize: 14, fontWeight: 'bold' }
+  top:7, left:7, right:7, bottom:7,
+  textAlign:Ti.UI.TEXT_AUTOCAPITALIZATION_ALL,
+  width: "auto", height :"auto",
+  color : "white",
+  font: { fontSize: 14, fontWeight: 'bold' }
 }
 
 
 // input
 "#inputMsgView" : {
-	backgroundColor : '#eeeeee',
-	layout:'composite', width : Titanium.UI.FILL,  height : 42,
-	bottom:0, zIndex:70
+  backgroundColor : '#eeeeee',
+  layout:'composite', width : Titanium.UI.FILL,  height : 42,
+  bottom:0, zIndex:70
 }
 "#msgLine" : {
-	top : 0,
-	backgroundColor: "#adadad",
-	width: Ti.UI.FILL,
-	height: 1
+  top : 0,
+  backgroundColor: "#adadad",
+  width: Ti.UI.FILL,
+  height: 1
 }
 
 //왼쪽 버튼
 "#inputMsgLeftView" : {
-	layout:'composite', width : "23.3%",  height : Titanium.UI.FILL,
-	left:0
+  layout:'composite', width : "23.3%",  height : Titanium.UI.FILL,
+  left:0
 }
 "#inputBtnLine" : {
-	backgroundColor: "gray",
-	height: "34%",	width: 1
+  backgroundColor: "gray",
+  height: "34%",  width: 1
 }
 "#notifyBtn":{
-	width: 27.67, height: 27.67,
-	left:"9.5%",
-	image: "/images/chattingtap_zzig_button_active.png"
+  width: 27.67, height: 27.67,
+  left:"9.5%",
+  image: "/images/chattingtap_zzig_button_active.png"
 }
 "#requestBtn":{
-	width: 27.67, height: 27.67,
-	right:"9.5%",
-	image: "/images/chattingtap_zzo_button_active.png"
+  width: 27.67, height: 27.67,
+  right:"9.5%",
+  image: "/images/chattingtap_zzo_button_active.png"
 }
 
 
 //
 "#inputMsgWrap" : {
-	width: "59.9%",height : Titanium.UI.FILL,
-	right : "16.8%",
-	borderRadius : 4, borderWidth: 0,
-	backgroundColor: "white",
+  width: "59.9%",height : Titanium.UI.FILL,
+  right : "16.8%",
+  borderRadius : 4, borderWidth: 0,
+  backgroundColor: "white",
 }
 "#inputMsgWrap[platform=ios]" : {
-	bottom:3, top:4
+  bottom:3, top:4
 }
 //안드로이드에서 위아래 영역이 필요크기보다 작으면 글자가잘림. 폰트크기에 의해 정해진크기.
 "#inputMsgWrap[platform=android]" : {
-	bottom:1, top:2
+  bottom:1, top:2
 }
 "#inputMsg" : {
-	borderStyle: Titanium.UI.INPUT_BORDERSTYLE_NONE,
-	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-	verticalAlign : Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
-	suppressReturn:false, //ios에서 추가해야지 동작함.
-	autocorrect : false,
+  borderStyle: Titanium.UI.INPUT_BORDERSTYLE_NONE,
+  returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+  verticalAlign : Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+  suppressReturn:false, //ios에서 추가해야지 동작함.
+  autocorrect : false,
 
-	width: Titanium.UI.FILL, height: Titanium.UI.FILL,
-	color : "#77787f",	font: { fontSize: 14 },
-	right : 20 //gallerybtn size
+  width: Titanium.UI.FILL, height: Titanium.UI.FILL,
+  color : "#77787f",  font: { fontSize: 14 },
+  right : 20 //gallerybtn size
 }
 ".inputMsg[platform=android]" : {
-	backgroundColor: 'transparent', borderWidth: 0, borderColor: 'transparent',
-	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS,
-	softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
+  backgroundColor: 'transparent', borderWidth: 0, borderColor: 'transparent',
+  autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS,
+  softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
 }
 ".sendGalleryBtn":{
-	width:30, height : Titanium.UI.FILL,
-	right : "16.8%",
-	zIndex: 10
+  width:30, height : Titanium.UI.FILL,
+  right : "16.8%",
+  zIndex: 10
 }
 ".sendGalleryBtnImage":{
-	width:Titanium.UI.SIZE, height : Titanium.UI.SIZE,
-	image :"/images/chattingtap_clip.png",
+  width:Titanium.UI.SIZE, height : Titanium.UI.SIZE,
+  image :"/images/chattingtap_clip.png",
 }
 
 "#sendBtn" : {
-	backgroundColor : "#8b61ff",
-	color : "white",	font: { fontSize: 16, fontWeight: 'bold' },
-	width : "14.7%",	height : Titanium.UI.FILL, right:0
+  backgroundColor : "#8b61ff",
+  color : "white",  font: { fontSize: 16, fontWeight: 'bold' },
+  width : "14.7%",  height : Titanium.UI.FILL, right:0
 }

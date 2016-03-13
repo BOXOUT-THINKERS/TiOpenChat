@@ -1,89 +1,89 @@
 <Alloy>
-	<Window id="login" class="container">
-		<View class="fakeStatusbar" platform="ios" />
-		<ScrollableView id="scrollView" class="mainWrap" showPagingControl="false" >
-			<View id="requestView" class="viewWrap">
-				<View class="fakeNavbar">
+  <Window id="login" class="container">
+    <View class="fakeStatusbar" platform="ios" />
+    <ScrollableView id="scrollView" class="mainWrap" showPagingControl="false" >
+      <View id="requestView" class="viewWrap">
+        <View class="fakeNavbar">
 
-				</View>
-				<View class="formWrap" id="formWrap">
-					<View id="middleView1" class="middleView">
-						<View class="heightView">
-							<View class="localNmView">
-								<Label id="localNm" text="+82" onClick="onPopupCountryPicker" />
-								<View class="localNmBottom" />
-							</View>
-							<TextField id="phoneNm" text="" class="phoneKBD" />
-							<View class="bottomLineView" />
-						</View>
-						<View class="heightView">
-							<ImageView id="gpsImage" image="/images/signin_gps_icon.png" />
-							<Label id="countryLabel" text="" />
-						</View>
-						<View class="bottomLineView2" />
-						<View id="agreeLabelView" class="heightView">
-							<Label id="agreeLabel" />
-						</View>
-					</View>
-					<View class="numpadView">
+        </View>
+        <View class="formWrap" id="formWrap">
+          <View id="middleView1" class="middleView">
+            <View class="heightView">
+              <View class="localNmView">
+                <Label id="localNm" text="+82" onClick="onPopupCountryPicker" />
+                <View class="localNmBottom" />
+              </View>
+              <TextField id="phoneNm" text="" class="phoneKBD" />
+              <View class="bottomLineView" />
+            </View>
+            <View class="heightView">
+              <ImageView id="gpsImage" image="/images/signin_gps_icon.png" />
+              <Label id="countryLabel" text="" />
+            </View>
+            <View class="bottomLineView2" />
+            <View id="agreeLabelView" class="heightView">
+              <Label id="agreeLabel" />
+            </View>
+          </View>
+          <View class="numpadView">
 
-					</View>
-				</View>
-				<View class="bottomView">
-					<Button id="tryCodeBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
-				</View>
-			</View>
-			<View id="verifyView" class="viewWrap">
-				<View class="fakeNavbar">
-					<View class="backBtn" onClick="onClickRetry">
-						<ImageView image="/images/slider_back_icn.png" />
-					</View>
-					<Label id="phoneNmLabel" text="" />
-				</View>
-				<View class="formWrap" id="formWrap">
-    				<View id="middleView2" class="middleView">
-						<View id="verifyCodeView">
-							<TextField id="verifyCode" text="" class="phoneKBD" />
-							<ImageView id="verifyStatusImage" image="/images/signin_check_box.png" />
-							<View id="bottomLineVerify" />
-							<View id="bottomLineVerifyFail" />
-						</View>
-						<View id="verifyMsgView">
-							<Label id="verifyMsgLabel"/>
-							<Label id="verifyFailMsgLabel"/>
-						</View>
-					</View>
-					<View class="numpadView">
+          </View>
+        </View>
+        <View class="bottomView">
+          <Button id="tryCodeBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
+        </View>
+      </View>
+      <View id="verifyView" class="viewWrap">
+        <View class="fakeNavbar">
+          <View class="backBtn" onClick="onClickRetry">
+            <ImageView image="/images/slider_back_icn.png" />
+          </View>
+          <Label id="phoneNmLabel" text="" />
+        </View>
+        <View class="formWrap" id="formWrap">
+            <View id="middleView2" class="middleView">
+            <View id="verifyCodeView">
+              <TextField id="verifyCode" text="" class="phoneKBD" />
+              <ImageView id="verifyStatusImage" image="/images/signin_check_box.png" />
+              <View id="bottomLineVerify" />
+              <View id="bottomLineVerifyFail" />
+            </View>
+            <View id="verifyMsgView">
+              <Label id="verifyMsgLabel"/>
+              <Label id="verifyFailMsgLabel"/>
+            </View>
+          </View>
+          <View class="numpadView">
 
-					</View>
-				</View>
-				<View class="bottomView">
-					<Button id="retryBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
-				</View>
-			</View>
-			<View id="joinView" class="viewWrap">
-				<View class="fakeNavbar">
+          </View>
+        </View>
+        <View class="bottomView">
+          <Button id="retryBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
+        </View>
+      </View>
+      <View id="joinView" class="viewWrap">
+        <View class="fakeNavbar">
 
-				</View>
-				<View class="formWrap" id="formWrap">
-					<View id="middleView3" class="middleView">
-						<View id="nameView">
-							<Label id="nameLabel"/>
-							<Label id="nameLimitLabel"/>
-							<TextField id="nameInput" value="" />
-							<View class="bottomLineNameWhite" />
-							<View class="bottomLineName" />
-						</View>
-						<View id="nameMsgView">
-							<Label id="nameMsgLabel"/>
-						</View>
-					</View>
-				</View>
-				<View id="agreeMsgView">
-					<Label id="agreeMsgLabel" />
-					<Button id="joinBtn" class="bottomBtn" onClick="onClickJoinComplete"></Button>
-				</View>
-			</View>
-		</ScrollableView>
-	</Window>
+        </View>
+        <View class="formWrap" id="formWrap">
+          <View id="middleView3" class="middleView">
+            <View id="nameView">
+              <Label id="nameLabel"/>
+              <Label id="nameLimitLabel"/>
+              <TextField id="nameInput" value="" />
+              <View class="bottomLineNameWhite" />
+              <View class="bottomLineName" />
+            </View>
+            <View id="nameMsgView">
+              <Label id="nameMsgLabel"/>
+            </View>
+          </View>
+        </View>
+        <View id="agreeMsgView">
+          <Label id="agreeMsgLabel" />
+          <Button id="joinBtn" class="bottomBtn" onClick="onClickJoinComplete"></Button>
+        </View>
+      </View>
+    </ScrollableView>
+  </Window>
 </Alloy>

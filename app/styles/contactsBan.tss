@@ -1,66 +1,66 @@
 ".container" : {
- 	backgroundColor:"#f7f7f7"
+   backgroundColor:"#f7f7f7"
 }
 
 // 로우
 ".rowTemplate":{
-	//backgroundColor:"#f7f7f7",
-	layout:"composite", height:56.67, width:Ti.UI.FILL
+  //backgroundColor:"#f7f7f7",
+  layout:"composite", height:56.67, width:Ti.UI.FILL
 }
 //왼쪽
 ".rowLeftView":{
-	layout:"horizontal", height:Ti.UI.SIZE, width:Ti.UI.SIZE,
-	left: 13
+  layout:"horizontal", height:Ti.UI.SIZE, width:Ti.UI.SIZE,
+  left: 13
 }
 ".checkIcon" : {
-	height:20, width:20
+  height:20, width:20
 }
 ".profileImageWarp" : {
-	left:13,	height:40, width:40
+  left:13,  height:40, width:40
 }
 ".profileImageOutline":{
-	height:40, width:40,
-	image : '/images/friendlist_edit_profile_pic_outline.png'
+  height:40, width:40,
+  image : '/images/friendlist_edit_profile_pic_outline.png'
 }
 ".profileImage":{
-	height:38, width:38, borderRadius:19
+  height:38, width:38, borderRadius:19
 }
 ".profileName":{
-	left:13,
-	font : { fontWeight: 'Medium', fontSize:16	}, color:"#3a3a3a"
+  left:13,
+  font : { fontWeight: 'Medium', fontSize:16  }, color:"#3a3a3a"
 }
 
 ".dummyfooterView" : {
-	height : 40
+  height : 40
 }
 
 "#footerView" : {
-	backgroundColor:"#eeeeee",
-	width : Titanium.UI.FILL,
-	height : 45,
-	bottom : 0
+  backgroundColor:"#eeeeee",
+  width : Titanium.UI.FILL,
+  height : 45,
+  bottom : 0
 }
 
 "#blockBtn" : {
-	left : '1.4%',
-	height : 35,
-	width : '48%',
-	color : 'white', font : { fontSize : 14, fontWeight : 'bold' },
-	backgroundColor : '#8b61ff',
-	borderRadius:4
+  left : '1.4%',
+  height : 35,
+  width : '48%',
+  color : 'white', font : { fontSize : 14, fontWeight : 'bold' },
+  backgroundColor : '#8b61ff',
+  borderRadius:4
 }
 
 "#hiddenBtn" : {
-	right : '1.4%',
-	height : 35,
-	width : '48%',
-	color : 'white', font : { fontSize : 14, fontWeight : 'bold' },
-	backgroundColor : '#41385b',
-	borderRadius:4
+  right : '1.4%',
+  height : 35,
+  width : '48%',
+  color : 'white', font : { fontSize : 14, fontWeight : 'bold' },
+  backgroundColor : '#41385b',
+  borderRadius:4
 }
 
  ".footerViewLine":{
-	backgroundColor:"#dddddd",
-	width: Ti.UI.FILL,
-	height: 0.66, top: 0
+  backgroundColor:"#dddddd",
+  width: Ti.UI.FILL,
+  height: 0.66, top: 0
 }

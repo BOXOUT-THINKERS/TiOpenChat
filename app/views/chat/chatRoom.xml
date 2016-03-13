@@ -1,181 +1,181 @@
 <Alloy>
-	<Window id="mainView" onFocus="onFocus" onOpen="onOpen" onClose="onClose">
-		<!-- navBar -->
-		<View class="customNavbar">
-			<View class="btnWarpLeft" onClick="backBtn">
-				<ImageView id="backBtn" image="/images/chat_half_back_icn.png" />
-			</View>
-			<View id="roomTitleWrap" class="roomTitleWrap">
-				<View id="roomTitleInnerView">
-					<Label id="roomTitle" class="roomTitle" />
-					<Label id="roomTitleDistance" class="roomTitle" />
-				</View>
-			</View>
-		</View>
+  <Window id="mainView" onFocus="onFocus" onOpen="onOpen" onClose="onClose">
+    <!-- navBar -->
+    <View class="customNavbar">
+      <View class="btnWarpLeft" onClick="backBtn">
+        <ImageView id="backBtn" image="/images/chat_half_back_icn.png" />
+      </View>
+      <View id="roomTitleWrap" class="roomTitleWrap">
+        <View id="roomTitleInnerView">
+          <Label id="roomTitle" class="roomTitle" />
+          <Label id="roomTitleDistance" class="roomTitle" />
+        </View>
+      </View>
+    </View>
 
-		<!-- 경로찾기 영역-->
-		<ScrollView id="routeView" />
+    <!-- 경로찾기 영역-->
+    <ScrollView id="routeView" />
 
-		<View id="contentViewWrap">
-			<!-- 채팅방 영역 -->
-			<View id="chatView" onClick="explicitBlur">
+    <View id="contentViewWrap">
+      <!-- 채팅방 영역 -->
+      <View id="chatView" onClick="explicitBlur">
 
-				<!-- 메시지 영역 -->
-				<View id="chatViewInnerViewWrap">
+        <!-- 메시지 영역 -->
+        <View id="chatViewInnerViewWrap">
 
-					<View id="chatViewInnerBackgroud"/>
-					<View id="chatViewInnerView">
-						<!--  채팅방 풀화면일경우나타나는 상단 네비.-->
-						<View id="locationBar">
-							<View id="fakeNavbar" class="fakeNavbar"></View>
-							<View class="fakeNavbarLine" />
-							<View class="fakeNavbarLine2" />
-							<View id="locationBarInner" class="locationBarInner">
+          <View id="chatViewInnerBackgroud"/>
+          <View id="chatViewInnerView">
+            <!--  채팅방 풀화면일경우나타나는 상단 네비.-->
+            <View id="locationBar">
+              <View id="fakeNavbar" class="fakeNavbar"></View>
+              <View class="fakeNavbarLine" />
+              <View class="fakeNavbarLine2" />
+              <View id="locationBarInner" class="locationBarInner">
 
-							</View>
-							<View id="locationLine" />
-							<View id="locationLine2" />
-						</View>
+              </View>
+              <View id="locationLine" />
+              <View id="locationLine2" />
+            </View>
 
-						<!--  메시지영역-->
-						<ListView id="messageView" onItemclick="messageClick">
-							<Templates>
-								<!-- 공통. 시스템 -->
-								<ItemTemplate name="rowSystemTemplate" class="messageViewRow">
-									<View class="systemTextBoxLimit">
-										<!-- <View class="systemTextBoxWrap"> -->
-											<View class="systemTextBox">
-												<View class="systemTextBoxInner">
-													<!-- <Label class="systemTitle" bindId="systemTitle"/> -->
-													<Label class="systemContent" bindId="systemContent"/>
-												</View>
-											</View>
-										<!-- </View> -->
-										<Label class="readCountView rightM1"  bindId="readCount" />
-										<Label class="timeView right0"  bindId="createdTime"/>
-									</View>
-								</ItemTemplate>
+            <!--  메시지영역-->
+            <ListView id="messageView" onItemclick="messageClick">
+              <Templates>
+                <!-- 공통. 시스템 -->
+                <ItemTemplate name="rowSystemTemplate" class="messageViewRow">
+                  <View class="systemTextBoxLimit">
+                    <!-- <View class="systemTextBoxWrap"> -->
+                      <View class="systemTextBox">
+                        <View class="systemTextBoxInner">
+                          <!-- <Label class="systemTitle" bindId="systemTitle"/> -->
+                          <Label class="systemContent" bindId="systemContent"/>
+                        </View>
+                      </View>
+                    <!-- </View> -->
+                    <Label class="readCountView rightM1"  bindId="readCount" />
+                    <Label class="timeView right0"  bindId="createdTime"/>
+                  </View>
+                </ItemTemplate>
 
-								<!--왼쪽메시지. -->
-								<ItemTemplate name="rowLeftTemplate" class="messageViewRow">
+                <!--왼쪽메시지. -->
+                <ItemTemplate name="rowLeftTemplate" class="messageViewRow">
 
-									<View class="leftTextBoxLimit">
-										<View class="leftImageWrap">
-											<ImageView bindId="friendImage" class="leftImage"/>
-											<ImageView class="imageOutline"/>
-										</View>
+                  <View class="leftTextBoxLimit">
+                    <View class="leftImageWrap">
+                      <ImageView bindId="friendImage" class="leftImage"/>
+                      <ImageView class="imageOutline"/>
+                    </View>
 
-										<ImageView class="leftTailImage"/>
-										<View class="leftTextBoxWrap">
-											<View class="leftTextBox leftTextBoxPadding">
-												<Label bindId="content" class="leftMessageText"/>
-											</View>
-											<Label class="readCountView rightM1"  bindId="readCount" />
-											<Label class="timeView right0"  bindId="createdTime"/>
-										</View>
-									</View>
-								</ItemTemplate>
-
-
-								<ItemTemplate name="rowLeftImageTemplate" class="messageViewRow">
-									<View class="leftTextBoxLimit">
-										<View class="leftImageWrap">
-											<ImageView bindId="friendImage" class="leftImage"/>
-											<ImageView class="imageOutline"/>
-										</View>
-
-										<ImageView class="leftTailImage"/>
-										<View class="leftTextBoxWrap">
-											<View class="leftTextBox leftTextBoxPadding">
-												<ImageView bindId="content" class="messageImage"  onClick="clickThumbnail"/>
-											</View>
-											<Label class="readCountView rightM1"  bindId="readCount" />
-											<Label class="timeView right0"  bindId="createdTime"/>
-										</View>
-									</View>
-								</ItemTemplate>
-
-								<!--  오른쪾 메시지-->
-								<ItemTemplate name="rowTemplate" class="messageViewRow">
-									<View class="rightTextBoxLimit">
-
-										<View class="rightTextBoxWrapWrap">
-											<View class="rightTextBoxWrap">
-												<Label class="readCountView leftM1"  bindId="readCount" />
-												<Label class="timeView left0" bindId="createdTime"/>
-												<View class="rightTextBox rightTextBoxPadding">
-													<Label bindId="content" class="rightMessageText"/>
-												</View>
-											</View>
-											<ImageView class="rightTailImage"/>
-										</View>
-
-									</View>
-								</ItemTemplate>
-
-								<ItemTemplate name="rowImageTemplate" class="messageViewRow">
-									<View class="rightTextBoxLimit">
-
-										<View class="rightTextBoxWrapWrap">
-											<View class="rightTextBoxWrap">
-												<Label class="readCountView leftM1"  bindId="readCount" />
-												<Label class="timeView left0" bindId="createdTime"/>
-												<View class="rightTextBox rightTextBoxPadding">
-													<ImageView bindId="content" class="messageImage" onClick="clickThumbnail"/>
-												</View>
-											</View>
-											<ImageView class="rightTailImage"/>
-										</View>
-
-									</View>
-								</ItemTemplate>
-							</Templates>
-
-							<ListSection id="messageSection" />
-						</ListView>
-					</View>
-				</View>
-			</View>
+                    <ImageView class="leftTailImage"/>
+                    <View class="leftTextBoxWrap">
+                      <View class="leftTextBox leftTextBoxPadding">
+                        <Label bindId="content" class="leftMessageText"/>
+                      </View>
+                      <Label class="readCountView rightM1"  bindId="readCount" />
+                      <Label class="timeView right0"  bindId="createdTime"/>
+                    </View>
+                  </View>
+                </ItemTemplate>
 
 
-		</View>
+                <ItemTemplate name="rowLeftImageTemplate" class="messageViewRow">
+                  <View class="leftTextBoxLimit">
+                    <View class="leftImageWrap">
+                      <ImageView bindId="friendImage" class="leftImage"/>
+                      <ImageView class="imageOutline"/>
+                    </View>
 
-		<!-- 키보드영 -->
-		<View id="inputMsgView">
-			<View id="msgLine" />
-			<View id="inputMsgLeftView">
-				<ImageView id="notifyBtn"/>
-				<View id="inputBtnLine" />
-				<ImageView id="requestBtn"/>
-			</View>
-			<View id="inputMsgWrap">
-				<TextArea id="inputMsg" class="inputMsg" />
-			</View>
-			<View class="sendGalleryBtn" onClick="onClickSendGallery">
-				<ImageView class="sendGalleryBtnImage"/>
-			</View>
-			<Button id="sendBtn" onClick="onClickSend"/>
-		</View>
+                    <ImageView class="leftTailImage"/>
+                    <View class="leftTextBoxWrap">
+                      <View class="leftTextBox leftTextBoxPadding">
+                        <ImageView bindId="content" class="messageImage"  onClick="clickThumbnail"/>
+                      </View>
+                      <Label class="readCountView rightM1"  bindId="readCount" />
+                      <Label class="timeView right0"  bindId="createdTime"/>
+                    </View>
+                  </View>
+                </ItemTemplate>
+
+                <!--  오른쪾 메시지-->
+                <ItemTemplate name="rowTemplate" class="messageViewRow">
+                  <View class="rightTextBoxLimit">
+
+                    <View class="rightTextBoxWrapWrap">
+                      <View class="rightTextBoxWrap">
+                        <Label class="readCountView leftM1"  bindId="readCount" />
+                        <Label class="timeView left0" bindId="createdTime"/>
+                        <View class="rightTextBox rightTextBoxPadding">
+                          <Label bindId="content" class="rightMessageText"/>
+                        </View>
+                      </View>
+                      <ImageView class="rightTailImage"/>
+                    </View>
+
+                  </View>
+                </ItemTemplate>
+
+                <ItemTemplate name="rowImageTemplate" class="messageViewRow">
+                  <View class="rightTextBoxLimit">
+
+                    <View class="rightTextBoxWrapWrap">
+                      <View class="rightTextBoxWrap">
+                        <Label class="readCountView leftM1"  bindId="readCount" />
+                        <Label class="timeView left0" bindId="createdTime"/>
+                        <View class="rightTextBox rightTextBoxPadding">
+                          <ImageView bindId="content" class="messageImage" onClick="clickThumbnail"/>
+                        </View>
+                      </View>
+                      <ImageView class="rightTailImage"/>
+                    </View>
+
+                  </View>
+                </ItemTemplate>
+              </Templates>
+
+              <ListSection id="messageSection" />
+            </ListView>
+          </View>
+        </View>
+      </View>
 
 
-	</Window>
+    </View>
+
+    <!-- 키보드영 -->
+    <View id="inputMsgView">
+      <View id="msgLine" />
+      <View id="inputMsgLeftView">
+        <ImageView id="notifyBtn"/>
+        <View id="inputBtnLine" />
+        <ImageView id="requestBtn"/>
+      </View>
+      <View id="inputMsgWrap">
+        <TextArea id="inputMsg" class="inputMsg" />
+      </View>
+      <View class="sendGalleryBtn" onClick="onClickSendGallery">
+        <ImageView class="sendGalleryBtnImage"/>
+      </View>
+      <Button id="sendBtn" onClick="onClickSend"/>
+    </View>
+
+
+  </Window>
 </Alloy>
 
 <!--                경로찾기 stepView 형태. -->
 <!-- 걷기      "type": "WALKING", "fromTo": "서초역까지 도보",    "duration": "7분",    "distance": "0.4 km"-->
 <!-- <View class="stepView">
-	<View class="stepImageWrap">
-		<ImageView class="stepImage" image="/images/navigation_walking.png"/>
-	</View>
-	<View class="stepTextWrap">
-		<View class="stepTextView">
-			<Label text="서초역까지 도보" class="stepTextFont blackColor"/>
-		</View>
-		<View class="stepTextDetailView">
-			<Label text="약 " class="stepTextDetailFont blackColor"/>
-			<Label text=" 7분" class="stepTextDetailFont purpleColor"/>
-		</View>
-	</View>
+  <View class="stepImageWrap">
+    <ImageView class="stepImage" image="/images/navigation_walking.png"/>
+  </View>
+  <View class="stepTextWrap">
+    <View class="stepTextView">
+      <Label text="서초역까지 도보" class="stepTextFont blackColor"/>
+    </View>
+    <View class="stepTextDetailView">
+      <Label text="약 " class="stepTextDetailFont blackColor"/>
+      <Label text=" 7분" class="stepTextDetailFont purpleColor"/>
+    </View>
+  </View>
 </View> -->
 <!-- 버스     "type": "BUS",    "fromTo": "버스 로타리행",    "duration": "6분",  "distance": "3.9 km",
 "stopCount": 3,    "from": "황간매표소",    "to": "노천리",    "vehicle": "충북 농어촌버스",    "vehicleDetail": "영동-석현"  -->
@@ -185,23 +185,23 @@
 <!-- 기차     "type": "HEAVY_RAIL",    "fromTo": "기차 부산행",    "duration": "43분",    "distance": "49.3 km",
 "stopCount": 3,    "from": "대전역",    "to": "황간역",    "vehicle": "경부선"} -->
 <!-- <View class="stepView">
-	<View class="stepImageWrap">
-		<ImageView class="stepImage" image="/images/navigation_metro.png"/>
-	</View>
-	<View class="stepTextWrap">
-		<View class="stepTextOuterView">
-			<View class="stepTextView">
-				<Label text="경부선" class="stepTextFont blackColor"/>
-				<Label text="(4호선)" class="stepTextFont blackColor"/>
-				<Label text=" , " class="stepTextFont purpleColor"/>
-				<Label text="황간역" class="stepTextFont blackColor"/>
-				<Label text=" 까지" class="stepTextFont blackColor"/>
-			</View>
-			<View class="stepTextDetailView">
-				<Label text="약 " class="stepTextDetailFont blackColor"/>
-				<Label text=" 16분" class="stepTextDetailFont purpleColor"/>
-				<Label text=" (3 역)" class="stepTextDetailFont purpleColor"/>
-			</View>
-		</View>
-	</View>
+  <View class="stepImageWrap">
+    <ImageView class="stepImage" image="/images/navigation_metro.png"/>
+  </View>
+  <View class="stepTextWrap">
+    <View class="stepTextOuterView">
+      <View class="stepTextView">
+        <Label text="경부선" class="stepTextFont blackColor"/>
+        <Label text="(4호선)" class="stepTextFont blackColor"/>
+        <Label text=" , " class="stepTextFont purpleColor"/>
+        <Label text="황간역" class="stepTextFont blackColor"/>
+        <Label text=" 까지" class="stepTextFont blackColor"/>
+      </View>
+      <View class="stepTextDetailView">
+        <Label text="약 " class="stepTextDetailFont blackColor"/>
+        <Label text=" 16분" class="stepTextDetailFont purpleColor"/>
+        <Label text=" (3 역)" class="stepTextDetailFont purpleColor"/>
+      </View>
+    </View>
+  </View>
 </View> -->

@@ -1,44 +1,44 @@
 /**
- * 	Reset - Standardize behavior across platforms and set better defaults
+ *   Reset - Standardize behavior across platforms and set better defaults
  *  courtesy of Tony Lukasavage
  *  https://gist.github.com/tonylukasavage/6009423
  *
  */
 
 'Label[platform=android]': {
-	color: '#000' // all platforms except Android default to black
+  color: '#000' // all platforms except Android default to black
 },
 
 'Window': {
-	backgroundColor: '#f7f7f7' // white background instead of default transparent
+  backgroundColor: '#f7f7f7' // white background instead of default transparent
 },
 
 'Window[platform=android]': {
-	modal: false // make android windows all heavyweight
+  modal: false // make android windows all heavyweight
 },
 
 'TextField': {
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED // common default style
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED // common default style
 },
 
 'TextField[platform=android]': {
- 	height: Ti.UI.SIZE
+   height: Ti.UI.SIZE
 },
 
 'View': {
-	//backgroundColor: 'white' // white background instead of default transparent
+  //backgroundColor: 'white' // white background instead of default transparent
 },
 
 'TableView': {
-	//backgroundColor: 'white' // white background instead of default transparent
+  //backgroundColor: 'white' // white background instead of default transparent
 },
 
 'TableViewRow': {
-	//backgroundColor: 'white' // white background instead of default transparent
+  //backgroundColor: 'white' // white background instead of default transparent
 },
 
 'ImageView':{
-	preventDefaultImage: true
+  preventDefaultImage: true
 }
 
 
@@ -50,49 +50,49 @@
 */
 
 'Window[platform=ios]': {
-	barColor: '#54EE92',
-	translucent : false,
-	navTintColor: 'white',
-	titleAttributes:  {
-		color: 'white'
-	},
-	statusBarStyle : Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+  barColor: '#54EE92',
+  translucent : false,
+  navTintColor: 'white',
+  titleAttributes:  {
+    color: 'white'
+  },
+  statusBarStyle : Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
 },
 
 'Label': {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: 'black',
-	font: {
-		fontSize: '18sp'
-	},
-	textAlign: 'center'
+  width: Ti.UI.SIZE,
+  height: Ti.UI.SIZE,
+  color: 'black',
+  font: {
+    fontSize: '18sp'
+  },
+  textAlign: 'center'
 },
 
 'TextField[platform=android]': {
-	borderRadius: 6,	// common default style
-	color: 'black',
-	borderColor: 'black',
-	borderWidth: 1
+  borderRadius: 6,  // common default style
+  color: 'black',
+  borderColor: 'black',
+  borderWidth: 1
 },
 
 'ListItem[platform=ios]':{
-	selectionStyle : Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE
+  selectionStyle : Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE
 },
 
 'Button[platform=android]':{
-	backgroundColor: 'transparent',
-	backgroundSelectedColor: '#80000000',
-	color: 'black'
+  backgroundColor: 'transparent',
+  backgroundSelectedColor: '#80000000',
+  color: 'black'
 },
 
 '.container' : {
-	backgroundColor: '#f7f7f7'
+  backgroundColor: '#f7f7f7'
 },
 
 '.SIZE':{
-	height : Titanium.UI.SIZE,
-	width : Titanium.UI.SIZE
+  height : Titanium.UI.SIZE,
+  width : Titanium.UI.SIZE
 },
 
 '.border' : {
@@ -116,21 +116,21 @@ height : Titanium.UI.FILL
 width : Titanium.UI.FILL
 },
 '.hLay': {
-	layout:'horizontal',
-	width : Ti.UI.SIZE,
-	height: Ti.UI.SIZE
+  layout:'horizontal',
+  width : Ti.UI.SIZE,
+  height: Ti.UI.SIZE
 },
 
 '.vLay': {
-	layout:'vertical',
-	width : Ti.UI.SIZE,
-	height: Ti.UI.SIZE
+  layout:'vertical',
+  width : Ti.UI.SIZE,
+  height: Ti.UI.SIZE
 },
 
 '.bold' : {
-	font : {
-		fontWeight: 'bold'
-	}
+  font : {
+    fontWeight: 'bold'
+  }
 }
 
 
@@ -146,209 +146,209 @@ width : Titanium.UI.FILL
  *************************************************************************/
 
 /**
- * 	Layouts & Fills
+ *   Layouts & Fills
  */
 
 ".vgroup":{
-	layout: 'vertical'
+  layout: 'vertical'
 },
 
 ".hgroup":{
-	layout: 'horizontal'
+  layout: 'horizontal'
 },
 
 ".buffer":{
-	top: 10,
-	left: 10,
-	right: 10,
-	bottom: 10
+  top: 10,
+  left: 10,
+  right: 10,
+  bottom: 10
 },
 
 ".top-buffer":{
-	top: 10
+  top: 10
 },
 
 ".left-buffer":{
-	left: 10
+  left: 10
 },
 ".left-bufferXTwo":{
-	left: 20
+  left: 20
 },
 
 ".right-buffer":{
-	right: 10
+  right: 10
 },
 
 ".bottom-buffer":{
-	bottom: 10
+  bottom: 10
 },
 
 ".fill":{
-	height: Ti.UI.FILL,
-	width: Ti.UI.FILL
+  height: Ti.UI.FILL,
+  width: Ti.UI.FILL
 },
 
 ".span-width":{
-	width: "100%",
-	height: Ti.UI.SIZE
+  width: "100%",
+  height: Ti.UI.SIZE
 },
 
 ".span-height":{
-	height: "100%",
-	width: Ti.UI.SIZE
+  height: "100%",
+  width: Ti.UI.SIZE
 },
 
 ".size":{
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE
+  height: Ti.UI.SIZE,
+  width: Ti.UI.SIZE
 },
 
 ".bottom":{
-	bottom: 0
+  bottom: 0
 },
 
 ".top":{
-	top: 0
+  top: 0
 },
 
 ".right":{
-	right: 0
+  right: 0
 },
 
 ".left":{
-	left: 0
+  left: 0
 },
 /**
  * Common Sizes
  */
 
 ".thumbnail":{
-	height: 75,
-	width: 75
+  height: 75,
+  width: 75
 },
 
 ".square100":{
-	height: 100,
-	width: 100
+  height: 100,
+  width: 100
 },
 
 ".square150":{
-	height: 150,
-	width: 150
+  height: 150,
+  width: 150
 },
 
 ".square200":{
-	height: 200,
-	width: 200
+  height: 200,
+  width: 200
 },
 
 ".square250":{
-	height: 250,
-	width: 250
+  height: 250,
+  width: 250
 },
 
 /**
- * 	Typography
+ *   Typography
  */
 ".h1":{
-	font:{
-		fontSize: 36
-	}
+  font:{
+    fontSize: 36
+  }
 },
 
 ".h1[platform=blackberry]":{
-	font:{
-		fontSize: 30
-	}
+  font:{
+    fontSize: 30
+  }
 },
 
 ".h2":{
-	font:{
-		fontSize: 30
-	}
+  font:{
+    fontSize: 30
+  }
 },
 
 ".h2[platform=blackberry]":{
-	font:{
-		fontSize: 24
-	}
+  font:{
+    fontSize: 24
+  }
 },
 
 ".h3":{
-	font:{
-		fontSize: 24
-	}
+  font:{
+    fontSize: 24
+  }
 },
 
 ".h3[platform=blackberry]":{
-	font:{
-		fontSize: 18
-	}
+  font:{
+    fontSize: 18
+  }
 },
 
 ".h4":{
-	font:{
-		fontSize: 18
-	}
+  font:{
+    fontSize: 18
+  }
 },
 
 ".h4[platform=blackberry]":{
-	font:{
-		fontSize: 14
-	}
+  font:{
+    fontSize: 14
+  }
 },
 
 ".h5":{
-	font:{
-		fontSize: 14
-	}
+  font:{
+    fontSize: 14
+  }
 },
 
 ".h5[platform=blackberry]":{
-	font:{
-		fontSize: 12
-	}
+  font:{
+    fontSize: 12
+  }
 },
 
 ".h6":{
-	font:{
-		fontSize: 12
-	}
+  font:{
+    fontSize: 12
+  }
 },
 
 ".h6[platform=blackberry]":{
-	font:{
-		fontSize: 10
-	}
+  font:{
+    fontSize: 10
+  }
 },
 ".normal-text":{
-	font:{
-		fontSize: 14
-	}
+  font:{
+    fontSize: 14
+  }
 },
 
 ".small-text":{
-	font:{
-		fontSize: 10
-	}
+  font:{
+    fontSize: 10
+  }
 },
 
 ".large-text":{
-	font:{
-		fontSize: 18
-	}
+  font:{
+    fontSize: 18
+  }
 },
 
 /**
- * 	Visibility
+ *   Visibility
  */
 
 ".hide":{
-	visible: false
+  visible: false
 },
 
 ".transparent":{
-	opacity: 0.25
+  opacity: 0.25
 }
 
 /*
@@ -356,33 +356,33 @@ width : Titanium.UI.FILL
  */
 
 ".white":{
-	color: "white"
+  color: "white"
 },
 
 ".black":{
-	color: "#000"
+  color: "#000"
 }
 
 ".red":{
-	color: '#ae331f'
+  color: '#ae331f'
 }
 
 /**
- * 	Alert / Notification Styles
+ *   Alert / Notification Styles
  *  These should be used in conjunction with Views and/or labels
  */
 ".success":{
-	color: "#468847",
-	backgroundColor: "#dff0d8",
-	borderColor: "#d6e9c6",
-	border: 1
+  color: "#468847",
+  backgroundColor: "#dff0d8",
+  borderColor: "#d6e9c6",
+  border: 1
 },
 
 ".error":{
-	color: "#b94a48",
-	backgroundColor: "#f2dede",
-	borderColor: "#eed3d7",
-	border: 1
+  color: "#b94a48",
+  backgroundColor: "#f2dede",
+  borderColor: "#eed3d7",
+  border: 1
 },
 
 ".warn":{
@@ -390,62 +390,62 @@ width : Titanium.UI.FILL
 },
 
 ".info":{
-	color: "#3a87ad",
-	backgroundColor: "#d9edf7",
-	borderColor: "#bce8f1",
-	border: 1
+  color: "#3a87ad",
+  backgroundColor: "#d9edf7",
+  borderColor: "#bce8f1",
+  border: 1
 }
 
 /**
- * 	Borders and Lines
+ *   Borders and Lines
  */
 ".border-dark":{
-	border: 6,
-	borderColor:"#666",
+  border: 6,
+  borderColor:"#666",
 },
 
 ".border-dark-thin":{
-	border: 2,
-	borderColor:"#666",
+  border: 2,
+  borderColor:"#666",
 },
 
 ".border-dark-thick":{
-	border: 10,
-	borderColor:"#666",
+  border: 10,
+  borderColor:"#666",
 },
 
 ".border-light":{
-	border: 6,
-	borderColor:"#ececec",
+  border: 6,
+  borderColor:"#ececec",
 },
 
 ".border-light-thin":{
-	border: 2,
-	borderColor:"#ececec",
+  border: 2,
+  borderColor:"#ececec",
 },
 
 ".border-light-thick":{
-	border: 10,
-	borderColor:"#ececec",
+  border: 10,
+  borderColor:"#ececec",
 },
 
 
 ".black-line":{
-	backgroundColor: "#000",
-	width: Ti.UI.FILL,
-	height: 1
+  backgroundColor: "#000",
+  width: Ti.UI.FILL,
+  height: 1
 },
 
 ".gray-line":{
-	backgroundColor: "#9b9d9f",
-	width: Ti.UI.FILL,
-	height: 1
+  backgroundColor: "#9b9d9f",
+  width: Ti.UI.FILL,
+  height: 1
 },
 
 ".white-line":{
-	backgroundColor: "white",
-	width: Ti.UI.FILL,
-	height: 1
+  backgroundColor: "white",
+  width: Ti.UI.FILL,
+  height: 1
 },
 
 /* Ionicons Styles (Generated by IconFont) */

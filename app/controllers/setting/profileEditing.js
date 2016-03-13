@@ -10,35 +10,35 @@ var inputLimitSize = (caseName == "name") ? Alloy.Globals.inputLimit.name : Allo
 if(OS_IOS){
     $.window.title = titleName;
 
-	var opt = _createRightBtnOption();
+  var opt = _createRightBtnOption();
 
-	var rightMenuView = Ti.UI.createView();
-	var rightBtn = Ti.UI.createButton(opt.btnData);
-	rightBtn.addEventListener("click", opt.onClick);
-	rightMenuView.add(rightBtn);
+  var rightMenuView = Ti.UI.createView();
+  var rightBtn = Ti.UI.createButton(opt.btnData);
+  rightBtn.addEventListener("click", opt.onClick);
+  rightMenuView.add(rightBtn);
 
     $.window.rightNavButton = rightMenuView;
 
 }else{
     $.window.addEventListener('open', function() {
-	    var activity = $.window.getActivity();
-	    if (activity) {
-	    	var opt = _createRightBtnOption();
+      var activity = $.window.getActivity();
+      if (activity) {
+        var opt = _createRightBtnOption();
 
-	        activity.onCreateOptionsMenu = function(e) {
-	            var rightBtn = e.menu.add(opt.btnData);
-	            rightBtn.setShowAsAction(Ti.Android.SHOW_AS_ACTION_ALWAYS);
-	            rightBtn.addEventListener("click", opt.onClick);
-	        };
+          activity.onCreateOptionsMenu = function(e) {
+              var rightBtn = e.menu.add(opt.btnData);
+              rightBtn.setShowAsAction(Ti.Android.SHOW_AS_ACTION_ALWAYS);
+              rightBtn.addEventListener("click", opt.onClick);
+          };
 
 
-	        var actionBar = activity.actionBar;
-	        if (actionBar) {
-	            activity.actionBar.title = titleName;
-	        }
-	    	activity.invalidateOptionsMenu();
-	    }
-	});
+          var actionBar = activity.actionBar;
+          if (actionBar) {
+              activity.actionBar.title = titleName;
+          }
+        activity.invalidateOptionsMenu();
+      }
+  });
 }
 
 ////////////////////////////////////////
@@ -101,38 +101,38 @@ if(OS_IOS){
 ////////////// helper
 
 function _createRightBtnOption() {
-	return {
-		btnData : {
-			title: L("s_enter"),
-			font: { fontSize: 15 }
-		},
-		onClick : function(){
-        	if(($.inputArea.value == '' || $.inputArea.value == null)){
-				Alloy.Globals.alert('s_alertEmptyComment');
-			}else{
-				var data = {};
-				data[caseName] = $.inputArea.value;
+  return {
+    btnData : {
+      title: L("s_enter"),
+      font: { fontSize: 15 }
+    },
+    onClick : function(){
+          if(($.inputArea.value == '' || $.inputArea.value == null)){
+        Alloy.Globals.alert('s_alertEmptyComment');
+      }else{
+        var data = {};
+        data[caseName] = $.inputArea.value;
 
-				_updateUser(data);
-				$.window.close();
-			}
-		}
-	}
+        _updateUser(data);
+        $.window.close();
+      }
+    }
+  }
 };
 function _updateUser(data) {
-	//로컬에 반영
-	var userM = Alloy.Globals.user.attributes;
-	userM.set(data,{change:false});
-	Alloy.Globals.user.trigger('change:profile');
+  //로컬에 반영
+  var userM = Alloy.Globals.user.attributes;
+  userM.set(data,{change:false});
+  Alloy.Globals.user.trigger('change:profile');
 
-	//서버에 반영.
-	Parse.Cloud.run('userModify', data, {
-		success: function(result) {
-			Ti.API.debug('settings:UserModify');
-		},
-		error: function(error) {
-			//TOOD[faith] : 이전값 저장해두었다가 되돌리는 코드가필요함.
-			Ti.API.debug('settings:UserModify', error);
-		}
-	});
+  //서버에 반영.
+  Parse.Cloud.run('userModify', data, {
+    success: function(result) {
+      Ti.API.debug('settings:UserModify');
+    },
+    error: function(error) {
+      //TOOD[faith] : 이전값 저장해두었다가 되돌리는 코드가필요함.
+      Ti.API.debug('settings:UserModify', error);
+    }
+  });
 };

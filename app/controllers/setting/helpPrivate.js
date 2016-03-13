@@ -12,38 +12,38 @@ $.s_hp_withdrawal.text = L('s_hp_withdrawal');
 
 // 회원 탈퇴
 function userWithdrawFn() {
-	var dialog = Ti.UI.createAlertDialog({
-		cancel: 1,
-		buttonNames: [L('sp_confirm'), L('sp_cancle')],
-		message: L('sp_message'),
-		title: L('sp_title')
-	});
-	dialog.addEventListener('click', function(e){
-		switch(e.index) {
-			case 0:
-				Alloy.Globals.alert("sp_alertWithdrawal");
-				Alloy.Globals.loginC.withdraw();
-			break;
-			case 1:
-				Alloy.Globals.toast("sp_alertCancle");
-			break;
-		}
-	});
-	dialog.show();
+  var dialog = Ti.UI.createAlertDialog({
+    cancel: 1,
+    buttonNames: [L('sp_confirm'), L('sp_cancle')],
+    message: L('sp_message'),
+    title: L('sp_title')
+  });
+  dialog.addEventListener('click', function(e){
+    switch(e.index) {
+      case 0:
+        Alloy.Globals.alert("sp_alertWithdrawal");
+        Alloy.Globals.loginC.withdraw();
+      break;
+      case 1:
+        Alloy.Globals.toast("sp_alertCancle");
+      break;
+    }
+  });
+  dialog.show();
 }
 
 function moveAction() {
-	Alloy.Globals.alert("c_alertReadyToOpen");
+  Alloy.Globals.alert("c_alertReadyToOpen");
 }
 
 function requestByEmail() {
-	var emailDialog = Ti.UI.createEmailDialog();
+  var emailDialog = Ti.UI.createEmailDialog();
     emailDialog.setToRecipients(['contact@boxoutthinkers.com']);
     emailDialog.setSubject(L("s_hp_emailSubject"));
     emailDialog.setMessageBody(L("s_hp_emailContent"));
 
 
-	emailDialog.addEventListener('complete',function(e) {
+  emailDialog.addEventListener('complete',function(e) {
         if (e.result == emailDialog.SENT) {
             if (OS_IOS) {
                 // android doesn't give us useful result codes.

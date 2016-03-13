@@ -1,62 +1,62 @@
 "#popupView" : {
-	width: Ti.UI.FILL,
-	height: 73,
-	top: -73,
-	backgroundColor: 'transparent',
-	zIndex: 100,
-	layout: 'composite'
+  width: Ti.UI.FILL,
+  height: 73,
+  top: -73,
+  backgroundColor: 'transparent',
+  zIndex: 100,
+  layout: 'composite'
 }
 
 ".backgroundOpacity" : {
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
-	backgroundColor : 'black',
-	opacity : 0.6,
-	touchEnabled: false
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL,
+  backgroundColor : 'black',
+  opacity : 0.6,
+  touchEnabled: false
 }
 
 ".mainView" : {
-	left: 5, right: 5, top: 5, bottom: 5,
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
-	backgroundColor: 'white',
-	borderRadius: 3
+  left: 5, right: 5, top: 5, bottom: 5,
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL,
+  backgroundColor: 'white',
+  borderRadius: 3
 }
 
 ".profileImageWarp" : {
-	left: 15,
-	height:40, width:40
+  left: 15,
+  height:40, width:40
 }
 ".profileImageOutline":{
-	height:40, width:40,
-	image : '/images/friendlist_profile_pic_outline.png'
+  height:40, width:40,
+  image : '/images/friendlist_profile_pic_outline.png'
 }
 "#profileImage":{
-	height:38, width:38, borderRadius:19,
-	font: { fontFamily: "Ionicons", fontSize:30 },
-	color : '#77787f', backgroundColor: '#bebfc3'
+  height:38, width:38, borderRadius:19,
+  font: { fontFamily: "Ionicons", fontSize:30 },
+  color : '#77787f', backgroundColor: '#bebfc3'
 }
 
 ".contentWarp" : {
-	left: 70, right : 53,
-	height:40, width:Ti.UI.FILL
+  left: 70, right : 53,
+  height:40, width:Ti.UI.FILL
 }
 "#profileName":{
-	left:0, top: 0,
-	font : { fontWeight: 'Medium', fontSize:16 }, color:"#3a3a3a"
+  left:0, top: 0,
+  font : { fontWeight: 'Medium', fontSize:16 }, color:"#3a3a3a"
 }
 "#msgLabel" : {
-	left:0, bottom: 0,
-	font : { fontWeight: 'Medium', fontSize:12 }, color:"#3a3a3a",
-	height: 15
+  left:0, bottom: 0,
+  font : { fontWeight: 'Medium', fontSize:12 }, color:"#3a3a3a",
+  height: 15
 }
 
 ".rightWarp" : {
-	right : 8,
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE
+  right : 8,
+  width: Ti.UI.SIZE,
+  height: Ti.UI.SIZE
 }
 "#msgtypeIcon" : {
-	width: 44.6,
-	height: 44.6
+  width: 44.6,
+  height: 44.6
 }

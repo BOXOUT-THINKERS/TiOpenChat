@@ -59,44 +59,44 @@ Parse.Cloud.define("sendVerificationCode", function(request, response) {
     } else {
         // normal code
         var verificationCode = Math.floor(Math.random()*8999) + 1000;
-    	var user = Parse.User.current();
-    	user.set("phoneVerificationCode", verificationCode);
-    	user.set("isWithdraw", false);
+      var user = Parse.User.current();
+      user.set("phoneVerificationCode", verificationCode);
+      user.set("isWithdraw", false);
 
         // add info
         user.set("timezoneOffset",request.params.timezoneOffset);
         user.set("currentLanguage", request.params.currentLanguage);
-    	user.save();
+      user.save();
 
         var msgBody = "";
         msgBody = "TiOpenChat's Verification Code is " + verificationCode + " .";
 
-    	twilio.sendSms({
-    		From: "",
-    		To: request.params.phoneNumber,
-    		Body: msgBody
-    	}, function(err, responseData) {
-    		if (err) {
-    			response.error(err);
-    		} else {
-    			response.success("Success");
-    		}
-    	});
+      twilio.sendSms({
+        From: "",
+        To: request.params.phoneNumber,
+        Body: msgBody
+      }, function(err, responseData) {
+        if (err) {
+          response.error(err);
+        } else {
+          response.success("Success");
+        }
+      });
     }
 });
 
 // verify PhoneNumber
 Parse.Cloud.define("verifyPhoneNumber", function(request, response) {
-	var user = Parse.User.current();
-	var verificationCode = user.get("phoneVerificationCode");
-	if (verificationCode == request.params.phoneVerificationCode) {
-		user.set("phoneVerificationCode", 0);
-		user.save().then(function(){
+  var user = Parse.User.current();
+  var verificationCode = user.get("phoneVerificationCode");
+  if (verificationCode == request.params.phoneVerificationCode) {
+    user.set("phoneVerificationCode", 0);
+    user.save().then(function(){
             response.success("Success");
         });
-	} else {
-		response.error("Invalid verification code.");
-	}
+  } else {
+    response.error("Invalid verification code.");
+  }
 });
 
 // backgroundJob for user
@@ -106,8 +106,8 @@ Parse.Cloud.job("userBackgroundJob", function(request, status) {
     var counter = 0;
     // Query for all users
     var queryUser = new Parse.Query(Parse.User);
-    queryUser.notEqualTo("isWithdraw", true);	// not withdraw
-    queryUser.notEqualTo("name", null);	// legal user
+    queryUser.notEqualTo("isWithdraw", true);  // not withdraw
+    queryUser.notEqualTo("name", null);  // legal user
     queryUser.each(function(user) {
         counter += 1;
         //if (counter % 10 === 1) {
@@ -122,11 +122,11 @@ Parse.Cloud.job("userBackgroundJob", function(request, status) {
         // if have my phone, but didn't link to me
         function contactsLinkJoinUser(user) {
             var query = new Parse.Query("Contacts");
-    		query.equalTo("mainPhone", user.get("username"));
+        query.equalTo("mainPhone", user.get("username"));
             query.equalTo("User_objectId_To", null);    // not link
-            query.notEqualTo("isBlock", true);	// not block
-    		query.include("User_object");
-    		return query.each(function(contacts) {
+            query.notEqualTo("isBlock", true);  // not block
+        query.include("User_object");
+        return query.each(function(contacts) {
                 // join push
                 var toUser = contacts.get("User_object");
 
@@ -137,12 +137,12 @@ Parse.Cloud.job("userBackgroundJob", function(request, status) {
                 var fromUserId = user.id;
 
                 // update
-    			contacts.set("User_objectId_To", user.id);
-    			contacts.set("User_object_To", user);
-    			return contacts.save().then(function(){
+          contacts.set("User_objectId_To", user.id);
+          contacts.set("User_object_To", user);
+          return contacts.save().then(function(){
                     return _notifyNewUserToFriends(fromUserId, fromUserName, toUserId, toUserCurrentLanguage);
                 });
-    		});
+        });
         }
 
         // Contacts add User_object
@@ -150,12 +150,12 @@ Parse.Cloud.job("userBackgroundJob", function(request, status) {
         function contactsUserPointer(user) {
             var query = new Parse.Query("Contacts");
             query.equalTo("User_objectId", user.id);
-    		query.equalTo("User_object", null);
-    		return query.each(function(contacts) {
+        query.equalTo("User_object", null);
+        return query.each(function(contacts) {
                 // update
-    			contacts.set("User_object", user);
-    			return contacts.save();
-    		});
+          contacts.set("User_object", user);
+          return contacts.save();
+        });
         }
     }).then(function() {
         // Set the job's success status
@@ -199,103 +199,103 @@ function _notifyNewUserToFriends(fromUserId, fromUserName, toUserId, toUserCurre
 
 // userModify
 Parse.Cloud.define("userModify", function(request, response) {
-	var user = Parse.User.current();
-	user.set(request.params);
-	user.save();
+  var user = Parse.User.current();
+  user.set(request.params);
+  user.save();
 
-	response.success("Success");
+  response.success("Success");
 });
 
 // send sms using twilio
 Parse.Cloud.define("sendSMS", function(request, response) {
-	if (request.params.phoneNumber && request.params.messageBody) {
-		twilio.sendSms({
-			From: "",
-			To: request.params.phoneNumber,
-			Body: request.params.messageBody
-		}, function(err, responseData) {
-			if (err) {
-				response.error(err);
-			} else {
-				response.success("Success");
-			}
-		});
-	} else {
-		response.error("Request Invalid");
-	}
+  if (request.params.phoneNumber && request.params.messageBody) {
+    twilio.sendSms({
+      From: "",
+      To: request.params.phoneNumber,
+      Body: request.params.messageBody
+    }, function(err, responseData) {
+      if (err) {
+        response.error(err);
+      } else {
+        response.success("Success");
+      }
+    });
+  } else {
+    response.error("Request Invalid");
+  }
 });
 
 // send push
 Parse.Cloud.define("sendPush", function (request, response) {
-	var pushData = request.params.data || {};
+  var pushData = request.params.data || {};
 
-	var query = request.params.query || {};
-	var userIds = query.userIds;
-	var channels = query.channels;
+  var query = request.params.query || {};
+  var userIds = query.userIds;
+  var channels = query.channels;
 
-	var userQuery = new Parse.Query(Parse.User);
-	if(userIds){
-		userQuery.containedIn("objectId", userIds);
-	}
-	// find installation
-	userQuery.find({
-		success: function(results) {
-			// check ban time
-			var targetUserIds = [];
-			for(var i=0,max=results.length; i<max; ++i){
-				var user = results[i];
+  var userQuery = new Parse.Query(Parse.User);
+  if(userIds){
+    userQuery.containedIn("objectId", userIds);
+  }
+  // find installation
+  userQuery.find({
+    success: function(results) {
+      // check ban time
+      var targetUserIds = [];
+      for(var i=0,max=results.length; i<max; ++i){
+        var user = results[i];
 
-				// check all push
-				if(!user.get('isPermissionAllPush')) continue;
+        // check all push
+        if(!user.get('isPermissionAllPush')) continue;
 
-				// check ban time
-				if(user.get('isUsingBanTime')){
-					var banStartHour = user.get('banStartHour');
-					var banStartMinute = user.get('banStartMinute');
-					var banEndHour = user.get('banEndHour');
-					var banEndMinute = user.get('banEndMinute');
-					var timezoneOffset = user.get('timezoneOffset');
-					// if is all ok
-					if(!_isBanTime(timezoneOffset, banStartHour, banStartMinute, banEndHour, banEndMinute)){
-						targetUserIds.push(user.id);
-					}
-				}else{
-					// not use ban time
-					targetUserIds.push(user.id);
-				}
+        // check ban time
+        if(user.get('isUsingBanTime')){
+          var banStartHour = user.get('banStartHour');
+          var banStartMinute = user.get('banStartMinute');
+          var banEndHour = user.get('banEndHour');
+          var banEndMinute = user.get('banEndMinute');
+          var timezoneOffset = user.get('timezoneOffset');
+          // if is all ok
+          if(!_isBanTime(timezoneOffset, banStartHour, banStartMinute, banEndHour, banEndMinute)){
+            targetUserIds.push(user.id);
+          }
+        }else{
+          // not use ban time
+          targetUserIds.push(user.id);
+        }
 
-			}
-			// send push
-			if(targetUserIds.length > 0){
-				var pushQuery = new Parse.Query(Parse.Installation);
+      }
+      // send push
+      if(targetUserIds.length > 0){
+        var pushQuery = new Parse.Query(Parse.Installation);
 
-				pushQuery.containedIn("User_objectId", targetUserIds);
-				if(channels){
-					pushQuery.containedIn("channels", channels);
-				}
-				Parse.Push.send({
-					where:pushQuery,
-					data:pushData
-				},
-				{
-					success: function(results) {
+        pushQuery.containedIn("User_objectId", targetUserIds);
+        if(channels){
+          pushQuery.containedIn("channels", channels);
+        }
+        Parse.Push.send({
+          where:pushQuery,
+          data:pushData
+        },
+        {
+          success: function(results) {
                         response.success(results);
-					},
-					error: function(error) {
-						response.error(error.message);
-					}
-				});
-			}else{
+          },
+          error: function(error) {
+            response.error(error.message);
+          }
+        });
+      }else{
                 var msg = 'find users : '+ results.length + ', but not push. because isBanTime!' + request.params;
                 response.success(msg);
-			}
-		},
-		error: function(error) {
+      }
+    },
+    error: function(error) {
             var msg = "Got an error " + error.code + " : " + error.message;
             console.error(msg);
-			response.error(msg);
-		}
-	});
+      response.error(msg);
+    }
+  });
 });
 
 /**
@@ -304,48 +304,48 @@ Parse.Cloud.define("sendPush", function (request, response) {
 
 // check ban time
 function _isBanTime(timezoneOffset, startHour, startMinute, endHour, endMinute) {
-	var currentTimeZoneOffsetInHours = timezoneOffset / 60;
-	var nowTime = new Date();
+  var currentTimeZoneOffsetInHours = timezoneOffset / 60;
+  var nowTime = new Date();
 
-	// using utc time
-	var diffTime = new Date(2015, 4, 10, nowTime.getUTCHours(), nowTime.getUTCMinutes());
-	diffTime.setDate(1);
+  // using utc time
+  var diffTime = new Date(2015, 4, 10, nowTime.getUTCHours(), nowTime.getUTCMinutes());
+  diffTime.setDate(1);
 
     // convert local time to utc
-	var banStartTime = new Date(2015, 4, 10, (startHour+currentTimeZoneOffsetInHours), startMinute);
-	banStartTime.setDate(1);
-	var banEndTime = new Date(2015, 4, 10, (endHour+currentTimeZoneOffsetInHours), endMinute);
-	banEndTime.setDate(1);
+  var banStartTime = new Date(2015, 4, 10, (startHour+currentTimeZoneOffsetInHours), startMinute);
+  banStartTime.setDate(1);
+  var banEndTime = new Date(2015, 4, 10, (endHour+currentTimeZoneOffsetInHours), endMinute);
+  banEndTime.setDate(1);
 
-	var isPushBlock = false;
+  var isPushBlock = false;
 
-	if (banStartTime > banEndTime) {
-		// reverse
-		banEndTime.setDate(banEndTime.getDate() + 1); // 4.1 14:30 + 1D = 4.2 14:30
-	}
+  if (banStartTime > banEndTime) {
+    // reverse
+    banEndTime.setDate(banEndTime.getDate() + 1); // 4.1 14:30 + 1D = 4.2 14:30
+  }
 
-	// today cechk
-	if (banStartTime <= diffTime && diffTime <= banEndTime) { // 4.2 04:30 ~ 4.2 14:30
-		// in time
-		isPushBlock = true;
-	}
+  // today cechk
+  if (banStartTime <= diffTime && diffTime <= banEndTime) { // 4.2 04:30 ~ 4.2 14:30
+    // in time
+    isPushBlock = true;
+  }
 
-	// tommorow check
-	diffTime.setDate(diffTime.getDate() + 1);	// 4.3 13:00
-	if (banStartTime <= diffTime && diffTime <= banEndTime) {
-		// in time
-		isPushBlock = true;
-	}
+  // tommorow check
+  diffTime.setDate(diffTime.getDate() + 1);  // 4.3 13:00
+  if (banStartTime <= diffTime && diffTime <= banEndTime) {
+    // in time
+    isPushBlock = true;
+  }
 
-	return isPushBlock;
+  return isPushBlock;
 }
 
 // contact added
 Parse.Cloud.define("createContacts", function(request, response) {
-	var user = Parse.User.current();
-	var createArrary = request.params.createArrary;
+  var user = Parse.User.current();
+  var createArrary = request.params.createArrary;
 
-	// do contact update
+  // do contact update
     var friendCount = 0;
     var completeCount = 0;
     var doCount = 0;
@@ -418,66 +418,66 @@ Parse.Cloud.beforeSave("Contacts", function(request, response) {
     }
 
     // link user
-	if (request.object.get("User_objectId_To") || request.object.get("isBlock")) {
+  if (request.object.get("User_objectId_To") || request.object.get("isBlock")) {
         // already linked or blocked
-		response.success();
-	} else {
+    response.success();
+  } else {
         // add contacts link
-		var query = new Parse.Query(Parse.User);
-		query.equalTo("username", request.object.get("mainPhone"));
-		query.notEqualTo("isWithdraw", true);	// not withdraw
-		query.first({
-			success: function(user) {
-				if (user) {
-					// check block
-					var subQuery = new Parse.Query("Contacts");
-					subQuery.equalTo("User_objectId", user.id);
-					subQuery.equalTo("User_objectId_To", request.object.get("User_objectId"));
-					subQuery.equalTo("isBlock", true);	// if block
-					subQuery.first({
-						success: function(contacts) {
-							if (!contacts) {
-								request.object.set("User_objectId_To", user.id);
-								request.object.set("User_object_To", user);
+    var query = new Parse.Query(Parse.User);
+    query.equalTo("username", request.object.get("mainPhone"));
+    query.notEqualTo("isWithdraw", true);  // not withdraw
+    query.first({
+      success: function(user) {
+        if (user) {
+          // check block
+          var subQuery = new Parse.Query("Contacts");
+          subQuery.equalTo("User_objectId", user.id);
+          subQuery.equalTo("User_objectId_To", request.object.get("User_objectId"));
+          subQuery.equalTo("isBlock", true);  // if block
+          subQuery.first({
+            success: function(contacts) {
+              if (!contacts) {
+                request.object.set("User_objectId_To", user.id);
+                request.object.set("User_object_To", user);
                                 // no name case
                                 if (!request.object.get("fullName")) {
                                     request.object.set("fullName", user.get("name"));
                                 }
-							} else {
+              } else {
                                 // blocked
-								request.object.set("User_objectId_To", null);
-								request.object.set("User_object_To", null);
-							}
+                request.object.set("User_objectId_To", null);
+                request.object.set("User_object_To", null);
+              }
 
-							response.success();
-						},
-						error: function(error) {
-							console.error("Contacts find error " + error.code + " : " + error.message);
-							request.object.set("User_objectId_To", user.id);
-							request.object.set("User_object_To", user);
+              response.success();
+            },
+            error: function(error) {
+              console.error("Contacts find error " + error.code + " : " + error.message);
+              request.object.set("User_objectId_To", user.id);
+              request.object.set("User_object_To", user);
                             // no name case
                             if (!request.object.get("fullName")) {
                                 request.object.set("fullName", user.get("name"));
                             }
 
-							response.success();
-						}
-					});
-				} else {
-					request.object.set("User_objectId_To", null);
-					request.object.set("User_object_To", null);
+              response.success();
+            }
+          });
+        } else {
+          request.object.set("User_objectId_To", null);
+          request.object.set("User_object_To", null);
 
-					response.success();
-				}
-			},
-			error: function(error) {
-				console.error("Got an error " + error.code + " : " + error.message);
-				request.object.set("User_objectId_To", null);
-				request.object.set("User_object_To", null);
-				response.success();
-			}
-		});
-	}
+          response.success();
+        }
+      },
+      error: function(error) {
+        console.error("Got an error " + error.code + " : " + error.message);
+        request.object.set("User_objectId_To", null);
+        request.object.set("User_object_To", null);
+        response.success();
+      }
+    });
+  }
 });
 
 Parse.Cloud.afterSave("Contacts", function(request) {
@@ -488,19 +488,19 @@ Parse.Cloud.afterSave("Contacts", function(request) {
             success: function(user) {
                 // remove link your contacts
                 var query = new Parse.Query("Contacts");
-        		query.equalTo("User_objectId", request.object.get("User_objectId_To"));
-        		query.equalTo("mainPhone", user.get("username"));
-        		query.find({
-            			success: function(results) {
+            query.equalTo("User_objectId", request.object.get("User_objectId_To"));
+            query.equalTo("mainPhone", user.get("username"));
+            query.find({
+                  success: function(results) {
                             // normal 1 record, 2+ bug, 0 is sad
                             for (var i = 0; i < results.length; i++) {
-            					var contacts = results[i];
-            					// blocked me
-            					if (request.object.get("isBlock")) {
-            						contacts.set("User_objectId_To", null);
-            						contacts.set("User_object_To", null);
-            						contacts.save();
-            					} else {
+                      var contacts = results[i];
+                      // blocked me
+                      if (request.object.get("isBlock")) {
+                        contacts.set("User_objectId_To", null);
+                        contacts.set("User_object_To", null);
+                        contacts.save();
+                      } else {
                                     // if not link
                                     if (!contacts.get("User_objectId_To")) {
                                         contacts.set("User_objectId_To", user.id);
@@ -508,12 +508,12 @@ Parse.Cloud.afterSave("Contacts", function(request) {
                                         contacts.save();
                                     }
                                 }
-            				}
-            			},
-            			error: function(error) {
-            				console.error("Got an error " + error.code + " : " + error.message);
-            			}
-        		});
+                    }
+                  },
+                  error: function(error) {
+                    console.error("Got an error " + error.code + " : " + error.message);
+                  }
+            });
             },
             error: function(object, error) {
                     console.error("[afterSave Contacts] Current user not found ");
@@ -523,34 +523,34 @@ Parse.Cloud.afterSave("Contacts", function(request) {
 });
 
 Parse.Cloud.afterSave(Parse.User, function(request) {
-	// i'am withdraw
-	if (request.object.get("isWithdraw")) {
-		// remove link for others
-		var query = new Parse.Query("Contacts");
-		query.equalTo("mainPhone", request.object.get("username"));
-		query.find({
-			success: function(results) {
-				for (var i = 0; i < results.length; i++) {
-					var contacts = results[i];
-					contacts.set("User_objectId_To", null);
-					contacts.set("User_object_To", null);
-					contacts.save();
-				}
-			},
-			error: function(error) {
-				console.error("Got an error " + error.code + " : " + error.message);
-			}
-		});
+  // i'am withdraw
+  if (request.object.get("isWithdraw")) {
+    // remove link for others
+    var query = new Parse.Query("Contacts");
+    query.equalTo("mainPhone", request.object.get("username"));
+    query.find({
+      success: function(results) {
+        for (var i = 0; i < results.length; i++) {
+          var contacts = results[i];
+          contacts.set("User_objectId_To", null);
+          contacts.set("User_object_To", null);
+          contacts.save();
+        }
+      },
+      error: function(error) {
+        console.error("Got an error " + error.code + " : " + error.message);
+      }
+    });
 
-		// TODO : chatroom clean
+    // TODO : chatroom clean
 
-		// TODO : contacts clean
+    // TODO : contacts clean
 
         // TODO : users clean
 
         // TODO : installation clean
 
-	}
+  }
 });
 
 Parse.Cloud.beforeSave("ChatRoom", function(request, response) {
@@ -559,33 +559,33 @@ Parse.Cloud.beforeSave("ChatRoom", function(request, response) {
 
     // inUser link
     var query = new Parse.Query(Parse.User);
-	query.containedIn("objectId", request.object.get("inUserIds"));
-	query.notEqualTo("isWithdraw", true);	// normal user
-	query.find({
-		success: function(results) {
-			request.object.set("inUsers", results);
+  query.containedIn("objectId", request.object.get("inUserIds"));
+  query.notEqualTo("isWithdraw", true);  // normal user
+  query.find({
+    success: function(results) {
+      request.object.set("inUsers", results);
 
             success1 = true;
             responseSuccess();
-		},
-		error: function(error) {
-			console.error("Got an error " + error.code + " : " + error.message);
-			request.object.set("inUsers", null);
+    },
+    error: function(error) {
+      console.error("Got an error " + error.code + " : " + error.message);
+      request.object.set("inUsers", null);
 
             success1 = true;
             responseSuccess();
-		}
-	});
+    }
+  });
 
     // roomId check
     var query2 = new Parse.Query("ChatRoom");
-	query2.equalTo("roomId", request.object.get("roomId"));
+  query2.equalTo("roomId", request.object.get("roomId"));
     if (request.object.id) {
-        query2.notEqualTo("objectId", request.object.id);	// not me
+        query2.notEqualTo("objectId", request.object.id);  // not me
     }
-	query2.find({
-		success: function(results) {
-			if (results.length > 0) {
+  query2.find({
+    success: function(results) {
+      if (results.length > 0) {
                 console.error("roomId is already exist");
 
                 success2 = true;
@@ -594,14 +594,14 @@ Parse.Cloud.beforeSave("ChatRoom", function(request, response) {
                 success2 = true;
                 responseSuccess();
             }
-		},
-		error: function(error) {
-			console.error("Got an error " + error.code + " : " + error.message);
+    },
+    error: function(error) {
+      console.error("Got an error " + error.code + " : " + error.message);
 
             success2 = true;
             responseSuccess();
-		}
-	});
+    }
+  });
 
     // check
     function responseSuccess() {

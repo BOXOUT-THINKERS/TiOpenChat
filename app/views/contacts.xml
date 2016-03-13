@@ -1,99 +1,99 @@
 <Alloy>
-	<View id="container" onTouchmove="scrollHandler">
-		<!-- 디자인만 추가한것 -->
-		<ListView id="listView">
-			<!-- 템플릿 -->
-			<Templates>
-				<ItemTemplate name="rowTemplate" class="rowTemplate">
-					<View class="rowLeftView">
-						<View class="profileImageWarp">
-							<ImageView bindId="profileImage" class="profileImage" />
-							<ImageView class="profileImageOutline" />
-						</View>
-						<Label bindId="profileName" class="profileName"  />
-					</View>
-					<View class="rowRightView">
-						<View class="commentWrapView" bindId="commentWrapView">
-							<View class="commentBox">
-								<Label class="profileComment" bindId="profileComment" />
-							</View>
-						</View>
-						<View class="profileEtcInfoWrapView" bindId="profileEtcInfoWrapView">
-							<ImageView class="locationIcon"/>
-							<Label bindId="locationText" class="locationText"/>
-						</View>
-					</View>
-				</ItemTemplate>
-				<ItemTemplate name="unregiteredFriendsTemplate" class="rowTemplate">
-					<View class="rowLeftView">
-						<View class="profileImageWarp">
-							<Label text="\uf4e8" class="profileImage" />
-							<ImageView class="profileImageOutline" />
-						</View>
-						<Label bindId="profileName" class="profileName"  />
-					</View>
-					<View class="unregisteredFriendRightView">
-						<View bindId="friendInviteWarp" class="friendInviteWarp">
-							<Label bindId="frinedInvite" class="friendInvite" />
-						</View>
-					</View>
-				</ItemTemplate>
-			</Templates>
+  <View id="container" onTouchmove="scrollHandler">
+    <!-- 디자인만 추가한것 -->
+    <ListView id="listView">
+      <!-- 템플릿 -->
+      <Templates>
+        <ItemTemplate name="rowTemplate" class="rowTemplate">
+          <View class="rowLeftView">
+            <View class="profileImageWarp">
+              <ImageView bindId="profileImage" class="profileImage" />
+              <ImageView class="profileImageOutline" />
+            </View>
+            <Label bindId="profileName" class="profileName"  />
+          </View>
+          <View class="rowRightView">
+            <View class="commentWrapView" bindId="commentWrapView">
+              <View class="commentBox">
+                <Label class="profileComment" bindId="profileComment" />
+              </View>
+            </View>
+            <View class="profileEtcInfoWrapView" bindId="profileEtcInfoWrapView">
+              <ImageView class="locationIcon"/>
+              <Label bindId="locationText" class="locationText"/>
+            </View>
+          </View>
+        </ItemTemplate>
+        <ItemTemplate name="unregiteredFriendsTemplate" class="rowTemplate">
+          <View class="rowLeftView">
+            <View class="profileImageWarp">
+              <Label text="\uf4e8" class="profileImage" />
+              <ImageView class="profileImageOutline" />
+            </View>
+            <Label bindId="profileName" class="profileName"  />
+          </View>
+          <View class="unregisteredFriendRightView">
+            <View bindId="friendInviteWarp" class="friendInviteWarp">
+              <Label bindId="frinedInvite" class="friendInvite" />
+            </View>
+          </View>
+        </ItemTemplate>
+      </Templates>
 
-			<!-- 프로필 관련 섹션 -->
+      <!-- 프로필 관련 섹션 -->
             <ListSection id="profileSection">
-            	<!-- 헤더 -->
+              <!-- 헤더 -->
                 <HeaderView >
-                	<View class="headerView">
+                  <View class="headerView">
                         <Label id="headerTitle1" class="headerTitle" />
                     </View>
                 </HeaderView>
             </ListSection>
-	<!-- 즐겨찾기 친구 관련 섹션 -->
+  <!-- 즐겨찾기 친구 관련 섹션 -->
             <ListSection id="favoriteSection">
-            	<!-- 헤더 -->
+              <!-- 헤더 -->
                 <HeaderView >
-                	<View class="headerView">
-						<View class="lineTop" />
+                  <View class="headerView">
+            <View class="lineTop" />
                         <Label id="headerTitle2" class="headerTitle" />
                     </View>
                 </HeaderView>
             </ListSection>
             <!-- 친구 관련 섹션 -->
             <ListSection id="friendsSection">
-            	<!-- 헤더 -->
+              <!-- 헤더 -->
                 <HeaderView >
-                	<View class="headerView">
-						<View  class="lineTop" />
+                  <View class="headerView">
+            <View  class="lineTop" />
                         <Label id="headerTitle3" class="headerTitle" />
                     </View>
                 </HeaderView>
             </ListSection>
-			<!-- 친구찾기 섹션 -->
-			<ListSection id="friendSearchSection">
-				<FooterView>
-					<View class="friendSearchView">
-						<View  class="lineTop" />
-						<Label id="friendSearchLabel" text="L('cb_friendSearchLabel')" />
-						<View class="rowRightView">
-							<View class="friendSearchWarp" onClick="openFriendInvite">
-								<ImageView class="friendSearchIcon" />
-								<Label text="L('cb_friendSearch')" class="friendSearch" />
-							</View>
-						</View>
-					</View>
-				</FooterView>
+      <!-- 친구찾기 섹션 -->
+      <ListSection id="friendSearchSection">
+        <FooterView>
+          <View class="friendSearchView">
+            <View  class="lineTop" />
+            <Label id="friendSearchLabel" text="L('cb_friendSearchLabel')" />
+            <View class="rowRightView">
+              <View class="friendSearchWarp" onClick="openFriendInvite">
+                <ImageView class="friendSearchIcon" />
+                <Label text="L('cb_friendSearch')" class="friendSearch" />
+              </View>
+            </View>
+          </View>
+        </FooterView>
             </ListSection>
             <!-- 등록되지 않은 친구 관련 섹션 -->
             <ListSection id="unregiteredFriendsSection">
-            	<!-- 헤더 -->
+              <!-- 헤더 -->
                 <HeaderView >
-                	<View class="headerView">
-						<View class="lineTop" />
+                  <View class="headerView">
+            <View class="lineTop" />
                         <Label id="headerTitle4" class="headerTitle"></Label>
                     </View>
                 </HeaderView>
             </ListSection>
-		</ListView>
-	</View>
+    </ListView>
+  </View>
 </Alloy>

@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
-	<id>com.boxoutthinkers.tiopenchat</id>
-	<name>TiOpenChat</name>
-	<version>1.0</version>
-	<publisher>BOXOUT THINKERS</publisher>
-	<url>http://boxoutthinkers.com</url>
-	<description/>
-	<copyright>2015 by BOXOUT THINKERS</copyright>
-	<icon>appicon.png</icon>
-	<fullscreen>false</fullscreen>
-	<navbar-hidden>false</navbar-hidden>
-	<analytics>true</analytics>
-	<guid>1526d33b-c4de-436b-9fb3-d17120b40735</guid>
-	<property name="ti.ui.defaultunit" type="string">dp</property>
-	<ios>
-		<min-ios-ver>8.0</min-ios-ver>
-		<plist>
-			<dict>
-				<key>UISupportedInterfaceOrientations~iphone</key>
-				<array>
-					<string>UIInterfaceOrientationPortrait</string>
-				</array>
-				<key>UISupportedInterfaceOrientations~ipad</key>
-				<array>
-					<string>UIInterfaceOrientationPortrait</string>
-					<string>UIInterfaceOrientationPortraitUpsideDown</string>
-					<string>UIInterfaceOrientationLandscapeLeft</string>
-					<string>UIInterfaceOrientationLandscapeRight</string>
-				</array>
-				<key>UIRequiresPersistentWiFi</key>
-				<false/>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-				<key>UIStatusBarHidden</key>
-				<false/>
-				<key>UIStatusBarStyle</key>
-				<string>UIStatusBarStyleDefault</string>
-				<key>CFBundleDevelopmentRegion</key>
+  <id>com.boxoutthinkers.tiopenchat</id>
+  <name>TiOpenChat</name>
+  <version>1.0</version>
+  <publisher>BOXOUT THINKERS</publisher>
+  <url>http://boxoutthinkers.com</url>
+  <description/>
+  <copyright>2015 by BOXOUT THINKERS</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>false</navbar-hidden>
+  <analytics>true</analytics>
+  <guid>1526d33b-c4de-436b-9fb3-d17120b40735</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <ios>
+    <min-ios-ver>8.0</min-ios-ver>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+        <key>CFBundleDevelopmentRegion</key>
                 <array>
                     <string>en</string>
                 </array>
@@ -45,13 +45,13 @@
                 </array>
                 <key>NSLocationWhenInUseUsageDescription</key>
                 <string>
-						Please allow to get the your location information for your friends.
-				</string>
-			</dict>
-		</plist>
-	</ios>
-	<android xmlns:android="http://schemas.android.com/apk/res/android">
-		<manifest android:versionCode="100" android:versionName="1.0.0">
+            Please allow to get the your location information for your friends.
+        </string>
+      </dict>
+    </plist>
+  </ios>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest android:versionCode="100" android:versionName="1.0.0">
             <!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
             <application android:theme="@style/Theme.CustomActionBar">
@@ -73,17 +73,17 @@
             <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
             <uses-permission android:name="android.permission.VIBRATE"/>
         </manifest>
-	</android>
-	<mobileweb>
-		<precache>
-		</precache>
-		<splash>
-			<enabled>true</enabled>
-			<inline-css-images>true</inline-css-images>
-		</splash>
-		<theme>default</theme>
-	</mobileweb>
-	<modules>
+  </android>
+  <mobileweb>
+    <precache>
+    </precache>
+    <splash>
+      <enabled>true</enabled>
+      <inline-css-images>true</inline-css-images>
+    </splash>
+    <theme>default</theme>
+  </mobileweb>
+  <modules>
         <module platform="android">eu.rebelcorp.parse</module>
         <module platform="android">com.tripvi.drawerlayout</module>
         <module platform="iphone">com.leftlanelab.firebase</module>
@@ -93,23 +93,23 @@
         <module platform="android">fh.imagefactory</module>
         <module platform="android">pw.custom.androidcamera</module>
     </modules>
-	<deployment-targets>
-		<target device="android">true</target>
-		<target device="ipad">false</target>
-		<target device="iphone">true</target>
-		<target device="mobileweb">false</target>
-		<target device="windows">false</target>
-	</deployment-targets>
-	<sdk-version>5.2.0.GA</sdk-version>
-	<plugins>
+  <deployment-targets>
+    <target device="android">true</target>
+    <target device="ipad">false</target>
+    <target device="iphone">true</target>
+    <target device="mobileweb">false</target>
+    <target device="windows">false</target>
+  </deployment-targets>
+  <sdk-version>5.2.0.GA</sdk-version>
+  <plugins>
         <plugin version="1.7.11">ti.alloy</plugin>
     </plugins>
-	<property name="Firebase_AppUrl" type="string"></property>
+  <property name="Firebase_AppUrl" type="string"></property>
     <property name="Parse_AppId" type="string"></property>
     <property name="Parse_ClientKey" type="string"></property>
     <property name="Parse_RestKey" type="string"></property>
     <property name="Parse_JsKey" type="string"></property>
     <property name="Parse_PwdFix" type="string"></property>
-	<property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
+  <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
     <property name="ti.android.bug2373.skipAlert" type="bool">true</property>
 </ti:app>

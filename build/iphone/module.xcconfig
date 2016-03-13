@@ -1,6 +1,0 @@
-// this is a generated file - DO NOT EDIT
-
-COM_LEFTLANELAB_FIREBASE_FRAMEWORK_SEARCH_PATHS=$(SRCROOT)/../../modules/iphone/com.leftlanelab.firebase/1.1.1/platform
-COM_LEFTLANELAB_FIREBASE_OTHER_LDFLAGS=$(inherited) -dynamic -licucore -lc++ -framework CFNetwork -framework Security -framework SystemConfiguration -framework Firebase
-FRAMEWORK_SEARCH_PATHS=$(inherited) $(COM_LEFTLANELAB_FIREBASE_FRAMEWORK_SEARCH_PATHS) 
-OTHER_LDFLAGS=$(inherited) $(COM_LEFTLANELAB_FIREBASE_OTHER_LDFLAGS) 

@@ -1,63 +1,63 @@
 <Alloy>
-	<Window id="container">
-		<TableView>
-			<TableViewSection>
-				<TableViewRow>
-					<Label id="sp_banList" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-			</TableViewSection>
-			<TableViewSection>
-				<TableViewRow>
-					<Label id="sp_SNSList" class="leftMargin" />
-					<View class="purplelineBottom" />
-				</TableViewRow>
-				<TableViewRow>
-					<Label  text="Google" class="leftMargin2" />
-					<Label text="google@google@com" class="rightMargin2"/>
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottomShort" />
-				</TableViewRow>
-				<TableViewRow>
-					<Label  text="Facebook" class="leftMargin2" />
-					<Label text="google@google@com" class="rightMargin2"/>
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottomShort" />
-				</TableViewRow>
-				<TableViewRow>
-					<Label  text="Naver" class="leftMargin2" />
-					<Label text="google@google@com" class="rightMargin2"/>
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottomShort" />
-				</TableViewRow>
-				<TableViewRow>
-					<Label  text="Kakao" class="leftMargin2" />
-					<Label text="google@google@com" class="rightMargin2"/>
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-			</TableViewSection>
-			<TableViewSection>
-				<TableViewRow onClick="userWithdrawFn">
-					<Label id="sp_withdrawal" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-			</TableViewSection>
+  <Window id="container">
+    <TableView>
+      <TableViewSection>
+        <TableViewRow>
+          <Label id="sp_banList" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+      </TableViewSection>
+      <TableViewSection>
+        <TableViewRow>
+          <Label id="sp_SNSList" class="leftMargin" />
+          <View class="purplelineBottom" />
+        </TableViewRow>
+        <TableViewRow>
+          <Label  text="Google" class="leftMargin2" />
+          <Label text="google@google@com" class="rightMargin2"/>
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottomShort" />
+        </TableViewRow>
+        <TableViewRow>
+          <Label  text="Facebook" class="leftMargin2" />
+          <Label text="google@google@com" class="rightMargin2"/>
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottomShort" />
+        </TableViewRow>
+        <TableViewRow>
+          <Label  text="Naver" class="leftMargin2" />
+          <Label text="google@google@com" class="rightMargin2"/>
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottomShort" />
+        </TableViewRow>
+        <TableViewRow>
+          <Label  text="Kakao" class="leftMargin2" />
+          <Label text="google@google@com" class="rightMargin2"/>
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+      </TableViewSection>
+      <TableViewSection>
+        <TableViewRow onClick="userWithdrawFn">
+          <Label id="sp_withdrawal" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+      </TableViewSection>
 
-		</TableView>
-	</Window>
+    </TableView>
+  </Window>
 </Alloy>

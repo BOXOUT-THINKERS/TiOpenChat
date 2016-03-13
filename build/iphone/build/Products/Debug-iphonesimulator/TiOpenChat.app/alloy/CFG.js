@@ -1,1 +1,0 @@
-module.exports={"dependencies":{"nl.fokkezb.loading":"1.8.3","nl.fokkezb.toast":"1.1.0","kr.yostudio.drawer":"1.0.3","danielhanold.pickerWidget":"1.1"},"backbone":"1.1.2"};

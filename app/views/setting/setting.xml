@@ -1,82 +1,82 @@
 <Alloy>
-	<View id="container">
-		<ScrollView id="settingView" class="verticalWrap" onScroll="scrollHandler">
-			<!-- <View > -->
-					<View onClick="changeProfileImage" class="profileImageRow">
-						<View  id="profileImageWrap">
-								<ImageView id="profileImage"/>
-								<ImageView id="profileImageOutline" />
-						</View>
-						<View class="purplelineBottom" />
-					</View>
-					<View onClick="moveProfileEdittingForName" class="rowView">
-						<Label id="s_nameTitle" class="leftMargin" />
-						<Label  id="profileName" class="rightMargin2 noUseColor"/>
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View>
-						<View class="purplelineBottom" />
-					</View>
-					<View onClick="moveProfileEdittingForComment" class="rowView">
-						<Label id="s_commentTitle" class="leftMargin" />
-						<Label  id="profileComment" class="rightMargin2 noUseColor"/>
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View>
-						<View class="purplelineBottom" />
-					</View>
+  <View id="container">
+    <ScrollView id="settingView" class="verticalWrap" onScroll="scrollHandler">
+      <!-- <View > -->
+          <View onClick="changeProfileImage" class="profileImageRow">
+            <View  id="profileImageWrap">
+                <ImageView id="profileImage"/>
+                <ImageView id="profileImageOutline" />
+            </View>
+            <View class="purplelineBottom" />
+          </View>
+          <View onClick="moveProfileEdittingForName" class="rowView">
+            <Label id="s_nameTitle" class="leftMargin" />
+            <Label  id="profileName" class="rightMargin2 noUseColor"/>
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View>
+            <View class="purplelineBottom" />
+          </View>
+          <View onClick="moveProfileEdittingForComment" class="rowView">
+            <Label id="s_commentTitle" class="leftMargin" />
+            <Label  id="profileComment" class="rightMargin2 noUseColor"/>
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View>
+            <View class="purplelineBottom" />
+          </View>
 
-					<View class="marginBetweenView" >
-						<View class="purplelineBottom" />
-					</View>
+          <View class="marginBetweenView" >
+            <View class="purplelineBottom" />
+          </View>
 
-					<View id="notifyAndSound" class="rowView">
-						<Label id="s_notifyAndSound" class="leftMargin" />
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/ >
-						</View>
-						<View class="purplelineBottom" />
-					</View>
-					<View  id="banManage" class="rowView">
-						<Label id="s_friendManage" class="leftMargin"/>
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View>
-						<View class="purplelineBottom" />
-					</View>
-					<View  id="privateInfo" class="rowView">
-						<Label id="s_connectSNS" class="leftMargin noUseColor"/>
-						<!-- <View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View> -->
-						<View class="purplelineBottom" />
-					</View>
-					<View class="rowView">
-						<Label id="s_phone" class="leftMargin" />
-						<Label id="phoneNumber" class="rightMargin2 noUseColor"/>
-						<!-- <View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View> -->
-						<View class="purplelineBottom" />
-					</View>
-					<View  id="versionInfo" class="rowView">
-						<Label id="s_versionInfo" class="leftMargin"/>
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View>
-						<View class="purplelineBottom" />
-					</View>
-					<View  id="helpPrivate" class="rowView">
-						<Label id="s_helpPrivate" class="leftMargin"/>
-						<View class="rightArrow">
-							<ImageView image="/images/setting_arrow.png"/>
-						</View>
-						<View class="purplelineBottom" />
-					</View>
+          <View id="notifyAndSound" class="rowView">
+            <Label id="s_notifyAndSound" class="leftMargin" />
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/ >
+            </View>
+            <View class="purplelineBottom" />
+          </View>
+          <View  id="banManage" class="rowView">
+            <Label id="s_friendManage" class="leftMargin"/>
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View>
+            <View class="purplelineBottom" />
+          </View>
+          <View  id="privateInfo" class="rowView">
+            <Label id="s_connectSNS" class="leftMargin noUseColor"/>
+            <!-- <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View> -->
+            <View class="purplelineBottom" />
+          </View>
+          <View class="rowView">
+            <Label id="s_phone" class="leftMargin" />
+            <Label id="phoneNumber" class="rightMargin2 noUseColor"/>
+            <!-- <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View> -->
+            <View class="purplelineBottom" />
+          </View>
+          <View  id="versionInfo" class="rowView">
+            <Label id="s_versionInfo" class="leftMargin"/>
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View>
+            <View class="purplelineBottom" />
+          </View>
+          <View  id="helpPrivate" class="rowView">
+            <Label id="s_helpPrivate" class="leftMargin"/>
+            <View class="rightArrow">
+              <ImageView image="/images/setting_arrow.png"/>
+            </View>
+            <View class="purplelineBottom" />
+          </View>
 
-					<View class="marginBetweenView" />
-					<View class="marginBetweenView" />
-					<View class="marginBetweenView" />
-		</ScrollView>
-	</View>
+          <View class="marginBetweenView" />
+          <View class="marginBetweenView" />
+          <View class="marginBetweenView" />
+    </ScrollView>
+  </View>
 </Alloy>

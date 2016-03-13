@@ -1,24 +1,24 @@
 module.exports = {
-	on: function(name, activity) {
-		activity.onStart = function() {
-			if (activeActivity == name) {
-				Ti.App.fireEvent('resumed');
-			}
+  on: function(name, activity) {
+    activity.onStart = function() {
+      if (activeActivity == name) {
+        Ti.App.fireEvent('resumed');
+      }
 
-			activeActivity = name;
-		};
+      activeActivity = name;
+    };
 
-		activity.onStop = function() {
-			if (activeActivity == name) {
-				Ti.App.fireEvent('paused');
-			}
-		};
-	},
+    activity.onStop = function() {
+      if (activeActivity == name) {
+        Ti.App.fireEvent('paused');
+      }
+    };
+  },
 
-	off: function(activity) {
-		activity.onStart = null;
-		activity.onStop = null;
-	}
+  off: function(activity) {
+    activity.onStart = null;
+    activity.onStop = null;
+  }
 };
 
 /**

@@ -3,37 +3,37 @@ var moment = require('alloy/moment');
 
 // Times in millisecond
 var second = 1e3, minute = 6e4, hour = 36e5, day = 864e5, week = 6048e5,
-	formats = {
-		seconds : {
-			short : 's',
-			long : ' sec'
-		},
-		minutes : {
-			short : 'm',
-			long : ' min'
-		},
-		hours : {
-			short : 'h',
-			long : ' hr'
-		},
-		days : {
-			short : 'd',
-			long : ' day'
-		}
-	};
+  formats = {
+    seconds : {
+      short : 's',
+      long : ' sec'
+    },
+    minutes : {
+      short : 'm',
+      long : ' min'
+    },
+    hours : {
+      short : 'h',
+      long : ' hr'
+    },
+    days : {
+      short : 'd',
+      long : ' day'
+    }
+  };
 
 var format = function(format) {
-	var diff = Math.abs(this.diff(moment()));
+  var diff = Math.abs(this.diff(moment()));
 
-	if (diff < week) {
-		return this.fromNow();
-	} else {
-		return this.format('L');
-	}
+  if (diff < week) {
+    return this.fromNow();
+  } else {
+    return this.format('L');
+  }
 };
 
 moment.fn.twitter = moment.fn.twitterShort = function() {
-	return format.call(this, 'short');
+  return format.call(this, 'short');
 };
 
 moment.lang('ko', {
@@ -65,7 +65,7 @@ moment.lang('ko', {
 });
 
 moment.lang('en',{
-	longDateFormat : {
+  longDateFormat : {
         LT : "HH:mm",
         L : "DD/MM/YYYY",
         LL : "D MMMM YYYY",
@@ -87,7 +87,7 @@ moment.lang('en',{
         MM : "%dM",
         y : "1Y",
         yy : "%dY"
-	}
+  }
 });
 
 module.exports = moment;

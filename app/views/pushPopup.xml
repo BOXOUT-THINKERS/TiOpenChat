@@ -1,18 +1,18 @@
 <Alloy>
-	<View id="popupView" onClick="openChatRoom">
-		<View class="backgroundOpacity" />
-		<View class="mainView">
-			<View class="profileImageWarp">
-				<ImageView id="profileImage" />
-				<ImageView class="profileImageOutline" />
-			</View>
-			<View class="contentWarp">
-				<Label id="profileName" />
-				<Label id="msgLabel" />
-			</View>
-			<View class="rightWarp">
-				<ImageView id="msgtypeIcon" />
-			</View>
-		</View>
-	</View>
+  <View id="popupView" onClick="openChatRoom">
+    <View class="backgroundOpacity" />
+    <View class="mainView">
+      <View class="profileImageWarp">
+        <ImageView id="profileImage" />
+        <ImageView class="profileImageOutline" />
+      </View>
+      <View class="contentWarp">
+        <Label id="profileName" />
+        <Label id="msgLabel" />
+      </View>
+      <View class="rightWarp">
+        <ImageView id="msgtypeIcon" />
+      </View>
+    </View>
+  </View>
 </Alloy>

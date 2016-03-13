@@ -2,43 +2,43 @@
 
 
 ".font16":{
-	color:"black", font : {fontSize:16, fontWeight:"Regular"}
+  color:"black", font : {fontSize:16, fontWeight:"Regular"}
 }
 ".font10":{
-	color:"#ff5d5d", font : {fontSize:10, fontWeight:"bold"}
+  color:"#ff5d5d", font : {fontSize:10, fontWeight:"bold"}
 }
 ///////////
 "#window":{
-	backgroundColor:"#F5F5F5"
+  backgroundColor:"#F5F5F5"
 }
 "#inputWrap":{
-	layout:"vertical", width:"80%", height : Titanium.UI.SIZE,
-	top:22
+  layout:"vertical", width:"80%", height : Titanium.UI.SIZE,
+  top:22
 }
 
 "#explanaionWord":{
-	left:10
+  left:10
 }
 
 "#inputAreaWrap" : {
-	left : 0,top:5,
-	height : 45, width: Titanium.UI.FILL,
+  left : 0,top:5,
+  height : 45, width: Titanium.UI.FILL,
 
-	borderRadius: 4,
-	borderWidth: 1,
-	borderColor : "#bebebe",
-	backgroundColor: "#f9faff"
+  borderRadius: 4,
+  borderWidth: 1,
+  borderColor : "#bebebe",
+  backgroundColor: "#f9faff"
 }
 "#inputArea" : {
-	borderStyle: Titanium.UI.INPUT_BORDERSTYLE_NONE,
-	width : Titanium.UI.FILL, height : Titanium.UI.FILL,
-	left:22, right:22
+  borderStyle: Titanium.UI.INPUT_BORDERSTYLE_NONE,
+  width : Titanium.UI.FILL, height : Titanium.UI.FILL,
+  left:22, right:22
 }
 //안드로이드 텍스트 필드 보더 없에기.
 "#inputArea[platform=android]" : {
-	backgroundColor: 'transparent', borderWidth: 0, borderColor: 'transparent'
+  backgroundColor: 'transparent', borderWidth: 0, borderColor: 'transparent'
 }
 
 "#inputLimit":{
-	right:10, top:7
+  right:10, top:7
 }

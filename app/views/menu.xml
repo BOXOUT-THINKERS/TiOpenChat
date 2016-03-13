@@ -1,52 +1,52 @@
 <Alloy>
-	<View class="container">
-		<View class="verticalWrap">
-			<View class="profileWrap">
-				<View class="profileImageWrap">
-					<ImageView id="profileImage"/>
-					<ImageView id="profileImageOutline"/>
-				</View>
-				<Label id="profileName" text="test" />
-				<ImageView id="editProfile"/>
-			</View>
+  <View class="container">
+    <View class="verticalWrap">
+      <View class="profileWrap">
+        <View class="profileImageWrap">
+          <ImageView id="profileImage"/>
+          <ImageView id="profileImageOutline"/>
+        </View>
+        <Label id="profileName" text="test" />
+        <ImageView id="editProfile"/>
+      </View>
 
-			<View class="mainBtnWrap">
-				<View class="eachBtn" id="contacts">
-					<ImageView id="eachImg1" image="/images/navidrawer_friendlist_icon.png" />
-				</View>
-				<View class="eachBtn leftPadding" id="chatList">
-					<ImageView id="eachImg2" image="/images/navidrawer_chatroomlist_icon.png" />
-				</View>
-				<View class="eachBtn leftPadding" id="request">
-					<ImageView id="eachImg3" image="/images/navidrawer_pecking_icon.png" />
-				</View>
-				<View class="eachBtn leftPadding" id="notify">
-					<ImageView id="eachImg4" image="/images/navidrawer_photo_icon.png" />
-				</View>
-			</View>
+      <View class="mainBtnWrap">
+        <View class="eachBtn" id="contacts">
+          <ImageView id="eachImg1" image="/images/navidrawer_friendlist_icon.png" />
+        </View>
+        <View class="eachBtn leftPadding" id="chatList">
+          <ImageView id="eachImg2" image="/images/navidrawer_chatroomlist_icon.png" />
+        </View>
+        <View class="eachBtn leftPadding" id="request">
+          <ImageView id="eachImg3" image="/images/navidrawer_pecking_icon.png" />
+        </View>
+        <View class="eachBtn leftPadding" id="notify">
+          <ImageView id="eachImg4" image="/images/navidrawer_photo_icon.png" />
+        </View>
+      </View>
 
-			<View class="etcBtnWrap">
-				<View class="eachEtcBtn">
-					<View class="bottomLine" />
-				</View>
-				<View id="manageFriend" class="eachEtcBtn">
-					<Label id="eactEtcFont1" class="eactEtcFont"/>
-					<View class="bottomLine" />
-				</View>
-				<View id="banTime" class="eachEtcBtn">
-					<Label id="eactEtcFont2" class="eactEtcFont"/>
-					<View class="bottomLine" />
-				</View>
-				<View id="helpPrivate" class="eachEtcBtn">
-					<Label id="eactEtcFont3" class="eactEtcFont"/>
-					<View class="bottomLine" />
-				</View>
-				<View id="setting" class="eachEtcBtn">
-					<Label id="eactEtcFont4" class="eactEtcFont"/>
-				</View>
-			</View>
-		</View>
-		<Label id="bottomText" class="bottomText"/>
+      <View class="etcBtnWrap">
+        <View class="eachEtcBtn">
+          <View class="bottomLine" />
+        </View>
+        <View id="manageFriend" class="eachEtcBtn">
+          <Label id="eactEtcFont1" class="eactEtcFont"/>
+          <View class="bottomLine" />
+        </View>
+        <View id="banTime" class="eachEtcBtn">
+          <Label id="eactEtcFont2" class="eactEtcFont"/>
+          <View class="bottomLine" />
+        </View>
+        <View id="helpPrivate" class="eachEtcBtn">
+          <Label id="eactEtcFont3" class="eactEtcFont"/>
+          <View class="bottomLine" />
+        </View>
+        <View id="setting" class="eachEtcBtn">
+          <Label id="eactEtcFont4" class="eactEtcFont"/>
+        </View>
+      </View>
+    </View>
+    <Label id="bottomText" class="bottomText"/>
 
-	</View>
+  </View>
 </Alloy>

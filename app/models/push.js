@@ -21,45 +21,45 @@ config: {
         "Content-Type" : "application/json"
     }
   },
-	extendModel: function(Model) {
-		_.extend(Model.prototype, {
-			_parse_class_name: "push",
+  extendModel: function(Model) {
+    _.extend(Model.prototype, {
+      _parse_class_name: "push",
 
-			// data: {title:'title', alert:'content', 추가:'추가'}
-			// query:{channels:'Chat', isTaget:true}
-			send : function (data, query) {
-				var self = this;
-				data = data || {};
-				query = query || {};
+      // data: {title:'title', alert:'content', 추가:'추가'}
+      // query:{channels:'Chat', isTaget:true}
+      send : function (data, query) {
+        var self = this;
+        data = data || {};
+        query = query || {};
 
-				var deferred = Q.defer();
+        var deferred = Q.defer();
 
-				var sendData = {
-					data : data,
-					where: query
-				}
-				Ti.API.debug('pushData ;', data);
-				Ti.API.debug('pushQuery ;', query);
+        var sendData = {
+          data : data,
+          where: query
+        }
+        Ti.API.debug('pushData ;', data);
+        Ti.API.debug('pushQuery ;', query);
 
-				this.save( sendData, {
-					silent: true,
-					success: function(e) {
-						//재 요청시 id가있으면 안되기에 지워줌.
-						self.clear();
-						return deferred.resolve(e)
-					},
-					error: function(e) {return deferred.reject(e)}
-				});
-				return deferred.promise;
-			}
-		});
+        this.save( sendData, {
+          silent: true,
+          success: function(e) {
+            //재 요청시 id가있으면 안되기에 지워줌.
+            self.clear();
+            return deferred.resolve(e)
+          },
+          error: function(e) {return deferred.reject(e)}
+        });
+        return deferred.promise;
+      }
+    });
 
-	return Model;
-	},
-	extendCollection: function(Collection) {
-		_.extend(Collection.prototype, {
+  return Model;
+  },
+  extendCollection: function(Collection) {
+    _.extend(Collection.prototype, {
                         // Extend, override or implement Backbone.Collection
-        		_parse_class_name: "push",
+            _parse_class_name: "push",
                         // For Backbone v1.1.2, uncomment the following to override the
                         // fetch method to account for a breaking change in Backbone.
                         fetch: function(options) {
@@ -67,9 +67,9 @@ config: {
                                 options.reset = true;
                                 return Backbone.Collection.prototype.fetch.call(this, options);
                         }
-		})
-	return Collection;
-	}
+    })
+  return Collection;
+  }
 };
 
 

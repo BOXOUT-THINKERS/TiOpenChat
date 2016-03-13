@@ -1,12 +1,12 @@
 <Alloy>
-	<Window id="window">
-		<View id="inputWrap">
-			<Label id="explanaionWord" class="font16"/>
-			<View id="inputAreaWrap">
-				<TextField id="inputArea" value="" class="font16"/>
-			</View>
-			<Label id="inputLimit" class="font10"/>
-		</View>
+  <Window id="window">
+    <View id="inputWrap">
+      <Label id="explanaionWord" class="font16"/>
+      <View id="inputAreaWrap">
+        <TextField id="inputArea" value="" class="font16"/>
+      </View>
+      <Label id="inputLimit" class="font10"/>
+    </View>
 
-	</Window>
+  </Window>
 </Alloy>

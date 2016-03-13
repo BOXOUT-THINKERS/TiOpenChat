@@ -1,38 +1,38 @@
 ".container": {
-	exitOnClose: true
+  exitOnClose: true
 }
 
 '#centerWindow[platform=ios]': {
-	//translucent : true
+  //translucent : true
 }
 
 "Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
+  width: Ti.UI.SIZE,
+  height: Ti.UI.SIZE,
+  color: "#000"
 }
 
 "#label": {
-	font: {
-		fontSize: 12
-	}
+  font: {
+    fontSize: 12
+  }
 }
 
 ".menuBtn": {
-	left: -5,
-	backgroundColor: '#54EE92',
-	font : {
-		fontSize: 25
-	}
+  left: -5,
+  backgroundColor: '#54EE92',
+  font : {
+    fontSize: 25
+  }
 }
 
 ".menuWrap": {
-	top: 64
+  top: 64
 }
 
 //하단버튼
 "#bottomButtonsWrap":{
-	backgroundColor:"red",
-	width: Ti.UI.FILL,	height: 300,
-	zIndex:20
+  backgroundColor:"red",
+  width: Ti.UI.FILL,  height: 300,
+  zIndex:20
 }

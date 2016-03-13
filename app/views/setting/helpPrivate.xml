@@ -1,46 +1,46 @@
 <Alloy>
-	<Window id="container">
-		<TableView>
-			<TableViewSection id="tableSection">
-				<TableViewRow onClick="requestByEmail">
-					<Label id="s_hp_question" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-				<!-- <TableViewRow onClick="moveAction">
-					<Label id="s_hp_faivoriteQuestion" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow> -->
-				<TableViewRow id="agreeUsingView" onClick="agreeUsingViewOpen">
-					<Label id="s_hp_usingLaw" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-				<TableViewRow onClick="agreePrivateViewOpen">
-					<Label id="s_hp_dealWithPrivate" class="leftMargin" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
+  <Window id="container">
+    <TableView>
+      <TableViewSection id="tableSection">
+        <TableViewRow onClick="requestByEmail">
+          <Label id="s_hp_question" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+        <!-- <TableViewRow onClick="moveAction">
+          <Label id="s_hp_faivoriteQuestion" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow> -->
+        <TableViewRow id="agreeUsingView" onClick="agreeUsingViewOpen">
+          <Label id="s_hp_usingLaw" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+        <TableViewRow onClick="agreePrivateViewOpen">
+          <Label id="s_hp_dealWithPrivate" class="leftMargin" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
 
 
-				<TableViewRow onClick="userWithdrawFn">
-					<Label id="s_hp_withdrawal" class="leftMargin noUseColor" />
-					<View class="rightArrow">
-						<ImageView image="/images/setting_arrow.png"/>
-					</View>
-					<View class="purplelineBottom" />
-				</TableViewRow>
-			</TableViewSection>
+        <TableViewRow onClick="userWithdrawFn">
+          <Label id="s_hp_withdrawal" class="leftMargin noUseColor" />
+          <View class="rightArrow">
+            <ImageView image="/images/setting_arrow.png"/>
+          </View>
+          <View class="purplelineBottom" />
+        </TableViewRow>
+      </TableViewSection>
 
-		</TableView>
-	</Window>
+    </TableView>
+  </Window>
 </Alloy>

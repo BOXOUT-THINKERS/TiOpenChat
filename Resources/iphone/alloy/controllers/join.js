@@ -23,10 +23,10 @@ function Controller() {
         }
     }
     function onPopupCountryPicker() {
-        var mainView = $.getView();
+        $.phoneNm.blur();
         Alloy.createWidget("danielhanold.pickerWidget", {
             id: "countryPicker",
-            outerView: mainView,
+            outerView: $.getView(),
             hideNavBar: false,
             type: "single-column",
             pickerValues: [ countryPickerValues ],
@@ -37,6 +37,7 @@ function Controller() {
                     $.localNm.text = "+" + countries[countryCode].phoneCode;
                     $.countryLabel.text = countries[countryCode].name;
                 }
+                $.phoneNm.focus();
             }
         });
     }
@@ -128,7 +129,7 @@ function Controller() {
                     $.phoneNmLabel.text = phoneNm;
                     $.phoneNm.blur();
                     $.scrollView.scrollToView($.verifyView);
-                    $.verifyCode.blur();
+                    $.verifyCode.focus();
                 },
                 error: function(error) {
                     Ti.API.error(error);

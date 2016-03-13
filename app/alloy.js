@@ -6,14 +6,14 @@ Alloy.Globals.appStartProcess = true;
 var Parse, dump,
   __slice = [].slice;
 Alloy.Globals.dump = function() {
-	var args;
-	args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-	return Ti.API.debug(JSON.stringify(args, void 0, 2));
+  var args;
+  args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+  return Ti.API.debug(JSON.stringify(args, void 0, 2));
 };
 // Parse
 Parse = require("ti-parse")({
-	applicationId: Ti.App.Properties.getString('Parse_AppId'),
-	javaScriptKey: Ti.App.Properties.getString('Parse_JsKey')
+  applicationId: Ti.App.Properties.getString('Parse_AppId'),
+  javaScriptKey: Ti.App.Properties.getString('Parse_JsKey')
 });
 
 // modules
@@ -26,12 +26,12 @@ Alloy.Globals.Q    = require('q');
 // loading widget
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
 Alloy.Globals.stopWaiting = function cancel() {
-	Alloy.Globals.loading.hide();
+  Alloy.Globals.loading.hide();
 };
 Alloy.Globals.startWaiting = function load(msg) {
-	var defaultLoadingMsg = L('c_waitingMsgDefault');
-	var loadingMessage = L(msg) || defaultLoadingMsg;
-	Alloy.Globals.loading.show(loadingMessage, false);
+  var defaultLoadingMsg = L('c_waitingMsgDefault');
+  var loadingMessage = L(msg) || defaultLoadingMsg;
+  Alloy.Globals.loading.show(loadingMessage, false);
 };
 
 // toast widget
@@ -39,12 +39,12 @@ var toast = Alloy.createWidget('nl.fokkezb.toast', 'global', {
 });
 Alloy.Globals.toast = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
-	var toastMessage = L(msg) || defaultToastMsg;
+  var toastMessage = L(msg) || defaultToastMsg;
     toast.show(toastMessage);   // same as toast.info
 }
 Alloy.Globals.error = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
-	var toastMessage = L(msg) || defaultToastMsg;
+  var toastMessage = L(msg) || defaultToastMsg;
     toast.error(toastMessage);   // applies the 'error' theme
 }
 
@@ -68,15 +68,15 @@ Alloy.Globals.thumbWidth = 576;
 
 // limit input
 Alloy.Globals.inputLimit = {
-	name : 10,
-	comment : 30
+  name : 10,
+  comment : 30
 };
 
 // badge handle
 if (OS_IOS) {
-	Ti.App.addEventListener('changeBadge', function(e){
-		Ti.UI.iPhone.setAppBadge(e.number);
-	});
+  Ti.App.addEventListener('changeBadge', function(e){
+    Ti.UI.iPhone.setAppBadge(e.number);
+  });
 }
 
 // Device check
@@ -95,59 +95,59 @@ if (OS_IOS) {
 
 /** window manage Global method **/
 (function(){
-	var winStack = [];
-	Alloy.Globals.openWindow = function(controller, args) {
-		if(typeof controller === 'string') controller = Alloy.createController(controller);
-		var win = controller.getView();
-		Alloy.Globals.currentWindow = win;
-		winStack.push(win);
+  var winStack = [];
+  Alloy.Globals.openWindow = function(controller, args) {
+    if(typeof controller === 'string') controller = Alloy.createController(controller);
+    var win = controller.getView();
+    Alloy.Globals.currentWindow = win;
+    winStack.push(win);
 
-		win.addEventListener('close',function(){
-			Alloy.Globals.currentWindow = null;
-			winStack = _.without(winStack, win);
-			Ti.API.debug(arguments.callee);
-			win.removeEventListener('close',arguments.callee);
-		});
-		Alloy.Globals.navigation.openWindow(win, args);
-	};
+    win.addEventListener('close',function(){
+      Alloy.Globals.currentWindow = null;
+      winStack = _.without(winStack, win);
+      Ti.API.debug(arguments.callee);
+      win.removeEventListener('close',arguments.callee);
+    });
+    Alloy.Globals.navigation.openWindow(win, args);
+  };
 
-	Alloy.Globals.closeAllWindow = function(){
-		for(var i=winStack.length-1;i>=0;i--){
-			winStack[i].close();
-		}
-	};
+  Alloy.Globals.closeAllWindow = function(){
+    for(var i=winStack.length-1;i>=0;i--){
+      winStack[i].close();
+    }
+  };
 })();
 
 Alloy.Globals.util = {
-	zeroPad : function(n, width, z) {
-		if ( typeof n == 'string') {
-			n = parseInt(n);
-		}
-		z = z || '0';
-		n = n + '';
-		return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-	},
-	notExist : function (o) {
-		if(_.isUndefined(o) || _.isNull(o) || _.isNaN(o)) {
-			return true;
-		} else {
-			return false;
-		}
-	},
-	exist : function (o) {
-		return !this.notExist(o);
-	},
-	getNumberOnly : function(val)	{
-		val = new String(val);
-		var regex = /[^0-9]/g;
-		val = val.replace(regex, '');
-		return val;
-	}
+  zeroPad : function(n, width, z) {
+    if ( typeof n == 'string') {
+      n = parseInt(n);
+    }
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  },
+  notExist : function (o) {
+    if(_.isUndefined(o) || _.isNull(o) || _.isNaN(o)) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  exist : function (o) {
+    return !this.notExist(o);
+  },
+  getNumberOnly : function(val)  {
+    val = new String(val);
+    var regex = /[^0-9]/g;
+    val = val.replace(regex, '');
+    return val;
+  }
 };
 
 // alerts
 Alloy.Globals.alert = function(msg) {
-	var msg = L(msg) || L('c_alertMsgDefault');
-	alert(msg);
-	Alloy.Globals.stopWaiting();
+  var msg = L(msg) || L('c_alertMsgDefault');
+  alert(msg);
+  Alloy.Globals.stopWaiting();
 };
