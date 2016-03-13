@@ -28,6 +28,8 @@ var settingsM = Alloy.Models.instance('settings');
 
 // 키보드 높이에 따른 레이아웃 조절
 Ti.App.addEventListener('keyboardframechanged', function(e) {
+  $.tryCodeBtnView.bottom = e.keyboardFrame.height;
+  $.retryBtnView.bottom = e.keyboardFrame.height;
   $.agreeMsgView.bottom = e.keyboardFrame.height;
 });
 
@@ -245,12 +247,13 @@ function parseSMSVerificationCloudCode(phoneNm) {
       success: function(result) {
         //Ti.API.debug(result);
 
-        Alloy.Globals.alert('verifyCodeSendSuccess');
-        // 인증코드 확인창으로 스크롤
-        $.phoneNmLabel.text = phoneNm;
-        $.phoneNm.blur();
-        $.scrollView.scrollToView($.verifyView);
-        $.verifyCode.focus();
+        Alloy.Globals.alert('verifyCodeSendSuccess').then(function() {
+          // 인증코드 확인창으로 스크롤
+          $.phoneNmLabel.text = phoneNm;
+          $.phoneNm.blur();
+          $.scrollView.scrollToView($.verifyView);
+          $.verifyCode.focus();
+        });
       },
       error: function(error) {
         Ti.API.error(error);

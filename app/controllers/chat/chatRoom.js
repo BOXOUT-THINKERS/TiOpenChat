@@ -1,5 +1,5 @@
 var args = arguments[0] || {};
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 
 // $.notifyMeBtn.title = L('nm_notifyMe');
 $.innerLeftText.text = L('ri_sir');

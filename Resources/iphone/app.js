@@ -4,15 +4,7 @@ Alloy.Globals.appOnline = true;
 
 Alloy.Globals.appStartProcess = true;
 
-var Parse, dump, __slice = [].slice;
-
-Alloy.Globals.dump = function() {
-    var args;
-    args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-    return Ti.API.debug(JSON.stringify(args, void 0, 2));
-};
-
-Parse = require("ti-parse")({
+require("tiparsejs_wrapper")({
     applicationId: Ti.App.Properties.getString("Parse_AppId"),
     javaScriptKey: Ti.App.Properties.getString("Parse_JsKey")
 });
@@ -22,8 +14,6 @@ Alloy.Globals.currentLanguage = Titanium.Locale.getCurrentLanguage().toLowerCase
 Alloy.Globals.moment = require("momentExtend");
 
 Alloy.Globals.moment.lang(Alloy.Globals.currentLanguage);
-
-Alloy.Globals.Q = require("q");
 
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
 
@@ -37,18 +27,16 @@ Alloy.Globals.startWaiting = function(msg) {
     Alloy.Globals.loading.show(loadingMessage, false);
 };
 
-var toast = Alloy.createWidget("nl.fokkezb.toast", "global", {});
-
 Alloy.Globals.toast = function(msg) {
     var defaultToastMsg = L("c_waitingMsgDefault");
     var toastMessage = L(msg) || defaultToastMsg;
-    toast.show(toastMessage);
+    Alloy.createWidget("nl.fokkezb.toast", "global", {}).show(toastMessage);
 };
 
 Alloy.Globals.error = function(msg) {
     var defaultToastMsg = L("c_waitingMsgDefault");
     var toastMessage = L(msg) || defaultToastMsg;
-    toast.error(toastMessage);
+    Alloy.createWidget("nl.fokkezb.toast", "global", {}).error(toastMessage);
 };
 
 Alloy.Globals.settings = Alloy.Models.instance("settings");
@@ -129,9 +117,21 @@ Alloy.Globals.util = {
 };
 
 Alloy.Globals.alert = function(msg) {
-    var msg = L(msg) || L("c_alertMsgDefault");
-    alert(msg);
-    Alloy.Globals.stopWaiting();
+    var Q = require("q");
+    var deferred = Q.defer();
+    var msg = _msg ? L(_msg, _msg) : L("c_alertMsgDefault");
+    var title = _title ? L(_title, _title) : L("c_alertTitleDefault");
+    var dialog = Ti.UI.createAlertDialog({
+        message: msg,
+        ok: L("c_alertMsgOk", "OK"),
+        title: title
+    });
+    dialog.addEventListener("click", function(e) {
+        Alloy.Globals.stopWaiting();
+        deferred.resolve(e.index);
+    });
+    dialog.show();
+    return deferred.promise;
 };
 
 Alloy.createController("index");

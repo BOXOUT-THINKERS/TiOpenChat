@@ -1,4 +1,4 @@
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 var installation = Alloy.Models.instance('installation');
 
 // iOS 용 Installation 처리용 모듈

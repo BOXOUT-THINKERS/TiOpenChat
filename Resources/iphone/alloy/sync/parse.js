@@ -1,3 +1,35 @@
+function ParseAjax(method, url, data, success, error) {
+    var options = {
+        success: success,
+        error: error
+    };
+    var promise = new Parse.Promise();
+    var xhr = Ti.Network.createHTTPClient({
+        onload: function(e) {
+            var response;
+            try {
+                response = JSON.parse(xhr.responseText);
+            } catch (e) {
+                promise.reject(e);
+            }
+            response && promise.resolve(response, xhr.status, xhr);
+        },
+        onerror: function() {
+            promise.reject(xhr);
+        },
+        ondatastream: function() {},
+        onsendstream: function() {},
+        timeout: 15e3
+    });
+    xhr.open(method, url, !0);
+    xhr.setRequestHeader("Content-Type", "text/plain");
+    xhr.setRequestHeader("X-Parse-Application-Id", Ti.App.Properties.getString("Parse_AppId"));
+    xhr.setRequestHeader("X-Parse-REST-API-Key", Ti.App.Properties.getString("Parse_RestKey"));
+    Parse._isNode && xhr.setRequestHeader("User-Agent", "Parse/" + Parse.VERSION + " (NodeJS " + process.versions.node + ")");
+    xhr.send(data);
+    return promise._thenRunCallbacks(options);
+}
+
 module.exports.sync = function(method, model, options) {
     var api_version = "1";
     var methodMap = {
@@ -18,14 +50,14 @@ module.exports.sync = function(method, model, options) {
         var key = pair[0];
         var val = pair[1];
         "where" === key && (val = JSON.stringify(val));
-        return [ key, val ].join("=");
+        return [ Ti.Network.encodeURIComponent(key), Ti.Network.encodeURIComponent(val) ].join("=");
     }).join("&")); else {
         data = model.toJSON();
         delete data.createdAt;
         delete data.updatedAt;
         data = JSON.stringify(data);
     }
-    return Parse._ajax(http_method, url, data, options.success, options.error);
+    return ParseAjax(http_method, url, data, options.success, options.error);
 };
 
 module.exports.afterModelCreate = function(Model) {

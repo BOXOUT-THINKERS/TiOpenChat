@@ -1,4 +1,4 @@
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 var remotePhotoService = require('services/remotePhotoService');
 
 exports.definition = {

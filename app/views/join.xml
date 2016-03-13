@@ -29,7 +29,7 @@
 
           </View>
         </View>
-        <View class="bottomView">
+        <View id="tryCodeBtnView" class="bottomView">
           <Button id="tryCodeBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
         </View>
       </View>
@@ -57,7 +57,7 @@
 
           </View>
         </View>
-        <View class="bottomView">
+        <View id="retryBtnView" class="bottomView">
           <Button id="retryBtn" class="bottomBtn" onClick="onClickTryCode"></Button>
         </View>
       </View>

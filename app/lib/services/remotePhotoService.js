@@ -1,5 +1,5 @@
 
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 
 //  리모트 저장소로 Parse를 이용함.
 exports.savePhoto = function(blobImage, imageName) {

@@ -1,6 +1,6 @@
 var _ = Alloy._;
 var Backbone = Alloy.Backbone;
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 
 var messageCollection = Alloy.Collections.instance('message');
 var chatRoomCollection = Alloy.Collections.instance('chatRoom');

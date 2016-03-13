@@ -2,7 +2,7 @@ var args = arguments[0] || {};
 
 $.container.title = L('sb_banFriendTitle');
 
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 var banContactsCol;
 
 //////////////

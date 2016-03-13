@@ -68,7 +68,7 @@ function _getOrCapturePhoto(action, params) {
     return deferred.promise;
 }
 
-var Q = Alloy.Globals.Q;
+var Q = require("q");
 
 exports.saveToPhotoGallery = function(imageBlob, successCb, failCb) {
     Titanium.Media.saveToPhotoGallery(imageBlob, {

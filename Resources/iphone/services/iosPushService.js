@@ -1,4 +1,4 @@
-var Q = Alloy.Globals.Q;
+var Q = require("q");
 
 var installation = Alloy.Models.instance("installation");
 

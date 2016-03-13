@@ -125,11 +125,12 @@ function Controller() {
                 currentLanguage: Alloy.Globals.currentLanguage
             }, {
                 success: function() {
-                    Alloy.Globals.alert("verifyCodeSendSuccess");
-                    $.phoneNmLabel.text = phoneNm;
-                    $.phoneNm.blur();
-                    $.scrollView.scrollToView($.verifyView);
-                    $.verifyCode.focus();
+                    Alloy.Globals.alert("verifyCodeSendSuccess").then(function() {
+                        $.phoneNmLabel.text = phoneNm;
+                        $.phoneNm.blur();
+                        $.scrollView.scrollToView($.verifyView);
+                        $.verifyCode.focus();
+                    });
                 },
                 error: function(error) {
                     Ti.API.error(error);
@@ -370,12 +371,12 @@ function Controller() {
         id: "__alloyId120"
     });
     $.__views.formWrap.add($.__views.__alloyId120);
-    $.__views.__alloyId121 = Ti.UI.createView({
+    $.__views.tryCodeBtnView = Ti.UI.createView({
         bottom: 0,
         height: 85,
-        id: "__alloyId121"
+        id: "tryCodeBtnView"
     });
-    $.__views.requestView.add($.__views.__alloyId121);
+    $.__views.requestView.add($.__views.tryCodeBtnView);
     $.__views.tryCodeBtn = Ti.UI.createButton({
         width: 325,
         height: 53,
@@ -388,7 +389,7 @@ function Controller() {
         backgroundColor: "#8B61FF",
         id: "tryCodeBtn"
     });
-    $.__views.__alloyId121.add($.__views.tryCodeBtn);
+    $.__views.tryCodeBtnView.add($.__views.tryCodeBtn);
     onClickTryCode ? $.addListener($.__views.tryCodeBtn, "click", onClickTryCode) : __defers["$.__views.tryCodeBtn!click!onClickTryCode"] = true;
     $.__views.verifyView = Ti.UI.createView({
         layout: "composite",
@@ -397,28 +398,28 @@ function Controller() {
         id: "verifyView"
     });
     __alloyId112.push($.__views.verifyView);
-    $.__views.__alloyId122 = Ti.UI.createView({
+    $.__views.__alloyId121 = Ti.UI.createView({
         top: 0,
         backgroundColor: "#54EE92",
         width: Ti.UI.FILL,
         height: 40,
-        id: "__alloyId122"
+        id: "__alloyId121"
     });
-    $.__views.verifyView.add($.__views.__alloyId122);
-    $.__views.__alloyId123 = Ti.UI.createView({
+    $.__views.verifyView.add($.__views.__alloyId121);
+    $.__views.__alloyId122 = Ti.UI.createView({
         width: 40,
         height: 40,
         left: 0,
+        id: "__alloyId122"
+    });
+    $.__views.__alloyId121.add($.__views.__alloyId122);
+    onClickRetry ? $.addListener($.__views.__alloyId122, "click", onClickRetry) : __defers["$.__views.__alloyId122!click!onClickRetry"] = true;
+    $.__views.__alloyId123 = Ti.UI.createImageView({
+        preventDefaultImage: true,
+        image: "/images/slider_back_icn.png",
         id: "__alloyId123"
     });
     $.__views.__alloyId122.add($.__views.__alloyId123);
-    onClickRetry ? $.addListener($.__views.__alloyId123, "click", onClickRetry) : __defers["$.__views.__alloyId123!click!onClickRetry"] = true;
-    $.__views.__alloyId124 = Ti.UI.createImageView({
-        preventDefaultImage: true,
-        image: "/images/slider_back_icn.png",
-        id: "__alloyId124"
-    });
-    $.__views.__alloyId123.add($.__views.__alloyId124);
     $.__views.phoneNmLabel = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -431,7 +432,7 @@ function Controller() {
         id: "phoneNmLabel",
         text: ""
     });
-    $.__views.__alloyId122.add($.__views.phoneNmLabel);
+    $.__views.__alloyId121.add($.__views.phoneNmLabel);
     $.__views.formWrap = Ti.UI.createView({
         top: 40,
         bottom: 85,
@@ -528,21 +529,21 @@ function Controller() {
         id: "verifyFailMsgLabel"
     });
     $.__views.verifyMsgView.add($.__views.verifyFailMsgLabel);
-    $.__views.__alloyId125 = Ti.UI.createView({
+    $.__views.__alloyId124 = Ti.UI.createView({
         top: 10,
         bottom: 10,
         layout: "vertical",
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
-        id: "__alloyId125"
+        id: "__alloyId124"
     });
-    $.__views.formWrap.add($.__views.__alloyId125);
-    $.__views.__alloyId126 = Ti.UI.createView({
+    $.__views.formWrap.add($.__views.__alloyId124);
+    $.__views.retryBtnView = Ti.UI.createView({
         bottom: 0,
         height: 85,
-        id: "__alloyId126"
+        id: "retryBtnView"
     });
-    $.__views.verifyView.add($.__views.__alloyId126);
+    $.__views.verifyView.add($.__views.retryBtnView);
     $.__views.retryBtn = Ti.UI.createButton({
         width: 325,
         height: 53,
@@ -555,7 +556,7 @@ function Controller() {
         backgroundColor: "#FB8F8F",
         id: "retryBtn"
     });
-    $.__views.__alloyId126.add($.__views.retryBtn);
+    $.__views.retryBtnView.add($.__views.retryBtn);
     onClickTryCode ? $.addListener($.__views.retryBtn, "click", onClickTryCode) : __defers["$.__views.retryBtn!click!onClickTryCode"] = true;
     $.__views.joinView = Ti.UI.createView({
         layout: "composite",
@@ -564,14 +565,14 @@ function Controller() {
         id: "joinView"
     });
     __alloyId112.push($.__views.joinView);
-    $.__views.__alloyId127 = Ti.UI.createView({
+    $.__views.__alloyId125 = Ti.UI.createView({
         top: 0,
         backgroundColor: "#54EE92",
         width: Ti.UI.FILL,
         height: 40,
-        id: "__alloyId127"
+        id: "__alloyId125"
     });
-    $.__views.joinView.add($.__views.__alloyId127);
+    $.__views.joinView.add($.__views.__alloyId125);
     $.__views.formWrap = Ti.UI.createView({
         top: 40,
         bottom: 85,
@@ -641,22 +642,22 @@ function Controller() {
         value: ""
     });
     $.__views.nameView.add($.__views.nameInput);
-    $.__views.__alloyId128 = Ti.UI.createView({
+    $.__views.__alloyId126 = Ti.UI.createView({
         top: 59,
         width: Ti.UI.FILL,
         height: 3,
         backgroundColor: "white",
-        id: "__alloyId128"
+        id: "__alloyId126"
     });
-    $.__views.nameView.add($.__views.__alloyId128);
-    $.__views.__alloyId129 = Ti.UI.createView({
+    $.__views.nameView.add($.__views.__alloyId126);
+    $.__views.__alloyId127 = Ti.UI.createView({
         top: 62,
         width: Ti.UI.FILL,
         height: 3,
         backgroundColor: "#8b61ff",
-        id: "__alloyId129"
+        id: "__alloyId127"
     });
-    $.__views.nameView.add($.__views.__alloyId129);
+    $.__views.nameView.add($.__views.__alloyId127);
     $.__views.nameMsgView = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: 30,
@@ -746,6 +747,8 @@ function Controller() {
     Alloy.Models.instance("user");
     Alloy.Models.instance("settings");
     Ti.App.addEventListener("keyboardframechanged", function(e) {
+        $.tryCodeBtnView.bottom = e.keyboardFrame.height;
+        $.retryBtnView.bottom = e.keyboardFrame.height;
         $.agreeMsgView.bottom = e.keyboardFrame.height;
     });
     var _inputLimitSize = Alloy.Globals.inputLimit.name;
@@ -774,7 +777,7 @@ function Controller() {
     $.getView().addEventListener("close", function() {});
     __defers["$.__views.localNm!click!onPopupCountryPicker"] && $.addListener($.__views.localNm, "click", onPopupCountryPicker);
     __defers["$.__views.tryCodeBtn!click!onClickTryCode"] && $.addListener($.__views.tryCodeBtn, "click", onClickTryCode);
-    __defers["$.__views.__alloyId123!click!onClickRetry"] && $.addListener($.__views.__alloyId123, "click", onClickRetry);
+    __defers["$.__views.__alloyId122!click!onClickRetry"] && $.addListener($.__views.__alloyId122, "click", onClickRetry);
     __defers["$.__views.retryBtn!click!onClickTryCode"] && $.addListener($.__views.retryBtn, "click", onClickTryCode);
     __defers["$.__views.joinBtn!click!onClickJoinComplete"] && $.addListener($.__views.joinBtn, "click", onClickJoinComplete);
     _.extend($, exports);

@@ -112,17 +112,17 @@ function Controller() {
         id: "container"
     });
     $.__views.container && $.addTopLevelView($.__views.container);
-    var __alloyId274 = {};
-    var __alloyId277 = [];
-    var __alloyId279 = {
+    var __alloyId272 = {};
+    var __alloyId275 = [];
+    var __alloyId277 = {
         type: "Ti.UI.View",
         childTemplates: function() {
-            var __alloyId280 = [];
-            var __alloyId282 = {
+            var __alloyId278 = [];
+            var __alloyId280 = {
                 type: "Ti.UI.View",
                 childTemplates: function() {
-                    var __alloyId283 = [];
-                    var __alloyId285 = {
+                    var __alloyId281 = [];
+                    var __alloyId283 = {
                         type: "Ti.UI.ImageView",
                         bindId: "profileImage",
                         properties: {
@@ -139,8 +139,8 @@ function Controller() {
                             bindId: "profileImage"
                         }
                     };
-                    __alloyId283.push(__alloyId285);
-                    var __alloyId287 = {
+                    __alloyId281.push(__alloyId283);
+                    var __alloyId285 = {
                         type: "Ti.UI.ImageView",
                         properties: {
                             preventDefaultImage: true,
@@ -149,8 +149,8 @@ function Controller() {
                             image: "/images/friendlist_profile_pic_outline.png"
                         }
                     };
-                    __alloyId283.push(__alloyId287);
-                    return __alloyId283;
+                    __alloyId281.push(__alloyId285);
+                    return __alloyId281;
                 }(),
                 properties: {
                     left: 0,
@@ -158,8 +158,8 @@ function Controller() {
                     width: 40
                 }
             };
-            __alloyId280.push(__alloyId282);
-            var __alloyId289 = {
+            __alloyId278.push(__alloyId280);
+            var __alloyId287 = {
                 type: "Ti.UI.Label",
                 bindId: "profileName",
                 properties: {
@@ -175,8 +175,8 @@ function Controller() {
                     bindId: "profileName"
                 }
             };
-            __alloyId280.push(__alloyId289);
-            return __alloyId280;
+            __alloyId278.push(__alloyId287);
+            return __alloyId278;
         }(),
         properties: {
             layout: "horizontal",
@@ -185,16 +185,16 @@ function Controller() {
             left: 13
         }
     };
-    __alloyId277.push(__alloyId279);
-    var __alloyId291 = {
+    __alloyId275.push(__alloyId277);
+    var __alloyId289 = {
         type: "Ti.UI.View",
         childTemplates: function() {
-            var __alloyId292 = [];
-            var __alloyId294 = {
+            var __alloyId290 = [];
+            var __alloyId292 = {
                 type: "Ti.UI.View",
                 childTemplates: function() {
-                    var __alloyId295 = [];
-                    var __alloyId297 = {
+                    var __alloyId293 = [];
+                    var __alloyId295 = {
                         type: "Ti.UI.Label",
                         bindId: "rowRightBtnLabel",
                         properties: {
@@ -212,8 +212,8 @@ function Controller() {
                             bindId: "rowRightBtnLabel"
                         }
                     };
-                    __alloyId295.push(__alloyId297);
-                    return __alloyId295;
+                    __alloyId293.push(__alloyId295);
+                    return __alloyId293;
                 }(),
                 properties: {
                     layout: "composite",
@@ -224,8 +224,8 @@ function Controller() {
                     right: 0
                 }
             };
-            __alloyId292.push(__alloyId294);
-            return __alloyId292;
+            __alloyId290.push(__alloyId292);
+            return __alloyId290;
         }(),
         properties: {
             layout: "composite",
@@ -234,8 +234,8 @@ function Controller() {
             right: 13
         }
     };
-    __alloyId277.push(__alloyId291);
-    var __alloyId276 = {
+    __alloyId275.push(__alloyId289);
+    var __alloyId274 = {
         properties: {
             backgroundColor: "white",
             layout: "composite",
@@ -244,17 +244,17 @@ function Controller() {
             selectionStyle: Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE,
             name: "rowTemplate"
         },
-        childTemplates: __alloyId277
+        childTemplates: __alloyId275
     };
-    __alloyId274["rowTemplate"] = __alloyId276;
+    __alloyId272["rowTemplate"] = __alloyId274;
     $.__views.section = Ti.UI.createListSection({
         id: "section"
     });
-    var __alloyId299 = [];
-    __alloyId299.push($.__views.section);
+    var __alloyId297 = [];
+    __alloyId297.push($.__views.section);
     $.__views.listView = Ti.UI.createListView({
-        sections: __alloyId299,
-        templates: __alloyId274,
+        sections: __alloyId297,
+        templates: __alloyId272,
         id: "listView"
     });
     $.__views.container.add($.__views.listView);
@@ -262,7 +262,7 @@ function Controller() {
     _.extend($, $.__views);
     arguments[0] || {};
     $.container.title = L("sb_banFriendTitle");
-    Alloy.Globals.Q;
+    require("q");
     var banContactsCol;
     $.getView().addEventListener("open", function() {
         var allContactsCol = Alloy.Collections.instance("contacts");

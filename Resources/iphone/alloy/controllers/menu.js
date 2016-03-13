@@ -52,29 +52,29 @@ function Controller() {
         id: "menu"
     });
     $.__views.menu && $.addTopLevelView($.__views.menu);
-    $.__views.__alloyId130 = Ti.UI.createView({
+    $.__views.__alloyId128 = Ti.UI.createView({
         backgroundColor: "#54EE92",
         layout: "vertical",
         width: Titanium.UI.FILL,
         height: Titanium.UI.FILL,
-        id: "__alloyId130"
+        id: "__alloyId128"
     });
-    $.__views.menu.add($.__views.__alloyId130);
-    $.__views.__alloyId131 = Ti.UI.createView({
+    $.__views.menu.add($.__views.__alloyId128);
+    $.__views.__alloyId129 = Ti.UI.createView({
         layout: "vertical",
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
-        id: "__alloyId131"
+        id: "__alloyId129"
     });
-    $.__views.__alloyId130.add($.__views.__alloyId131);
-    $.__views.__alloyId132 = Ti.UI.createView({
+    $.__views.__alloyId128.add($.__views.__alloyId129);
+    $.__views.__alloyId130 = Ti.UI.createView({
         layout: "composite",
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
         top: "7",
-        id: "__alloyId132"
+        id: "__alloyId130"
     });
-    $.__views.__alloyId131.add($.__views.__alloyId132);
+    $.__views.__alloyId129.add($.__views.__alloyId130);
     $.__views.profileImage = Ti.UI.createImageView({
         preventDefaultImage: true,
         width: 82,
@@ -83,7 +83,7 @@ function Controller() {
         borderRadius: 41,
         id: "profileImage"
     });
-    $.__views.__alloyId132.add($.__views.profileImage);
+    $.__views.__alloyId130.add($.__views.profileImage);
     $.__views.profileImageOutline = Ti.UI.createImageView({
         preventDefaultImage: true,
         width: 85,
@@ -92,7 +92,7 @@ function Controller() {
         zIndex: 5,
         id: "profileImageOutline"
     });
-    $.__views.__alloyId132.add($.__views.profileImageOutline);
+    $.__views.__alloyId130.add($.__views.profileImageOutline);
     $.__views.profileName = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -106,7 +106,7 @@ function Controller() {
         id: "profileName",
         text: "test"
     });
-    $.__views.__alloyId131.add($.__views.profileName);
+    $.__views.__alloyId129.add($.__views.profileName);
     $.__views.editProfile = Ti.UI.createImageView({
         preventDefaultImage: true,
         width: 104.67,
@@ -115,15 +115,15 @@ function Controller() {
         image: "/images/navidrawer_profile_edit_button.png",
         id: "editProfile"
     });
-    $.__views.__alloyId131.add($.__views.editProfile);
-    $.__views.__alloyId133 = Ti.UI.createView({
+    $.__views.__alloyId129.add($.__views.editProfile);
+    $.__views.__alloyId131 = Ti.UI.createView({
         layout: "horizontal",
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
         top: 15,
-        id: "__alloyId133"
+        id: "__alloyId131"
     });
-    $.__views.__alloyId130.add($.__views.__alloyId133);
+    $.__views.__alloyId128.add($.__views.__alloyId131);
     $.__views.contacts = Ti.UI.createView({
         backgroundColor: "#fd9091",
         layout: "composite",
@@ -131,7 +131,7 @@ function Controller() {
         height: 65,
         id: "contacts"
     });
-    $.__views.__alloyId133.add($.__views.contacts);
+    $.__views.__alloyId131.add($.__views.contacts);
     $.__views.eachImg1 = Ti.UI.createImageView({
         preventDefaultImage: true,
         id: "eachImg1",
@@ -146,7 +146,7 @@ function Controller() {
         left: 1,
         id: "chatList"
     });
-    $.__views.__alloyId133.add($.__views.chatList);
+    $.__views.__alloyId131.add($.__views.chatList);
     $.__views.eachImg2 = Ti.UI.createImageView({
         preventDefaultImage: true,
         id: "eachImg2",
@@ -161,7 +161,7 @@ function Controller() {
         left: 1,
         id: "request"
     });
-    $.__views.__alloyId133.add($.__views.request);
+    $.__views.__alloyId131.add($.__views.request);
     $.__views.eachImg3 = Ti.UI.createImageView({
         preventDefaultImage: true,
         id: "eachImg3",
@@ -176,37 +176,37 @@ function Controller() {
         left: 1,
         id: "notify"
     });
-    $.__views.__alloyId133.add($.__views.notify);
+    $.__views.__alloyId131.add($.__views.notify);
     $.__views.eachImg4 = Ti.UI.createImageView({
         preventDefaultImage: true,
         id: "eachImg4",
         image: "/images/navidrawer_photo_icon.png"
     });
     $.__views.notify.add($.__views.eachImg4);
-    $.__views.__alloyId134 = Ti.UI.createView({
+    $.__views.__alloyId132 = Ti.UI.createView({
         layout: "vertical",
         width: Titanium.UI.FILL,
         height: 210,
         top: 13,
-        id: "__alloyId134"
+        id: "__alloyId132"
     });
-    $.__views.__alloyId130.add($.__views.__alloyId134);
-    $.__views.__alloyId135 = Ti.UI.createView({
+    $.__views.__alloyId128.add($.__views.__alloyId132);
+    $.__views.__alloyId133 = Ti.UI.createView({
         backgroundColor: "#8b61ff",
         layout: "composite",
         width: Titanium.UI.FILL,
         height: 40,
-        id: "__alloyId135"
+        id: "__alloyId133"
     });
-    $.__views.__alloyId134.add($.__views.__alloyId135);
-    $.__views.__alloyId136 = Ti.UI.createView({
+    $.__views.__alloyId132.add($.__views.__alloyId133);
+    $.__views.__alloyId134 = Ti.UI.createView({
         backgroundColor: "white",
         width: "90%",
         height: 1,
         bottom: 0,
-        id: "__alloyId136"
+        id: "__alloyId134"
     });
-    $.__views.__alloyId135.add($.__views.__alloyId136);
+    $.__views.__alloyId133.add($.__views.__alloyId134);
     $.__views.manageFriend = Ti.UI.createView({
         backgroundColor: "#8b61ff",
         layout: "composite",
@@ -214,7 +214,7 @@ function Controller() {
         height: 40,
         id: "manageFriend"
     });
-    $.__views.__alloyId134.add($.__views.manageFriend);
+    $.__views.__alloyId132.add($.__views.manageFriend);
     $.__views.eactEtcFont1 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -227,14 +227,14 @@ function Controller() {
         id: "eactEtcFont1"
     });
     $.__views.manageFriend.add($.__views.eactEtcFont1);
-    $.__views.__alloyId137 = Ti.UI.createView({
+    $.__views.__alloyId135 = Ti.UI.createView({
         backgroundColor: "white",
         width: "90%",
         height: 1,
         bottom: 0,
-        id: "__alloyId137"
+        id: "__alloyId135"
     });
-    $.__views.manageFriend.add($.__views.__alloyId137);
+    $.__views.manageFriend.add($.__views.__alloyId135);
     $.__views.banTime = Ti.UI.createView({
         backgroundColor: "#8b61ff",
         layout: "composite",
@@ -242,7 +242,7 @@ function Controller() {
         height: 40,
         id: "banTime"
     });
-    $.__views.__alloyId134.add($.__views.banTime);
+    $.__views.__alloyId132.add($.__views.banTime);
     $.__views.eactEtcFont2 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -255,14 +255,14 @@ function Controller() {
         id: "eactEtcFont2"
     });
     $.__views.banTime.add($.__views.eactEtcFont2);
-    $.__views.__alloyId138 = Ti.UI.createView({
+    $.__views.__alloyId136 = Ti.UI.createView({
         backgroundColor: "white",
         width: "90%",
         height: 1,
         bottom: 0,
-        id: "__alloyId138"
+        id: "__alloyId136"
     });
-    $.__views.banTime.add($.__views.__alloyId138);
+    $.__views.banTime.add($.__views.__alloyId136);
     $.__views.helpPrivate = Ti.UI.createView({
         backgroundColor: "#8b61ff",
         layout: "composite",
@@ -270,7 +270,7 @@ function Controller() {
         height: 40,
         id: "helpPrivate"
     });
-    $.__views.__alloyId134.add($.__views.helpPrivate);
+    $.__views.__alloyId132.add($.__views.helpPrivate);
     $.__views.eactEtcFont3 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -283,14 +283,14 @@ function Controller() {
         id: "eactEtcFont3"
     });
     $.__views.helpPrivate.add($.__views.eactEtcFont3);
-    $.__views.__alloyId139 = Ti.UI.createView({
+    $.__views.__alloyId137 = Ti.UI.createView({
         backgroundColor: "white",
         width: "90%",
         height: 1,
         bottom: 0,
-        id: "__alloyId139"
+        id: "__alloyId137"
     });
-    $.__views.helpPrivate.add($.__views.__alloyId139);
+    $.__views.helpPrivate.add($.__views.__alloyId137);
     $.__views.setting = Ti.UI.createView({
         backgroundColor: "#8b61ff",
         layout: "composite",
@@ -298,7 +298,7 @@ function Controller() {
         height: 40,
         id: "setting"
     });
-    $.__views.__alloyId134.add($.__views.setting);
+    $.__views.__alloyId132.add($.__views.setting);
     $.__views.eactEtcFont4 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,

@@ -41,15 +41,15 @@ function Controller() {
         title: "photo"
     });
     $.__views.window && $.addTopLevelView($.__views.window);
-    $.__views.__alloyId273 = Ti.UI.createView({
+    $.__views.__alloyId271 = Ti.UI.createView({
         backgroundColor: "black",
         opacity: .5,
         height: 20,
         top: 0,
         zIndex: 1,
-        id: "__alloyId273"
+        id: "__alloyId271"
     });
-    $.__views.window.add($.__views.__alloyId273);
+    $.__views.window.add($.__views.__alloyId271);
     $.__views.topView = Ti.UI.createView({
         backgroundColor: "black",
         opacity: .5,

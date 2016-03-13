@@ -2,26 +2,16 @@
 Alloy.Globals.appOnline = true;
 Alloy.Globals.appStartProcess = true;
 
-// Parse debuger
-var Parse, dump,
-  __slice = [].slice;
-Alloy.Globals.dump = function() {
-  var args;
-  args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-  return Ti.API.debug(JSON.stringify(args, void 0, 2));
-};
 // Parse
-Parse = require("ti-parse")({
+require("tiparsejs_wrapper")({
   applicationId: Ti.App.Properties.getString('Parse_AppId'),
   javaScriptKey: Ti.App.Properties.getString('Parse_JsKey')
 });
 
 // modules
 Alloy.Globals.currentLanguage = Titanium.Locale.getCurrentLanguage().toLowerCase().substr(0, 2) || "en";
-
 Alloy.Globals.moment = require('momentExtend');
 Alloy.Globals.moment.lang(Alloy.Globals.currentLanguage);
-Alloy.Globals.Q    = require('q');
 
 // loading widget
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
@@ -35,17 +25,17 @@ Alloy.Globals.startWaiting = function load(msg) {
 };
 
 // toast widget
-var toast = Alloy.createWidget('nl.fokkezb.toast', 'global', {
-});
 Alloy.Globals.toast = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
   var toastMessage = L(msg) || defaultToastMsg;
-    toast.show(toastMessage);   // same as toast.info
+  Alloy.createWidget('nl.fokkezb.toast', 'global', {
+  }).show(toastMessage);   // same as toast.info
 }
 Alloy.Globals.error = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
   var toastMessage = L(msg) || defaultToastMsg;
-    toast.error(toastMessage);   // applies the 'error' theme
+  Alloy.createWidget('nl.fokkezb.toast', 'global', {
+  }).error(toastMessage);   // applies the 'error' theme
 }
 
 // for test code
@@ -147,7 +137,22 @@ Alloy.Globals.util = {
 
 // alerts
 Alloy.Globals.alert = function(msg) {
-  var msg = L(msg) || L('c_alertMsgDefault');
-  alert(msg);
-  Alloy.Globals.stopWaiting();
+  var Q = require('q');
+  var deferred = Q.defer();
+
+  var msg = _msg ? L(_msg, _msg) : L('c_alertMsgDefault');
+  var title = _title ? L(_title, _title) : L('c_alertTitleDefault');
+  var dialog = Ti.UI.createAlertDialog({
+    message: msg,
+    ok: L('c_alertMsgOk', "OK"),
+    title: title
+  });
+  dialog.addEventListener('click', function(e){
+    // Ti.API.info('e.index: ' + e.index);
+    Alloy.Globals.stopWaiting();
+    deferred.resolve(e.index);
+  });
+  dialog.show();
+
+  return deferred.promise;
 };

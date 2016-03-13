@@ -1,0 +1,10 @@
+version: 1.7.1
+description: The Parse JavaScript SDK
+author:
+license: BSD-3-Clause
+copyright: Copyright © 2016 -
+name: TiParseJS
+moduleid: TiParseJS
+guid: e8c5e008-5bee-15a5-1027-f5d0d8506ad9
+platform: commonjs
+minsdk: 3.2.0.GA

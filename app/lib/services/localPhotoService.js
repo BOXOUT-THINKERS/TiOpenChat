@@ -1,4 +1,4 @@
-var Q = Alloy.Globals.Q;
+var Q = require('q');
 /*
  * # 역할.
  *  - blob을 인자로 받아서 포토갤러리/카메라롤에 저장한다.

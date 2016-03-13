@@ -33,6 +33,7 @@
 
   <!-- alert message -->
   <string name="c_alertMsgOk">OK</string>
+  <string name="c_alertTitleDefault">Alert</string>
   <string name="c_alertMsgDefault">Please retry it again.</string>
   <string name="c_alertMsgFriend"> Cannot load your friends.</string>
   <string name="c_alertReadyToOpen">Preparing...</string>
@@ -108,7 +109,7 @@ Please, Allow to access contacts. (Setting > TiOpenChat)</string>
   <string name="cb_smsCancle">Cancle</string><!-- confirm alert cancle button -->
   <string name="cb_smsMessage">It might pay the price because using SMS of communications company</string><!-- confirm alert content -->
   <string name="cb_smsTitle">Invite Friend</string><!-- confirm alert title -->
-  
+
   <string name="cb_smsContent">TiOpenChat? http://www.TiOpenChat.com/</string><!-- sms contecnt-->
 
   <!-- sms after send -->

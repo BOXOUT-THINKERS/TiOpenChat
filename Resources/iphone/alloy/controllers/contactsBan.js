@@ -233,7 +233,7 @@ function Controller() {
     $.blockBtn.title = L("cb_banFriendBtn");
     $.hiddenBtn.title = L("cb_hideFriendBtn");
     var contactsCol = Alloy.Collections.instance("contacts");
-    var Q = Alloy.Globals.Q;
+    var Q = require("q");
     var friendContactsCol;
     var selectedModels = [];
     $.getView().addEventListener("open", function() {

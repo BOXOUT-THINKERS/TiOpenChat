@@ -6,7 +6,7 @@ function _makeQuery(params) {
 
 var Alloy = require("alloy"), _ = require("alloy/underscore")._, model, collection;
 
-var Q = Alloy.Globals.Q;
+var Q = require("q");
 
 var _ = Alloy._;
 

@@ -92,6 +92,7 @@
         <module platform="android">ti.imagefactory</module>
         <module platform="android">fh.imagefactory</module>
         <module platform="android">pw.custom.androidcamera</module>
+        <module platform="commonjs">TiParseJS</module>
     </modules>
   <deployment-targets>
     <target device="android">true</target>
