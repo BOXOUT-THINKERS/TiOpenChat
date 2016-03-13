@@ -108,52 +108,6 @@ function onPopupCountryPicker(e) {
 	});
 }
 
-
-function onClickNumberpad(e) {
-	if (OS_IOS && e.type == 'click') {
-		return;
-	}
-	if (OS_ANDROID && e.type == 'singletap') {
-		return;
-	}
-
-	var phoneNm = $.phoneNm.text;
-	switch(e.source.itemId) {
-		case "plus":
-			//$.phoneNm.text = phoneNm + "+";
-		break;
-		case "delete":
-			$.phoneNm.text = phoneNm.substring(0, phoneNm.length-1);
-		break;
-		default:
-			$.phoneNm.text = phoneNm + e.source.itemId;
-		break;
-	}
-}
-function onClickNumberpad2(e) {
-	if (OS_IOS && e.type == 'click') {
-		return;
-	}
-	if (OS_ANDROID && e.type == 'singletap') {
-		return;
-	}
-
-	var verifyCode = $.verifyCode.text;
-	switch(e.source.itemId) {
-		case "plus":
-			//$.verifyCode.text = verifyCode + "+";
-		break;
-		case "delete":
-			$.verifyCode.text = verifyCode.substring(0, verifyCode.length-1);
-		break;
-		default:
-			$.verifyCode.text = verifyCode + e.source.itemId;
-		break;
-	}
-		//자동 동작
-		onChangeVerifyCode();
-}
-
 // 인증코드 발송하기
 var codeSendCount = 0;
 var inWait = false;
@@ -185,13 +139,15 @@ function onClickTryCode() {
 	Alloy.Globals.startWaiting('verifyCodeSend');
 
 	// Parse Cloud Code SMS Verification
-	parseSMSVerification($.localNm.text, $.phoneNm.text);
+	parseSMSVerification($.localNm.text, $.phoneNm.value);
 }
 
 // 인증번호 재요청
 function onClickRetry() {
 	// 인증번호 요청창으로 스크롤
+	$.verifyCode.blur();
 	$.scrollView.scrollToView($.requestView);
+	$.phoneNm.focus();
 }
 
 // Parse Cloud Code를 이용해서 SMS 인증코드 전송 : 전송 전 User 처리
@@ -292,7 +248,9 @@ function parseSMSVerificationCloudCode(phoneNm) {
 				Alloy.Globals.alert('verifyCodeSendSuccess');
 				// 인증코드 확인창으로 스크롤
 				$.phoneNmLabel.text = phoneNm;
+				$.phoneNm.blur();
 				$.scrollView.scrollToView($.verifyView);
+				$.verifyCode.blur();
 			},
 			error: function(error) {
 				Ti.API.error(error);
@@ -305,7 +263,7 @@ function parseSMSVerificationCloudCode(phoneNm) {
 
 // textfiled에서 입력되는 값을 확인
 function onChangeVerifyCode() {
-	var verifyCode = $.verifyCode.text;
+	var verifyCode = $.verifyCode.value;
 	if (verifyCode.length >= 4) {
 		checkVerifyCode();
 	}
@@ -317,7 +275,7 @@ function checkVerifyCode() {
 		Alloy.Globals.startWaiting('verifyCodeCheck');
 
 		// 인증코드 전송
-		Parse.Cloud.run('verifyPhoneNumber', { "phoneVerificationCode":$.verifyCode.text }, {
+		Parse.Cloud.run('verifyPhoneNumber', { "phoneVerificationCode":$.verifyCode.value }, {
 			success: function(result) {
 				$.verifyStatusImage.image = '/images/signin_check_box_selected.png';
 				$.verifyFailMsgLabel.visible = false;
@@ -328,7 +286,9 @@ function checkVerifyCode() {
 				Alloy.Globals.stopWaiting();
 
 				//이름 입력창으로 이동
+				$.verifyCode.blur();
 				$.scrollView.scrollToView($.joinView);
+				$.nameInput.focus();
 			},
 			error: function(error) {
 				Ti.API.error(error);
@@ -387,13 +347,16 @@ function userNameUpdateAndLogin(userName) {
 
 }
 
+// close
 Alloy.Globals.loginC.on('login:open',function(){
 	$.getView().close();
 });
 
+// open event
+$.getView().addEventListener('open', function() {
+	$.phoneNm.focus();
+});
+// close event
+$.getView().addEventListener('close', function() {
 
-//이미지 한영 변환 작업.
-// (function(){
-	$.fakeNavTitle.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/signin_navi_title_odizzo.png" : "/images/signin_navi_title_odizzo_en.png";
-	$.fakeNavTitle2.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/signin_navi_title_odizzo.png" : "/images/signin_navi_title_odizzo_en.png";
-// })();
+});

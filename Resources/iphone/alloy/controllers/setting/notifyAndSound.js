@@ -104,17 +104,17 @@ function Controller() {
         id: "mainView"
     });
     $.__views.mainView && $.addTopLevelView($.__views.mainView);
-    var __alloyId439 = [];
-    $.__views.__alloyId440 = Ti.UI.createTableViewSection({
-        id: "__alloyId440"
+    var __alloyId354 = [];
+    $.__views.__alloyId355 = Ti.UI.createTableViewSection({
+        id: "__alloyId355"
     });
-    __alloyId439.push($.__views.__alloyId440);
-    $.__views.__alloyId441 = Ti.UI.createTableViewRow({
+    __alloyId354.push($.__views.__alloyId355);
+    $.__views.__alloyId356 = Ti.UI.createTableViewRow({
         backgroundColor: "#f7f7f7",
         height: 43,
-        id: "__alloyId441"
+        id: "__alloyId356"
     });
-    $.__views.__alloyId440.add($.__views.__alloyId441);
+    $.__views.__alloyId355.add($.__views.__alloyId356);
     $.__views.sn_notifyPush = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -126,27 +126,27 @@ function Controller() {
         left: 36,
         id: "sn_notifyPush"
     });
-    $.__views.__alloyId441.add($.__views.sn_notifyPush);
+    $.__views.__alloyId356.add($.__views.sn_notifyPush);
     $.__views.permission_push_switch = Ti.UI.createSwitch({
         right: 29,
         value: false,
         id: "permission_push_switch"
     });
-    $.__views.__alloyId441.add($.__views.permission_push_switch);
-    $.__views.__alloyId442 = Ti.UI.createView({
+    $.__views.__alloyId356.add($.__views.permission_push_switch);
+    $.__views.__alloyId357 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId442"
+        id: "__alloyId357"
     });
-    $.__views.__alloyId441.add($.__views.__alloyId442);
-    $.__views.__alloyId443 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId356.add($.__views.__alloyId357);
+    $.__views.__alloyId358 = Ti.UI.createTableViewRow({
         backgroundColor: "#f7f7f7",
         height: 43,
-        id: "__alloyId443"
+        id: "__alloyId358"
     });
-    $.__views.__alloyId440.add($.__views.__alloyId443);
+    $.__views.__alloyId355.add($.__views.__alloyId358);
     $.__views.sn_notifyEventAndNotice = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -158,45 +158,45 @@ function Controller() {
         left: 36,
         id: "sn_notifyEventAndNotice"
     });
-    $.__views.__alloyId443.add($.__views.sn_notifyEventAndNotice);
+    $.__views.__alloyId358.add($.__views.sn_notifyEventAndNotice);
     $.__views.Installation_channels_eventSwitch = Ti.UI.createSwitch({
         right: 29,
         value: false,
         id: "Installation_channels_eventSwitch"
     });
-    $.__views.__alloyId443.add($.__views.Installation_channels_eventSwitch);
-    $.__views.__alloyId444 = Ti.UI.createView({
+    $.__views.__alloyId358.add($.__views.Installation_channels_eventSwitch);
+    $.__views.__alloyId359 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId444"
+        id: "__alloyId359"
     });
-    $.__views.__alloyId443.add($.__views.__alloyId444);
-    $.__views.__alloyId445 = Ti.UI.createTableViewSection({
-        id: "__alloyId445"
+    $.__views.__alloyId358.add($.__views.__alloyId359);
+    $.__views.__alloyId360 = Ti.UI.createTableViewSection({
+        id: "__alloyId360"
     });
-    __alloyId439.push($.__views.__alloyId445);
-    $.__views.__alloyId446 = Ti.UI.createTableViewRow({
+    __alloyId354.push($.__views.__alloyId360);
+    $.__views.__alloyId361 = Ti.UI.createTableViewRow({
         backgroundColor: "#f7f7f7",
         height: Titanium.UI.SIZE,
-        id: "__alloyId446"
+        id: "__alloyId361"
     });
-    $.__views.__alloyId445.add($.__views.__alloyId446);
-    $.__views.__alloyId447 = Ti.UI.createView({
+    $.__views.__alloyId360.add($.__views.__alloyId361);
+    $.__views.__alloyId362 = Ti.UI.createView({
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
         layout: "vertical",
-        id: "__alloyId447"
+        id: "__alloyId362"
     });
-    $.__views.__alloyId446.add($.__views.__alloyId447);
-    $.__views.__alloyId448 = Ti.UI.createView({
+    $.__views.__alloyId361.add($.__views.__alloyId362);
+    $.__views.__alloyId363 = Ti.UI.createView({
         width: Titanium.UI.FILL,
         height: 43,
         layout: "composite",
-        id: "__alloyId448"
+        id: "__alloyId363"
     });
-    $.__views.__alloyId447.add($.__views.__alloyId448);
+    $.__views.__alloyId362.add($.__views.__alloyId363);
     $.__views.sn_banTime = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -208,36 +208,36 @@ function Controller() {
         left: 36,
         id: "sn_banTime"
     });
-    $.__views.__alloyId448.add($.__views.sn_banTime);
+    $.__views.__alloyId363.add($.__views.sn_banTime);
     $.__views.isStopNoticeTimeSwitch = Ti.UI.createSwitch({
         right: 29,
         value: false,
         id: "isStopNoticeTimeSwitch"
     });
-    $.__views.__alloyId448.add($.__views.isStopNoticeTimeSwitch);
-    $.__views.__alloyId449 = Ti.UI.createView({
+    $.__views.__alloyId363.add($.__views.isStopNoticeTimeSwitch);
+    $.__views.__alloyId364 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId449"
+        id: "__alloyId364"
     });
-    $.__views.__alloyId448.add($.__views.__alloyId449);
+    $.__views.__alloyId363.add($.__views.__alloyId364);
     $.__views.isStopNoticeTimeSubSection = Ti.UI.createView({
         width: Titanium.UI.FILL,
         height: Titanium.UI.SIZE,
         layout: "vertical",
         id: "isStopNoticeTimeSubSection"
     });
-    $.__views.__alloyId447.add($.__views.isStopNoticeTimeSubSection);
-    $.__views.__alloyId450 = Ti.UI.createView({
+    $.__views.__alloyId362.add($.__views.isStopNoticeTimeSubSection);
+    $.__views.__alloyId365 = Ti.UI.createView({
         width: Titanium.UI.FILL,
         height: 43,
         layout: "composite",
-        id: "__alloyId450"
+        id: "__alloyId365"
     });
-    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId450);
-    onOpenBanStartTimePicker ? $.addListener($.__views.__alloyId450, "click", onOpenBanStartTimePicker) : __defers["$.__views.__alloyId450!click!onOpenBanStartTimePicker"] = true;
+    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId365);
+    onOpenBanStartTimePicker ? $.addListener($.__views.__alloyId365, "click", onOpenBanStartTimePicker) : __defers["$.__views.__alloyId365!click!onOpenBanStartTimePicker"] = true;
     $.__views.sn_banTimeStart = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -249,7 +249,7 @@ function Controller() {
         left: 58,
         id: "sn_banTimeStart"
     });
-    $.__views.__alloyId450.add($.__views.sn_banTimeStart);
+    $.__views.__alloyId365.add($.__views.sn_banTimeStart);
     $.__views.banStartTime = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -261,24 +261,24 @@ function Controller() {
         right: 29,
         id: "banStartTime"
     });
-    $.__views.__alloyId450.add($.__views.banStartTime);
-    $.__views.__alloyId451 = Ti.UI.createView({
+    $.__views.__alloyId365.add($.__views.banStartTime);
+    $.__views.__alloyId366 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
         left: 36,
-        id: "__alloyId451"
+        id: "__alloyId366"
     });
-    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId451);
-    $.__views.__alloyId452 = Ti.UI.createView({
+    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId366);
+    $.__views.__alloyId367 = Ti.UI.createView({
         width: Titanium.UI.FILL,
         height: 43,
         layout: "composite",
-        id: "__alloyId452"
+        id: "__alloyId367"
     });
-    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId452);
-    onOpenBanEndTimePicker ? $.addListener($.__views.__alloyId452, "click", onOpenBanEndTimePicker) : __defers["$.__views.__alloyId452!click!onOpenBanEndTimePicker"] = true;
+    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId367);
+    onOpenBanEndTimePicker ? $.addListener($.__views.__alloyId367, "click", onOpenBanEndTimePicker) : __defers["$.__views.__alloyId367!click!onOpenBanEndTimePicker"] = true;
     $.__views.sn_banTimeEnd = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -290,7 +290,7 @@ function Controller() {
         left: 58,
         id: "sn_banTimeEnd"
     });
-    $.__views.__alloyId452.add($.__views.sn_banTimeEnd);
+    $.__views.__alloyId367.add($.__views.sn_banTimeEnd);
     $.__views.banEndTime = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -302,15 +302,15 @@ function Controller() {
         right: 29,
         id: "banEndTime"
     });
-    $.__views.__alloyId452.add($.__views.banEndTime);
-    $.__views.__alloyId453 = Ti.UI.createView({
+    $.__views.__alloyId367.add($.__views.banEndTime);
+    $.__views.__alloyId368 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId453"
+        id: "__alloyId368"
     });
-    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId453);
+    $.__views.isStopNoticeTimeSubSection.add($.__views.__alloyId368);
     $.__views.tableView = Ti.UI.createTableView({
         backgroundColor: "#f7f7f7",
         separatorColor: "transparent",
@@ -318,7 +318,7 @@ function Controller() {
             left: 0,
             right: 0
         },
-        data: __alloyId439,
+        data: __alloyId354,
         id: "tableView"
     });
     $.__views.mainView.add($.__views.tableView);
@@ -364,8 +364,8 @@ function Controller() {
             });
         });
     }();
-    __defers["$.__views.__alloyId450!click!onOpenBanStartTimePicker"] && $.addListener($.__views.__alloyId450, "click", onOpenBanStartTimePicker);
-    __defers["$.__views.__alloyId452!click!onOpenBanEndTimePicker"] && $.addListener($.__views.__alloyId452, "click", onOpenBanEndTimePicker);
+    __defers["$.__views.__alloyId365!click!onOpenBanStartTimePicker"] && $.addListener($.__views.__alloyId365, "click", onOpenBanStartTimePicker);
+    __defers["$.__views.__alloyId367!click!onOpenBanEndTimePicker"] && $.addListener($.__views.__alloyId367, "click", onOpenBanEndTimePicker);
     _.extend($, exports);
 }
 

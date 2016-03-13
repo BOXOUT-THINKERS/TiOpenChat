@@ -4,7 +4,7 @@
 		<ScrollableView id="scrollView" class="mainWrap" showPagingControl="false" >
 			<View id="requestView" class="viewWrap">
 				<View class="fakeNavbar">
-					<ImageView id="fakeNavTitle" image="/images/signin_navi_title_odizzo.png" />
+
 				</View>
 				<View class="formWrap" id="formWrap">
 					<View id="middleView1" class="middleView">
@@ -13,7 +13,7 @@
 								<Label id="localNm" text="+82" onClick="onPopupCountryPicker" />
 								<View class="localNmBottom" />
 							</View>
-							<Label id="phoneNm" text="" />
+							<TextField id="phoneNm" text="" class="phoneKBD" />
 							<View class="bottomLineView" />
 						</View>
 						<View class="heightView">
@@ -26,62 +26,7 @@
 						</View>
 					</View>
 					<View class="numpadView">
-						<View class="numpadRow">
-							<View class="yellowLineDummy" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="1">
-								<ImageView itemId="1" image="/images/signin_number_key_1.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="2">
-								<ImageView itemId="2" image="/images/signin_number_key_2.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="3">
-								<ImageView itemId="3" image="/images/signin_number_key_3.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="4">
-								<ImageView itemId="4" image="/images/signin_number_key_4.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="5">
-								<ImageView itemId="5" image="/images/signin_number_key_5.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="6">
-								<ImageView itemId="6" image="/images/signin_number_key_6.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="7">
-								<ImageView itemId="7" image="/images/signin_number_key_7.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="8">
-								<ImageView itemId="8" image="/images/signin_number_key_8.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="9">
-								<ImageView itemId="9" image="/images/signin_number_key_9.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="plus">
-								<ImageView itemId="plus" image="/images/signin_number_key_plus.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="0">
-								<ImageView itemId="0" image="/images/signin_number_key_0.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad" onClick="onClickNumberpad" itemId="delete">
-								<ImageView itemId="delete" image="/images/signin_number_key_delete.png" />
-							</View>
-						</View>
+
 					</View>
 				</View>
 				<View class="bottomView">
@@ -98,7 +43,7 @@
 				<View class="formWrap" id="formWrap">
     				<View id="middleView2" class="middleView">
 						<View id="verifyCodeView">
-							<Label id="verifyCode" text="" />
+							<TextField id="verifyCode" text="" class="phoneKBD" />
 							<ImageView id="verifyStatusImage" image="/images/signin_check_box.png" />
 							<View id="bottomLineVerify" />
 							<View id="bottomLineVerifyFail" />
@@ -109,62 +54,7 @@
 						</View>
 					</View>
 					<View class="numpadView">
-						<View class="numpadRow">
-							<View class="yellowLineDummy" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="1">
-								<ImageView itemId="1" image="/images/signin_number_key_1.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="2">
-								<ImageView itemId="2" image="/images/signin_number_key_2.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="3">
-								<ImageView itemId="3" image="/images/signin_number_key_3.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="4">
-								<ImageView itemId="4" image="/images/signin_number_key_4.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="5">
-								<ImageView itemId="5" image="/images/signin_number_key_5.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="6">
-								<ImageView itemId="6" image="/images/signin_number_key_6.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="7">
-								<ImageView itemId="7" image="/images/signin_number_key_7.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="8">
-								<ImageView itemId="8" image="/images/signin_number_key_8.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="9">
-								<ImageView itemId="9" image="/images/signin_number_key_9.png" />
-							</View>
-						</View>
-						<View class="numpadRow">
-							<View class="yellowLine2" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="plus">
-								<ImageView itemId="plus" image="/images/signin_number_key_plus.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="0">
-								<ImageView itemId="0" image="/images/signin_number_key_0.png" />
-							</View>
-							<View class="yellowLine" />
-							<View class="numpadNumber" onSingletap="onClickNumberpad2" onClick="onClickNumberpad2" itemId="delete">
-								<ImageView itemId="delete" image="/images/signin_number_key_delete.png" />
-							</View>
-						</View>
+
 					</View>
 				</View>
 				<View class="bottomView">
@@ -173,7 +63,7 @@
 			</View>
 			<View id="joinView" class="viewWrap">
 				<View class="fakeNavbar">
-					<ImageView id="fakeNavTitle2" image="/images/signin_navi_title_odizzo.png" />
+
 				</View>
 				<View class="formWrap" id="formWrap">
 					<View id="middleView3" class="middleView">

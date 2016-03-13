@@ -45,18 +45,18 @@ function Controller() {
         id: "container"
     });
     $.__views.container && $.addTopLevelView($.__views.container);
-    var __alloyId386 = [];
-    $.__views.__alloyId387 = Ti.UI.createTableViewSection({
-        id: "__alloyId387"
+    var __alloyId301 = [];
+    $.__views.__alloyId302 = Ti.UI.createTableViewSection({
+        id: "__alloyId302"
     });
-    __alloyId386.push($.__views.__alloyId387);
-    $.__views.__alloyId388 = Ti.UI.createTableViewRow({
+    __alloyId301.push($.__views.__alloyId302);
+    $.__views.__alloyId303 = Ti.UI.createTableViewRow({
         backgroundColor: "#f7f7f7",
         height: 43,
-        id: "__alloyId388"
+        id: "__alloyId303"
     });
-    $.__views.__alloyId387.add($.__views.__alloyId388);
-    moveHideFriendManage ? $.addListener($.__views.__alloyId388, "click", moveHideFriendManage) : __defers["$.__views.__alloyId388!click!moveHideFriendManage"] = true;
+    $.__views.__alloyId302.add($.__views.__alloyId303);
+    moveHideFriendManage ? $.addListener($.__views.__alloyId303, "click", moveHideFriendManage) : __defers["$.__views.__alloyId303!click!moveHideFriendManage"] = true;
     $.__views.hideFriendTitle = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -68,35 +68,35 @@ function Controller() {
         left: 36,
         id: "hideFriendTitle"
     });
-    $.__views.__alloyId388.add($.__views.hideFriendTitle);
-    $.__views.__alloyId389 = Ti.UI.createView({
+    $.__views.__alloyId303.add($.__views.hideFriendTitle);
+    $.__views.__alloyId304 = Ti.UI.createView({
         width: 40,
         height: 40,
         right: 18,
-        id: "__alloyId389"
+        id: "__alloyId304"
     });
-    $.__views.__alloyId388.add($.__views.__alloyId389);
-    $.__views.__alloyId390 = Ti.UI.createImageView({
+    $.__views.__alloyId303.add($.__views.__alloyId304);
+    $.__views.__alloyId305 = Ti.UI.createImageView({
         preventDefaultImage: true,
         image: "/images/setting_arrow.png",
-        id: "__alloyId390"
+        id: "__alloyId305"
     });
-    $.__views.__alloyId389.add($.__views.__alloyId390);
-    $.__views.__alloyId391 = Ti.UI.createView({
+    $.__views.__alloyId304.add($.__views.__alloyId305);
+    $.__views.__alloyId306 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId391"
+        id: "__alloyId306"
     });
-    $.__views.__alloyId388.add($.__views.__alloyId391);
-    $.__views.__alloyId392 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId303.add($.__views.__alloyId306);
+    $.__views.__alloyId307 = Ti.UI.createTableViewRow({
         backgroundColor: "#f7f7f7",
         height: 43,
-        id: "__alloyId392"
+        id: "__alloyId307"
     });
-    $.__views.__alloyId387.add($.__views.__alloyId392);
-    moveBanFriendManage ? $.addListener($.__views.__alloyId392, "click", moveBanFriendManage) : __defers["$.__views.__alloyId392!click!moveBanFriendManage"] = true;
+    $.__views.__alloyId302.add($.__views.__alloyId307);
+    moveBanFriendManage ? $.addListener($.__views.__alloyId307, "click", moveBanFriendManage) : __defers["$.__views.__alloyId307!click!moveBanFriendManage"] = true;
     $.__views.banFriendTitle = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -108,46 +108,46 @@ function Controller() {
         left: 36,
         id: "banFriendTitle"
     });
-    $.__views.__alloyId392.add($.__views.banFriendTitle);
-    $.__views.__alloyId393 = Ti.UI.createView({
+    $.__views.__alloyId307.add($.__views.banFriendTitle);
+    $.__views.__alloyId308 = Ti.UI.createView({
         width: 40,
         height: 40,
         right: 18,
-        id: "__alloyId393"
+        id: "__alloyId308"
     });
-    $.__views.__alloyId392.add($.__views.__alloyId393);
-    $.__views.__alloyId394 = Ti.UI.createImageView({
+    $.__views.__alloyId307.add($.__views.__alloyId308);
+    $.__views.__alloyId309 = Ti.UI.createImageView({
         preventDefaultImage: true,
         image: "/images/setting_arrow.png",
-        id: "__alloyId394"
+        id: "__alloyId309"
     });
-    $.__views.__alloyId393.add($.__views.__alloyId394);
-    $.__views.__alloyId395 = Ti.UI.createView({
+    $.__views.__alloyId308.add($.__views.__alloyId309);
+    $.__views.__alloyId310 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         bottom: 0,
-        id: "__alloyId395"
+        id: "__alloyId310"
     });
-    $.__views.__alloyId392.add($.__views.__alloyId395);
-    $.__views.__alloyId385 = Ti.UI.createTableView({
+    $.__views.__alloyId307.add($.__views.__alloyId310);
+    $.__views.__alloyId300 = Ti.UI.createTableView({
         backgroundColor: "#f7f7f7",
         separatorColor: "transparent",
         separatorInsets: {
             left: 0,
             right: 0
         },
-        data: __alloyId386,
-        id: "__alloyId385"
+        data: __alloyId301,
+        id: "__alloyId300"
     });
-    $.__views.container.add($.__views.__alloyId385);
+    $.__views.container.add($.__views.__alloyId300);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.container.title = L("s_friendManage");
     $.hideFriendTitle.text = L("sb_hideFriendTitle");
     $.banFriendTitle.text = L("sb_banFriendTitle");
-    __defers["$.__views.__alloyId388!click!moveHideFriendManage"] && $.addListener($.__views.__alloyId388, "click", moveHideFriendManage);
-    __defers["$.__views.__alloyId392!click!moveBanFriendManage"] && $.addListener($.__views.__alloyId392, "click", moveBanFriendManage);
+    __defers["$.__views.__alloyId303!click!moveHideFriendManage"] && $.addListener($.__views.__alloyId303, "click", moveHideFriendManage);
+    __defers["$.__views.__alloyId307!click!moveBanFriendManage"] && $.addListener($.__views.__alloyId307, "click", moveBanFriendManage);
     _.extend($, exports);
 }
 

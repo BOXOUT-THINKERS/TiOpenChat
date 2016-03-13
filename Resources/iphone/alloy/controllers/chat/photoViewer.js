@@ -41,15 +41,15 @@ function Controller() {
         title: "photo"
     });
     $.__views.window && $.addTopLevelView($.__views.window);
-    $.__views.__alloyId358 = Ti.UI.createView({
+    $.__views.__alloyId273 = Ti.UI.createView({
         backgroundColor: "black",
         opacity: .5,
         height: 20,
         top: 0,
         zIndex: 1,
-        id: "__alloyId358"
+        id: "__alloyId273"
     });
-    $.__views.window.add($.__views.__alloyId358);
+    $.__views.window.add($.__views.__alloyId273);
     $.__views.topView = Ti.UI.createView({
         backgroundColor: "black",
         opacity: .5,
@@ -131,7 +131,7 @@ function Controller() {
     $.closeBtn.title = L("pv_closeBtn");
     var photoUrl = args.photoUrl;
     var photoName = args.photoName;
-    var location = args.location;
+    args.location;
     var localPhotoService = require("services/localPhotoService");
     exports.isLoadCompletePrevImage = false;
     Ti.API.debug("photoViewer :");
@@ -143,33 +143,6 @@ function Controller() {
     $.window.addEventListener("open", function() {
         exports.isLoadCompletePrevImage || Alloy.Globals.startWaiting();
     });
-    if (!_.isEmpty(location) && location.latitude && location.longitude) {
-        var mapWrap = Titanium.UI.createView({
-            width: Ti.UI.FILL,
-            height: "50%",
-            backgroundColor: "white"
-        });
-        $.centerView.add(mapWrap);
-        var GoogleMapsClass = require("GoogleMaps");
-        var GoogleMaps = new GoogleMapsClass({
-            iOSKey: Ti.App.Properties.getString("google-map-ios-key")
-        });
-        mapView1 = GoogleMaps.initMap({
-            latitude: location.latitude,
-            longitude: location.longitude,
-            zoom: 15,
-            latitudeDelta: .01,
-            longitudeDelta: .01
-        });
-        mapWrap.add(mapView1);
-        var annotation = GoogleMaps.createMarker({
-            latitude: location.latitude,
-            longitude: location.longitude,
-            image: "images/chat_half_map_pin_you",
-            myid: "annotation"
-        });
-        GoogleMaps.addMarker(annotation);
-    }
     $.currentImage.addEventListener("click", function() {
         if ($.topView.visible) {
             $.topView.visible = false;

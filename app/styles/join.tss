@@ -2,6 +2,10 @@
 	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
 }
 
+".phoneKBD" : {
+  keyboardType: Titanium.UI.KEYBOARD_PHONE_PAD
+}
+
 '.container' : {
 	layout:'composite',
 	width: Titanium.UI.FILL,
@@ -110,39 +114,8 @@
 	top : 10,
 	bottom : 10,
 	layout:'vertical',
-	width: 274.33,
-	height: Ti.UI.FILL
-}
-
-".numpadRow" : {
-	layout:'horizontal',
 	width: Ti.UI.FILL,
-	height: "25%"
-}
-
-".numpadNumber" : {
-	layout : 'composite',
-	width : 86,
-	height : Ti.UI.FILL
-}
-
-".yellowLine" : {
-	width : 7,
-	height : Ti.UI.FILL,
-	backgroundImage : "/images/signin_dot_line.png",
-	backgroundRepeat : true
-}
-
-".yellowLine2" : {
-	width : 274.33,
-	height : 7,
-	backgroundImage : "/images/signin_dot_line.png",
-	backgroundRepeat : true
-}
-
-".yellowLineDummy" : {
-	width : 274.33,
-	height : 7
+	height: Ti.UI.FILL
 }
 
 ".bottomBtn" : {

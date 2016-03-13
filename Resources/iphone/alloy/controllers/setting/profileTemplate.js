@@ -22,8 +22,8 @@ function Controller() {
     }
     var $ = this;
     var exports = {};
-    var __alloyId493 = [];
-    var __alloyId495 = {
+    var __alloyId408 = [];
+    var __alloyId410 = {
         type: "Ti.UI.ImageView",
         bindId: "profileImg",
         properties: {
@@ -34,12 +34,12 @@ function Controller() {
             left: "10"
         }
     };
-    __alloyId493.push(__alloyId495);
-    var __alloyId497 = {
+    __alloyId408.push(__alloyId410);
+    var __alloyId412 = {
         type: "Ti.UI.View",
         childTemplates: function() {
-            var __alloyId498 = [];
-            var __alloyId500 = {
+            var __alloyId413 = [];
+            var __alloyId415 = {
                 type: "Ti.UI.Label",
                 bindId: "name",
                 properties: {
@@ -53,8 +53,8 @@ function Controller() {
                     bindId: "name"
                 }
             };
-            __alloyId498.push(__alloyId500);
-            var __alloyId502 = {
+            __alloyId413.push(__alloyId415);
+            var __alloyId417 = {
                 type: "Ti.UI.Label",
                 bindId: "word",
                 properties: {
@@ -68,19 +68,19 @@ function Controller() {
                     bindId: "word"
                 }
             };
-            __alloyId498.push(__alloyId502);
-            return __alloyId498;
+            __alloyId413.push(__alloyId417);
+            return __alloyId413;
         }(),
         properties: {}
     };
-    __alloyId493.push(__alloyId497);
+    __alloyId408.push(__alloyId412);
     $.__views.profileTemplate = {
         properties: {
             name: "profileTemplate",
             height: "100",
             id: "profileTemplate"
         },
-        childTemplates: __alloyId493
+        childTemplates: __alloyId408
     };
     __itemTemplate["profileTemplate"] = $.__views.profileTemplate;
     $.__views.profileTemplate && $.addTopLevelView($.__views.profileTemplate);

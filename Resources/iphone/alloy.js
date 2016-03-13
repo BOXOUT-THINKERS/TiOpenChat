@@ -19,42 +19,9 @@ function isTabletFallback() {
     return Math.min(Ti.Platform.displayCaps.platformHeight, Ti.Platform.displayCaps.platformWidth) >= 700;
 }
 
-function deepExtend() {
-    var target = arguments[0] || {};
-    var i = 1;
-    var length = arguments.length;
-    var deep = false;
-    var options, name, src, copy, copy_is_array, clone;
-    if ("boolean" == typeof target) {
-        deep = target;
-        target = arguments[1] || {};
-        i = 2;
-    }
-    "object" == typeof target || _.isFunction(target) || (target = {});
-    for (;length > i; i++) {
-        options = arguments[i];
-        if (null != options) {
-            "string" == typeof options && (options = options.split(""));
-            for (name in options) {
-                src = target[name];
-                copy = options[name];
-                if (target === copy) continue;
-                if (deep && copy && !_.isFunction(copy) && _.isObject(copy) && ((copy_is_array = _.isArray(copy)) || !_.has(copy, "apiName"))) {
-                    if (copy_is_array) {
-                        copy_is_array = false;
-                        clone = src && _.isArray(src) ? src : [];
-                    } else clone = _.isDate(copy) ? new Date(copy.valueOf()) : src && _.isObject(src) ? src : {};
-                    target[name] = deepExtend(deep, clone, copy);
-                } else target[name] = copy;
-            }
-        }
-    }
-    return target;
-}
-
 var _ = require("alloy/underscore")._, Backbone = require("alloy/backbone"), CONST = require("alloy/constants");
 
-exports.version = "1.7.28";
+exports.version = "1.7.33";
 
 exports._ = _;
 
@@ -192,10 +159,10 @@ exports.createStyle = function(controller, opts, defaults) {
         }
         if (style.queries && style.queries.formFactor && !Alloy[style.queries.formFactor]) continue;
         if (style.queries && style.queries.if && ("false" === style.queries.if.trim().toLowerCase() || -1 !== style.queries.if.indexOf("Alloy.Globals") && false === Alloy.Globals[style.queries.if.split(".")[2]])) continue;
-        deepExtend(true, styleFinal, style.style);
+        exports.deepExtend(true, styleFinal, style.style);
     }
     var extraStyle = _.omit(opts, [ CONST.CLASS_PROPERTY, CONST.APINAME_PROPERTY ]);
-    deepExtend(true, styleFinal, extraStyle);
+    exports.deepExtend(true, styleFinal, extraStyle);
     styleFinal[CONST.CLASS_PROPERTY] = classes;
     styleFinal[CONST.APINAME_PROPERTY] = apiName;
     MW320_CHECK && delete styleFinal[CONST.APINAME_PROPERTY];
@@ -294,3 +261,36 @@ exports.Collections.instance = function(name) {
 };
 
 exports.CFG = require("alloy/CFG");
+
+exports.deepExtend = function() {
+    var target = arguments[0] || {};
+    var i = 1;
+    var length = arguments.length;
+    var deep = false;
+    var options, name, src, copy, copy_is_array, clone;
+    if ("boolean" == typeof target) {
+        deep = target;
+        target = arguments[1] || {};
+        i = 2;
+    }
+    "object" == typeof target || _.isFunction(target) || (target = {});
+    for (;length > i; i++) {
+        options = arguments[i];
+        if (null != options) {
+            "string" == typeof options && (options = options.split(""));
+            for (name in options) {
+                src = target[name];
+                copy = options[name];
+                if (target === copy) continue;
+                if (deep && copy && !_.isFunction(copy) && _.isObject(copy) && ((copy_is_array = _.isArray(copy)) || !_.has(copy, "apiName"))) {
+                    if (copy_is_array) {
+                        copy_is_array = false;
+                        clone = src && _.isArray(src) ? src : [];
+                    } else clone = _.isDate(copy) ? new Date(copy.valueOf()) : src && _.isObject(src) ? src : {};
+                    target[name] = exports.deepExtend(deep, clone, copy);
+                } else target[name] = copy;
+            }
+        }
+    }
+    return target;
+};

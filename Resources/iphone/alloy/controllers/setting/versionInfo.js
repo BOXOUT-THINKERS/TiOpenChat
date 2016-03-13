@@ -124,14 +124,14 @@ function Controller() {
         id: "infoWrap"
     });
     $.__views.topViewWrap.add($.__views.infoWrap);
-    $.__views.__alloyId536 = Ti.UI.createView({
+    $.__views.__alloyId451 = Ti.UI.createView({
         layout: "horizontal",
         width: Titanium.UI.SIZE,
         height: "50%",
         right: 0,
-        id: "__alloyId536"
+        id: "__alloyId451"
     });
-    $.__views.infoWrap.add($.__views.__alloyId536);
+    $.__views.infoWrap.add($.__views.__alloyId451);
     $.__views.c_recentVersion = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -142,7 +142,7 @@ function Controller() {
         textAlign: "center",
         id: "c_recentVersion"
     });
-    $.__views.__alloyId536.add($.__views.c_recentVersion);
+    $.__views.__alloyId451.add($.__views.c_recentVersion);
     $.__views.recentVersion = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -154,15 +154,15 @@ function Controller() {
         left: 5,
         id: "recentVersion"
     });
-    $.__views.__alloyId536.add($.__views.recentVersion);
-    $.__views.__alloyId537 = Ti.UI.createView({
+    $.__views.__alloyId451.add($.__views.recentVersion);
+    $.__views.__alloyId452 = Ti.UI.createView({
         layout: "horizontal",
         width: Titanium.UI.SIZE,
         height: "50%",
         right: 0,
-        id: "__alloyId537"
+        id: "__alloyId452"
     });
-    $.__views.infoWrap.add($.__views.__alloyId537);
+    $.__views.infoWrap.add($.__views.__alloyId452);
     $.__views.c_currentVersion = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -173,7 +173,7 @@ function Controller() {
         textAlign: "center",
         id: "c_currentVersion"
     });
-    $.__views.__alloyId537.add($.__views.c_currentVersion);
+    $.__views.__alloyId452.add($.__views.c_currentVersion);
     $.__views.currentVersion = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -185,7 +185,7 @@ function Controller() {
         left: 5,
         id: "currentVersion"
     });
-    $.__views.__alloyId537.add($.__views.currentVersion);
+    $.__views.__alloyId452.add($.__views.currentVersion);
     $.__views.bottomViewWrap = Ti.UI.createView({
         layout: "composite",
         width: Titanium.UI.FILL,

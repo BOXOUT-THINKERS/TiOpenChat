@@ -91,16 +91,16 @@ function Controller() {
     });
     $.__views.popupView && $.addTopLevelView($.__views.popupView);
     openChatRoom ? $.addListener($.__views.popupView, "click", openChatRoom) : __defers["$.__views.popupView!click!openChatRoom"] = true;
-    $.__views.__alloyId225 = Ti.UI.createView({
+    $.__views.__alloyId140 = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
         backgroundColor: "black",
         opacity: .6,
         touchEnabled: false,
-        id: "__alloyId225"
+        id: "__alloyId140"
     });
-    $.__views.popupView.add($.__views.__alloyId225);
-    $.__views.__alloyId226 = Ti.UI.createView({
+    $.__views.popupView.add($.__views.__alloyId140);
+    $.__views.__alloyId141 = Ti.UI.createView({
         left: 5,
         right: 5,
         top: 5,
@@ -109,16 +109,16 @@ function Controller() {
         height: Ti.UI.FILL,
         backgroundColor: "white",
         borderRadius: 3,
-        id: "__alloyId226"
+        id: "__alloyId141"
     });
-    $.__views.popupView.add($.__views.__alloyId226);
-    $.__views.__alloyId227 = Ti.UI.createView({
+    $.__views.popupView.add($.__views.__alloyId141);
+    $.__views.__alloyId142 = Ti.UI.createView({
         left: 15,
         height: 40,
         width: 40,
-        id: "__alloyId227"
+        id: "__alloyId142"
     });
-    $.__views.__alloyId226.add($.__views.__alloyId227);
+    $.__views.__alloyId141.add($.__views.__alloyId142);
     $.__views.profileImage = Ti.UI.createImageView({
         preventDefaultImage: true,
         height: 38,
@@ -132,23 +132,23 @@ function Controller() {
         backgroundColor: "#bebfc3",
         id: "profileImage"
     });
-    $.__views.__alloyId227.add($.__views.profileImage);
-    $.__views.__alloyId228 = Ti.UI.createImageView({
+    $.__views.__alloyId142.add($.__views.profileImage);
+    $.__views.__alloyId143 = Ti.UI.createImageView({
         preventDefaultImage: true,
         height: 40,
         width: 40,
         image: "/images/friendlist_profile_pic_outline.png",
-        id: "__alloyId228"
+        id: "__alloyId143"
     });
-    $.__views.__alloyId227.add($.__views.__alloyId228);
-    $.__views.__alloyId229 = Ti.UI.createView({
+    $.__views.__alloyId142.add($.__views.__alloyId143);
+    $.__views.__alloyId144 = Ti.UI.createView({
         left: 70,
         right: 53,
         height: 40,
         width: Ti.UI.FILL,
-        id: "__alloyId229"
+        id: "__alloyId144"
     });
-    $.__views.__alloyId226.add($.__views.__alloyId229);
+    $.__views.__alloyId141.add($.__views.__alloyId144);
     $.__views.profileName = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -162,7 +162,7 @@ function Controller() {
         top: 0,
         id: "profileName"
     });
-    $.__views.__alloyId229.add($.__views.profileName);
+    $.__views.__alloyId144.add($.__views.profileName);
     $.__views.msgLabel = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: 15,
@@ -176,21 +176,21 @@ function Controller() {
         bottom: 0,
         id: "msgLabel"
     });
-    $.__views.__alloyId229.add($.__views.msgLabel);
-    $.__views.__alloyId230 = Ti.UI.createView({
+    $.__views.__alloyId144.add($.__views.msgLabel);
+    $.__views.__alloyId145 = Ti.UI.createView({
         right: 8,
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
-        id: "__alloyId230"
+        id: "__alloyId145"
     });
-    $.__views.__alloyId226.add($.__views.__alloyId230);
+    $.__views.__alloyId141.add($.__views.__alloyId145);
     $.__views.msgtypeIcon = Ti.UI.createImageView({
         preventDefaultImage: true,
         width: 44.6,
         height: 44.6,
         id: "msgtypeIcon"
     });
-    $.__views.__alloyId230.add($.__views.msgtypeIcon);
+    $.__views.__alloyId145.add($.__views.msgtypeIcon);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var chatViewManager = Alloy.Globals.chatViewManager;

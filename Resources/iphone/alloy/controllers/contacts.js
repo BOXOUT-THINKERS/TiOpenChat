@@ -95,22 +95,6 @@ function Controller() {
         var friend = contactM.get("User_object_To") || {};
         var imageUrl = friend.profileImage ? friend.profileImage.url : "/images/friendlist_profile_default_img.png";
         var locationText = "";
-        if (!_.isEmpty(friend)) {
-            var msgModels = messageCollection.where({
-                fromUserId: friend.objectId,
-                type: "send:location",
-                locationType: "my"
-            });
-            if (!_.isEmpty(msgModels)) {
-                var recentMsg = _.max(msgModels, function(msgModel) {
-                    return msgModel.get("created");
-                });
-                if (!_.isEmpty(recentMsg.get("location"))) {
-                    location = recentMsg.get("location");
-                    locationText = _getLocationTextByReverseAddress(location.address);
-                }
-            }
-        }
         return {
             template: _.isEmpty(friend) ? "unregiteredFriendsTemplate" : "rowTemplate",
             profileImage: {
@@ -124,9 +108,6 @@ function Controller() {
             },
             locationText: {
                 text: locationText || ""
-            },
-            friendZzixgi: {
-                text: L("cb_zzixgiFriendBtn")
             },
             frinedInvite: {
                 text: L("cb_inviteFriendBtn")
@@ -142,22 +123,6 @@ function Controller() {
                 searchableText: contactM.get("fullName") || friend.name
             }
         };
-    }
-    function _getLocationTextByReverseAddress(address) {
-        var locationText = "";
-        if (!_.isEmpty(address)) if ("ko" == Alloy.Globals.currentLanguage) {
-            address.state && (locationText = locationText + " " + address.state);
-            address.city && (locationText = locationText + " " + address.city);
-            address.street && (locationText = locationText + " " + address.street);
-            locationText = locationText.substr(1);
-        } else {
-            address.street && (locationText = locationText + ", " + address.street);
-            address.city && (locationText = locationText + ", " + address.city);
-            address.state && (locationText = locationText + ", " + address.state);
-            address.country && (locationText = locationText + ", " + address.country);
-            locationText = locationText.substr(2);
-        }
-        return locationText;
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "contacts";
@@ -455,43 +420,10 @@ function Controller() {
             var __alloyId54 = [];
             var __alloyId56 = {
                 type: "Ti.UI.View",
-                bindId: "friendZzixgiWarp",
+                bindId: "friendInviteWarp",
                 childTemplates: function() {
                     var __alloyId57 = [];
                     var __alloyId59 = {
-                        type: "Ti.UI.Label",
-                        bindId: "friendZzixgi",
-                        properties: {
-                            width: Ti.UI.SIZE,
-                            height: Ti.UI.FILL,
-                            color: "#7641FF",
-                            font: {
-                                fontSize: 13,
-                                fontWeight: "bold"
-                            },
-                            textAlign: "center",
-                            bindId: "friendZzixgi"
-                        }
-                    };
-                    __alloyId57.push(__alloyId59);
-                    return __alloyId57;
-                }(),
-                properties: {
-                    right: 8,
-                    height: 36.66,
-                    width: 45,
-                    borderRadius: 5,
-                    backgroundColor: "#FDFF46",
-                    bindId: "friendZzixgiWarp"
-                }
-            };
-            __alloyId54.push(__alloyId56);
-            var __alloyId61 = {
-                type: "Ti.UI.View",
-                bindId: "friendInviteWarp",
-                childTemplates: function() {
-                    var __alloyId62 = [];
-                    var __alloyId64 = {
                         type: "Ti.UI.Label",
                         bindId: "frinedInvite",
                         properties: {
@@ -506,8 +438,8 @@ function Controller() {
                             bindId: "frinedInvite"
                         }
                     };
-                    __alloyId62.push(__alloyId64);
-                    return __alloyId62;
+                    __alloyId57.push(__alloyId59);
+                    return __alloyId57;
                 }(),
                 properties: {
                     right: 0,
@@ -518,7 +450,7 @@ function Controller() {
                     bindId: "friendInviteWarp"
                 }
             };
-            __alloyId54.push(__alloyId61);
+            __alloyId54.push(__alloyId56);
             return __alloyId54;
         }(),
         properties: {
@@ -541,10 +473,10 @@ function Controller() {
         childTemplates: __alloyId39
     };
     __alloyId3["unregiteredFriendsTemplate"] = __alloyId38;
-    $.__views.__alloyId67 = Ti.UI.createView({
+    $.__views.__alloyId62 = Ti.UI.createView({
         backgroundColor: "#eeeeee",
         height: 23.33,
-        id: "__alloyId67"
+        id: "__alloyId62"
     });
     $.__views.headerTitle1 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
@@ -558,26 +490,26 @@ function Controller() {
         left: 13,
         id: "headerTitle1"
     });
-    $.__views.__alloyId67.add($.__views.headerTitle1);
+    $.__views.__alloyId62.add($.__views.headerTitle1);
     $.__views.profileSection = Ti.UI.createListSection({
-        headerView: $.__views.__alloyId67,
+        headerView: $.__views.__alloyId62,
         id: "profileSection"
     });
-    var __alloyId68 = [];
-    __alloyId68.push($.__views.profileSection);
-    $.__views.__alloyId71 = Ti.UI.createView({
+    var __alloyId63 = [];
+    __alloyId63.push($.__views.profileSection);
+    $.__views.__alloyId66 = Ti.UI.createView({
         backgroundColor: "#eeeeee",
         height: 23.33,
-        id: "__alloyId71"
+        id: "__alloyId66"
     });
-    $.__views.__alloyId72 = Ti.UI.createView({
+    $.__views.__alloyId67 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         top: 0,
-        id: "__alloyId72"
+        id: "__alloyId67"
     });
-    $.__views.__alloyId71.add($.__views.__alloyId72);
+    $.__views.__alloyId66.add($.__views.__alloyId67);
     $.__views.headerTitle2 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -590,25 +522,25 @@ function Controller() {
         left: 13,
         id: "headerTitle2"
     });
-    $.__views.__alloyId71.add($.__views.headerTitle2);
+    $.__views.__alloyId66.add($.__views.headerTitle2);
     $.__views.favoriteSection = Ti.UI.createListSection({
-        headerView: $.__views.__alloyId71,
+        headerView: $.__views.__alloyId66,
         id: "favoriteSection"
     });
-    __alloyId68.push($.__views.favoriteSection);
-    $.__views.__alloyId75 = Ti.UI.createView({
+    __alloyId63.push($.__views.favoriteSection);
+    $.__views.__alloyId70 = Ti.UI.createView({
         backgroundColor: "#eeeeee",
         height: 23.33,
-        id: "__alloyId75"
+        id: "__alloyId70"
     });
-    $.__views.__alloyId76 = Ti.UI.createView({
+    $.__views.__alloyId71 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         top: 0,
-        id: "__alloyId76"
+        id: "__alloyId71"
     });
-    $.__views.__alloyId75.add($.__views.__alloyId76);
+    $.__views.__alloyId70.add($.__views.__alloyId71);
     $.__views.headerTitle3 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -621,27 +553,27 @@ function Controller() {
         left: 13,
         id: "headerTitle3"
     });
-    $.__views.__alloyId75.add($.__views.headerTitle3);
+    $.__views.__alloyId70.add($.__views.headerTitle3);
     $.__views.friendsSection = Ti.UI.createListSection({
-        headerView: $.__views.__alloyId75,
+        headerView: $.__views.__alloyId70,
         id: "friendsSection"
     });
-    __alloyId68.push($.__views.friendsSection);
-    $.__views.__alloyId79 = Ti.UI.createView({
+    __alloyId63.push($.__views.friendsSection);
+    $.__views.__alloyId74 = Ti.UI.createView({
         backgroundColor: "#f7f7f7",
         layout: "composite",
         height: 56.67,
         width: Ti.UI.FILL,
-        id: "__alloyId79"
+        id: "__alloyId74"
     });
-    $.__views.__alloyId80 = Ti.UI.createView({
+    $.__views.__alloyId75 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         top: 0,
-        id: "__alloyId80"
+        id: "__alloyId75"
     });
-    $.__views.__alloyId79.add($.__views.__alloyId80);
+    $.__views.__alloyId74.add($.__views.__alloyId75);
     $.__views.friendSearchLabel = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -655,37 +587,37 @@ function Controller() {
         id: "friendSearchLabel",
         text: L("cb_friendSearchLabel")
     });
-    $.__views.__alloyId79.add($.__views.friendSearchLabel);
-    $.__views.__alloyId81 = Ti.UI.createView({
+    $.__views.__alloyId74.add($.__views.friendSearchLabel);
+    $.__views.__alloyId76 = Ti.UI.createView({
         layout: "vertical",
         height: Ti.UI.SIZE,
         width: "55%",
         right: 13,
-        id: "__alloyId81"
+        id: "__alloyId76"
     });
-    $.__views.__alloyId79.add($.__views.__alloyId81);
-    $.__views.__alloyId82 = Ti.UI.createView({
+    $.__views.__alloyId74.add($.__views.__alloyId76);
+    $.__views.__alloyId77 = Ti.UI.createView({
         right: 0,
         height: 36.66,
         width: Ti.UI.SIZE,
         borderRadius: 5,
         backgroundColor: "#FD787C",
         layout: "horizontal",
-        id: "__alloyId82"
+        id: "__alloyId77"
     });
-    $.__views.__alloyId81.add($.__views.__alloyId82);
-    openFriendInvite ? $.addListener($.__views.__alloyId82, "click", openFriendInvite) : __defers["$.__views.__alloyId82!click!openFriendInvite"] = true;
-    $.__views.__alloyId83 = Ti.UI.createImageView({
+    $.__views.__alloyId76.add($.__views.__alloyId77);
+    openFriendInvite ? $.addListener($.__views.__alloyId77, "click", openFriendInvite) : __defers["$.__views.__alloyId77!click!openFriendInvite"] = true;
+    $.__views.__alloyId78 = Ti.UI.createImageView({
         preventDefaultImage: true,
         left: 13,
         top: 8.33,
         height: 20,
         width: 20,
         image: "/images/friendlist_friend_search_icn.png",
-        id: "__alloyId83"
+        id: "__alloyId78"
     });
-    $.__views.__alloyId82.add($.__views.__alloyId83);
-    $.__views.__alloyId84 = Ti.UI.createLabel({
+    $.__views.__alloyId77.add($.__views.__alloyId78);
+    $.__views.__alloyId79 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.FILL,
         color: "white",
@@ -697,27 +629,27 @@ function Controller() {
         left: 8,
         right: 13,
         text: L("cb_friendSearch"),
-        id: "__alloyId84"
+        id: "__alloyId79"
     });
-    $.__views.__alloyId82.add($.__views.__alloyId84);
+    $.__views.__alloyId77.add($.__views.__alloyId79);
     $.__views.friendSearchSection = Ti.UI.createListSection({
-        footerView: $.__views.__alloyId79,
+        footerView: $.__views.__alloyId74,
         id: "friendSearchSection"
     });
-    __alloyId68.push($.__views.friendSearchSection);
-    $.__views.__alloyId87 = Ti.UI.createView({
+    __alloyId63.push($.__views.friendSearchSection);
+    $.__views.__alloyId82 = Ti.UI.createView({
         backgroundColor: "#eeeeee",
         height: 23.33,
-        id: "__alloyId87"
+        id: "__alloyId82"
     });
-    $.__views.__alloyId88 = Ti.UI.createView({
+    $.__views.__alloyId83 = Ti.UI.createView({
         backgroundColor: "#CACACA",
         width: Ti.UI.FILL,
         height: .5,
         top: 0,
-        id: "__alloyId88"
+        id: "__alloyId83"
     });
-    $.__views.__alloyId87.add($.__views.__alloyId88);
+    $.__views.__alloyId82.add($.__views.__alloyId83);
     $.__views.headerTitle4 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -730,16 +662,16 @@ function Controller() {
         left: 13,
         id: "headerTitle4"
     });
-    $.__views.__alloyId87.add($.__views.headerTitle4);
+    $.__views.__alloyId82.add($.__views.headerTitle4);
     $.__views.unregiteredFriendsSection = Ti.UI.createListSection({
-        headerView: $.__views.__alloyId87,
+        headerView: $.__views.__alloyId82,
         id: "unregiteredFriendsSection"
     });
-    __alloyId68.push($.__views.unregiteredFriendsSection);
+    __alloyId63.push($.__views.unregiteredFriendsSection);
     $.__views.listView = Ti.UI.createListView({
         width: Titanium.UI.FILL,
         height: Titanium.UI.FILL,
-        sections: __alloyId68,
+        sections: __alloyId63,
         templates: __alloyId3,
         id: "listView"
     });
@@ -753,15 +685,12 @@ function Controller() {
     $.headerTitle3.text = L("cb_friendHeaderTitle");
     $.headerTitle4.text = L("cb_searchTitle");
     var contactsCol = Alloy.Collections.instance("contacts");
-    var messageCollection = Alloy.Collections.instance("message");
+    Alloy.Collections.instance("message");
+    var chatRoomCol = Alloy.Collections.instance("chatRoom");
     var favoriteFriends = [];
     var friends = [];
     var unregisteredFriends = [];
     var ufIndex = 0;
-    var GoogleMapsClass = require("GoogleMaps");
-    new GoogleMapsClass({
-        iOSKey: Ti.App.Properties.getString("google-map-ios-key")
-    });
     var unregisteredFriendsNotDisplayCount = 0;
     Alloy.Models.instance("user").on("change:profile", drawProfileRow);
     contactsCol.on("redraw", function() {
@@ -808,33 +737,14 @@ function Controller() {
         Ti.API.debug("close contactsView");
     };
     $.listView.addEventListener("itemclick", function(e) {
-        function _requestWhereruToSingleUser(contactM, fromUser, shootInfo, isNotRequestWhere) {
+        function _openChatRoom(contactM, fromUser) {
             var toUser = contactM ? contactM.getUserInfo() : {};
-            Ti.API.debug("requestwhereru ", toUser);
             var fromUserId = fromUser.id;
             var toUserId = toUser.id;
             var inUserIds = [ fromUserId, toUserId ];
             var roomId = null;
             chatRoomCol.getOrCreate(roomId, inUserIds, fromUserId).then(function(chatRoomM) {
                 var chatC = chatViewManager.getOrCreate(chatRoomM);
-                var delayedTrriger = null;
-                if (!isNotRequestWhere) {
-                    var messageData = {
-                        toUser: toUser,
-                        fromUser: fromUser,
-                        requestWord: "",
-                        shootInfo: shootInfo,
-                        location: myLocation
-                    };
-                    if (chatC.isOpenedChatRoom) chatC.trigger("request:whereru", messageData); else {
-                        var delayedTrriger = function() {
-                            chatC.trigger("request:whereru", this.messageData);
-                        };
-                        delayedTrriger = _.bind(delayedTrriger, {
-                            messageData: messageData
-                        });
-                    }
-                }
                 if (!chatC.isOpenedChatRoom) {
                     Alloy.Globals.menuC.trigger("menuclick", {
                         itemId: "chatlist",
@@ -842,7 +752,6 @@ function Controller() {
                     });
                     var openView = function() {
                         chatViewManager.openView(this.chatRoomM);
-                        delayedTrriger && delayedTrriger();
                     };
                     openView = _.bind(openView, {
                         chatRoomM: chatRoomM
@@ -859,12 +768,12 @@ function Controller() {
             var friendId = contactM.get("User_objectId_To");
             if (friendId) {
                 var fromUser = Alloy.Globals.user.getInfo();
-                _requestWhereruToSingleUser(contactM, fromUser, {}, true);
+                _openChatRoom(contactM, fromUser, {}, true);
             }
         }
     });
     __defers["$.__views.container!touchmove!scrollHandler"] && $.addListener($.__views.container, "touchmove", scrollHandler);
-    __defers["$.__views.__alloyId82!click!openFriendInvite"] && $.addListener($.__views.__alloyId82, "click", openFriendInvite);
+    __defers["$.__views.__alloyId77!click!openFriendInvite"] && $.addListener($.__views.__alloyId77, "click", openFriendInvite);
     _.extend($, exports);
 }
 

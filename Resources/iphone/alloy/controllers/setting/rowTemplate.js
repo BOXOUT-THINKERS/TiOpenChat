@@ -22,8 +22,8 @@ function Controller() {
     }
     var $ = this;
     var exports = {};
-    var __alloyId503 = [];
-    var __alloyId504 = {
+    var __alloyId418 = [];
+    var __alloyId419 = {
         type: "Ti.UI.Label",
         bindId: "title",
         properties: {
@@ -38,8 +38,8 @@ function Controller() {
             bindId: "title"
         }
     };
-    __alloyId503.push(__alloyId504);
-    var __alloyId505 = {
+    __alloyId418.push(__alloyId419);
+    var __alloyId420 = {
         type: "Ti.UI.Button",
         bindId: "detail",
         properties: {
@@ -47,13 +47,13 @@ function Controller() {
             bindId: "detail"
         }
     };
-    __alloyId503.push(__alloyId505);
+    __alloyId418.push(__alloyId420);
     $.__views.rowTemplate = {
         properties: {
             name: "rowTemplate",
             id: "rowTemplate"
         },
-        childTemplates: __alloyId503
+        childTemplates: __alloyId418
     };
     __itemTemplate["rowTemplate"] = $.__views.rowTemplate;
     $.__views.rowTemplate && $.addTopLevelView($.__views.rowTemplate);

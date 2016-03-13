@@ -119,16 +119,16 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.__alloyId112 = Ti.UI.createView({
+    $.__views.__alloyId107 = Ti.UI.createView({
         top: 64,
         role: "leftView",
-        id: "__alloyId112"
+        id: "__alloyId107"
     });
     $.__views.menuC = Alloy.createController("menu", {
         id: "menuC",
-        __parentSymbol: $.__views.__alloyId112
+        __parentSymbol: $.__views.__alloyId107
     });
-    $.__views.menuC.setParent($.__views.__alloyId112);
+    $.__views.menuC.setParent($.__views.__alloyId107);
     $.__views.centerWindow = Ti.UI.createWindow({
         backgroundColor: "#f7f7f7",
         barColor: "#54EE92",
@@ -145,10 +145,10 @@ function Controller() {
     });
     onOpen ? $.addListener($.__views.centerWindow, "open", onOpen) : __defers["$.__views.centerWindow!open!onOpen"] = true;
     onClose ? $.addListener($.__views.centerWindow, "close", onClose) : __defers["$.__views.centerWindow!close!onClose"] = true;
-    $.__views.__alloyId114 = Ti.UI.createView({
-        id: "__alloyId114"
+    $.__views.__alloyId109 = Ti.UI.createView({
+        id: "__alloyId109"
     });
-    $.__views.__alloyId115 = Ti.UI.createButton({
+    $.__views.__alloyId110 = Ti.UI.createButton({
         font: {
             fontFamily: "Ionicons",
             fontSize: 25
@@ -157,11 +157,11 @@ function Controller() {
         title: "",
         left: -5,
         backgroundColor: "#54EE92",
-        id: "__alloyId115"
+        id: "__alloyId110"
     });
-    $.__views.__alloyId114.add($.__views.__alloyId115);
-    onMenuButtonClick ? $.addListener($.__views.__alloyId115, "click", onMenuButtonClick) : __defers["$.__views.__alloyId115!click!onMenuButtonClick"] = true;
-    $.__views.centerWindow.leftNavButton = $.__views.__alloyId114;
+    $.__views.__alloyId109.add($.__views.__alloyId110);
+    onMenuButtonClick ? $.addListener($.__views.__alloyId110, "click", onMenuButtonClick) : __defers["$.__views.__alloyId110!click!onMenuButtonClick"] = true;
+    $.__views.centerWindow.leftNavButton = $.__views.__alloyId109;
     $.__views.centerWindow.rightNavButton = void 0;
     $.__views.mainC = Alloy.createController("blank", {
         id: "mainC",
@@ -170,7 +170,7 @@ function Controller() {
     $.__views.mainC.setParent($.__views.centerWindow);
     $.__views.index = Alloy.createWidget("kr.yostudio.drawer", "widget", {
         id: "index",
-        children: [ $.__views.__alloyId112, $.__views.centerWindow ]
+        children: [ $.__views.__alloyId107, $.__views.centerWindow ]
     });
     $.__views.index && $.addTopLevelView($.__views.index);
     onDrawerOpen ? $.__views.index.on("draweropen", onDrawerOpen) : __defers["$.__views.index!draweropen!onDrawerOpen"] = true;
@@ -351,17 +351,6 @@ function Controller() {
 
           case "setting":
             changeCenterView(Alloy.createController("setting/setting"), e.itemId);
-            break;
-
-          case "zzixgi":
-            Alloy.createController("overlay", e).showZzixgi();
-            break;
-
-          case "zzogi":
-            var zzogiFn = function(e) {
-                Alloy.createController("profile", e).getView().open();
-            };
-            zzogiFn(e);
         }
         e.isNotToggle || $.index.toggleLeftView({
             animated: false
@@ -369,7 +358,7 @@ function Controller() {
     });
     __defers["$.__views.centerWindow!open!onOpen"] && $.addListener($.__views.centerWindow, "open", onOpen);
     __defers["$.__views.centerWindow!close!onClose"] && $.addListener($.__views.centerWindow, "close", onClose);
-    __defers["$.__views.__alloyId115!click!onMenuButtonClick"] && $.addListener($.__views.__alloyId115, "click", onMenuButtonClick);
+    __defers["$.__views.__alloyId110!click!onMenuButtonClick"] && $.addListener($.__views.__alloyId110, "click", onMenuButtonClick);
     __defers["$.__views.index!draweropen!onDrawerOpen"] && $.__views.index.on("draweropen", onDrawerOpen);
     __defers["$.__views.index!drawerclose!onDrawerClose"] && $.__views.index.on("drawerclose", onDrawerClose);
     _.extend($, exports);
