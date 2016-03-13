@@ -143,11 +143,6 @@
     <!-- 키보드영 -->
     <View id="inputMsgView">
       <View id="msgLine" />
-      <View id="inputMsgLeftView">
-        <ImageView id="notifyBtn"/>
-        <View id="inputBtnLine" />
-        <ImageView id="requestBtn"/>
-      </View>
       <View id="inputMsgWrap">
         <TextArea id="inputMsg" class="inputMsg" />
       </View>

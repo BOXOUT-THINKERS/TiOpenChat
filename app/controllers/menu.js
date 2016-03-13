@@ -85,15 +85,3 @@ function _triggerMenu(menuStr, option){
 
   $.trigger('menuclick', args);
 }
-
-
-
-//이미지 한영 변환 작업.
-(function(){
-  $.editProfile.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/navidrawer_profile_edit_button.png" :  "/images/navidrawer_profile_edit_button_en.png";
-
-  $.eachImg1.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/navidrawer_friendlist_icon.png" : "/images/navidrawer_friendlist_icon_en.png"
-  $.eachImg2.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/navidrawer_chatroomlist_icon.png" : "/images/navidrawer_chatroomlist_icon_en.png"
-  $.eachImg3.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/navidrawer_pecking_icon.png" : "/images/navidrawer_pecking_icon_en.png"
-  $.eachImg4.image = (Alloy.Globals.currentLanguage == 'ko') ? "/images/navidrawer_photo_icon.png" : "/images/navidrawer_photo_icon_en.png"
-})();

@@ -292,31 +292,10 @@
   height: 1
 }
 
-//왼쪽 버튼
-"#inputMsgLeftView" : {
-  layout:'composite', width : "23.3%",  height : Titanium.UI.FILL,
-  left:0
-}
-"#inputBtnLine" : {
-  backgroundColor: "gray",
-  height: "34%",  width: 1
-}
-"#notifyBtn":{
-  width: 27.67, height: 27.67,
-  left:"9.5%",
-  image: "/images/chattingtap_zzig_button_active.png"
-}
-"#requestBtn":{
-  width: 27.67, height: 27.67,
-  right:"9.5%",
-  image: "/images/chattingtap_zzo_button_active.png"
-}
-
-
 //
 "#inputMsgWrap" : {
-  width: "59.9%",height : Titanium.UI.FILL,
-  right : "16.8%",
+  height : Titanium.UI.FILL,
+  left: 0, right : "16.8%",
   borderRadius : 4, borderWidth: 0,
   backgroundColor: "white",
 }

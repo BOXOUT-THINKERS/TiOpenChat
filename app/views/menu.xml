@@ -12,16 +12,10 @@
 
       <View class="mainBtnWrap">
         <View class="eachBtn" id="contacts">
-          <ImageView id="eachImg1" image="/images/navidrawer_friendlist_icon.png" />
+          <Label text="contacts"/>
         </View>
         <View class="eachBtn leftPadding" id="chatList">
-          <ImageView id="eachImg2" image="/images/navidrawer_chatroomlist_icon.png" />
-        </View>
-        <View class="eachBtn leftPadding" id="request">
-          <ImageView id="eachImg3" image="/images/navidrawer_pecking_icon.png" />
-        </View>
-        <View class="eachBtn leftPadding" id="notify">
-          <ImageView id="eachImg4" image="/images/navidrawer_photo_icon.png" />
+          <Label text="chatList"/>
         </View>
       </View>
 

@@ -46,7 +46,7 @@
 }
 ".eachBtn":{
   backgroundColor:"#fd9091",
-  layout:"composite", width:65, height: 65,
+  layout:"composite", width:130, height: 65,
 }
 ".leftPadding":{
   left:1
