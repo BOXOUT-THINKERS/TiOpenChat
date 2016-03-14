@@ -278,8 +278,9 @@ function _receiveMessageListener(messageModel) {
   if(chatView) {
     Ti.API.debug('-----기존 방에 새메시지 추가하는경우', roomId);
     var chatRoomM = chatView._chatRoomM;
-    // var chatC = chatViewManager.getOrCreate(chatRoomM)
-    chatRoomM.trigger('receive:message', messageModel);
+    var chatC = chatViewManager.getOrCreate(chatRoomM)
+    // chatRoomM.trigger('receive:message', messageModel);
+    chatC.messageAdded(messageModel);
 
     _setRecentMessage(chatRoomM, messageModel);
   }else{
@@ -289,8 +290,9 @@ function _receiveMessageListener(messageModel) {
     //대화방이 서버에 존재할경우 값을 가져오고, add 이벤트 발생시킴.
     chatRoomCollection.getOrCreate(roomId, inUserIds, messageModel.get('toUserId'))
       .then(function(chatRoomM){
-        // var chatC = chatViewManager.getOrCreate(chatRoomM);
-        chatRoomM.trigger('receive:message', messageModel);
+        var chatC = chatViewManager.getOrCreate(chatRoomM);
+        // chatRoomM.trigger('receive:message', messageModel);
+        chatC.messageAdded(messageModel);
 
         //어차피 chatView만들때 메시지모델에 있는값으로 만드니...필요가없지.
         // _setRecentMessage(chatRoomM, messageModel, true);

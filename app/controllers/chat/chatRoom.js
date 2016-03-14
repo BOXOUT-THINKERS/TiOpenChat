@@ -15,14 +15,14 @@ exports.refeshLinkToChatRoomM = function() {
   var refreshedChatRoomM = chatRoomCollection.getBy(exports.roomId);
   //리프레쉬된것있을경우만
   if(!_.isEmpty(refreshedChatRoomM)){
-    if (chatRoomM) {
-      chatRoomM.off('receive:message',messageAdded);
-    }
+    // if (chatRoomM) {
+    //   chatRoomM.off('receive:message',messageAdded);
+    // }
 
     chatRoomM = refreshedChatRoomM
     exports.chatRoomM = chatRoomM;
-    //메시지 추가 이벤트.
-    chatRoomM.on('receive:message',messageAdded);
+    // //메시지 추가 이벤트.
+    // chatRoomM.on('receive:message',messageAdded);
   }
 };
 // 초기 생성시 실행
@@ -324,7 +324,8 @@ function _updateFriendRoomData(friendInfo){
 }
 
 //---------------------------------메시지 컬렉션 변화에 의한 뷰의 메시지 추가 관련 시작
-function messageAdded(messageModel) {
+// function messageAdded(messageModel) {
+exports.messageAdded = function(messageModel){
   Ti.API.debug("messageAdded", JSON.stringify(messageModel))
   // 특정 챗룸에 전달하니 isEqualRoom으로 확인안해도됨.
   // if(_isEqualRoom(messageModel)) {
