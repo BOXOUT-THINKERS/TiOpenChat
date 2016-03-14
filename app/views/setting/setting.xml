@@ -59,13 +59,13 @@
             </View> -->
             <View class="purplelineBottom" />
           </View>
-          <View  id="versionInfo" class="rowView">
+          <!-- <View  id="versionInfo" class="rowView">
             <Label id="s_versionInfo" class="leftMargin"/>
             <View class="rightArrow">
               <ImageView image="/images/setting_arrow.png"/>
             </View>
             <View class="purplelineBottom" />
-          </View>
+          </View> -->
           <View  id="helpPrivate" class="rowView">
             <Label id="s_helpPrivate" class="leftMargin"/>
             <View class="rightArrow">

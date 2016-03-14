@@ -5,7 +5,7 @@ $.s_notifyAndSound.text = L('s_notifyAndSound');
 $.s_friendManage.text = L('s_friendManage');
 $.s_connectSNS.text = L('s_connectSNS');
 $.s_phone.text = L('s_phone');
-$.s_versionInfo.text = L('s_versionInfo');
+// $.s_versionInfo.text = L('s_versionInfo');
 $.s_helpPrivate.text = L('s_helpPrivate');
 
 var U = Alloy.Globals.util;
@@ -34,7 +34,6 @@ exports.rightBtn = function() {
   };
 };
 
-
 //리스너 등록. 재생성없이 사용하므로 컨트롤러 생성시점에서 한번 바인딩만하면됨.
 registerListerners();
 function registerListerners() {
@@ -44,7 +43,7 @@ function registerListerners() {
 
   $.notifyAndSound.addEventListener('click', moveWindow.bind(null,'notifyAndSound'));
   $.banManage.addEventListener('click', moveWindow.bind(null,'banManage'));
-  $.versionInfo.addEventListener('click', moveWindow.bind(null,'versionInfo'));
+  // $.versionInfo.addEventListener('click', moveWindow.bind(null,'versionInfo'));
   $.helpPrivate.addEventListener('click', moveWindow.bind(null,'helpPrivate'));
   // $.isSaveReceivedPhotoSwitch.addEventListener('change', function(){
   //   settingsM.save({'isSaveReceivedPhoto': $.isSaveReceivedPhotoSwitch.value});
