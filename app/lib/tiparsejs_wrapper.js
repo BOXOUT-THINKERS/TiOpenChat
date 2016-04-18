@@ -1,3 +1,4 @@
+const REQUEST_ATTEMPT_LIMIT = 5;
 /**
  * CommonJS Module Wrapper for TiParseJSSDK
  * Get it here:
@@ -8,16 +9,81 @@
  */
 
 
-var TiParse = function(options) {
+var TiParse = function(_options) {
 
 
   // UPDATED TO LATEST PARSE LIBRARY
   Parse = require("TiParseJS");
 
-  //FACEBOOK - If you don't need facebook comment out these lines
+  // //FACEBOOK - If you don't need facebook comment out these lines
   // TiFacebook = require('facebook');
-  // TiFacebook.appid = options.facebookAppId;
-
+  // TiFacebook.appid = _options.facebookAppId;
+  //
+  // FB = {
+  //   provider : {
+  //
+  //     authenticate : function(_options) {
+  //       var self = this;
+  //       TiFacebook.forceDialogAuth = false;
+  //       TiFacebook.authorize();
+  //
+  //       TiFacebook.addEventListener('login', function(response) {
+  //
+  //         if (response.success) {
+  //            if (_options.success) {
+  //               _options.success(self, {
+  //                   id :  JSON.parse(response.data).id,
+  //                   access_token : TiFacebook.accessToken,
+  //                   expiration_date : (new Date(TiFacebook.expirationDate)).toJSON()
+  //             });
+  //
+  //           }
+  //         } else {
+  //           if (_options.error) {
+  //             _options.error(self, response);
+  //           }
+  //         }
+  //       });
+  //
+  //     },
+  //     restoreAuthentication : function(authData) {
+  //       var authResponse;
+  //       if (authData) {
+  //         authResponse = {
+  //           userID : authData.id,
+  //           accessToken : authData.access_token,
+  //           expiresIn : (Parse._parseDate(authData.expiration_date).getTime() - (new Date()).getTime()) / 1000
+  //         };
+  //       } else {
+  //         authResponse = {
+  //           userID : null,
+  //           accessToken : null,
+  //           expiresIn : null
+  //         };
+  //       }
+  //       //FB.Auth.setAuthResponse(authResponse);
+  //       if (!authData) {
+  //         TiFacebook.logout();
+  //       }
+  //       return true;
+  //     },
+  //     getAuthType : function() {
+  //       return "facebook";
+  //     },
+  //     deauthenticate : function() {
+  //       this.restoreAuthentication(null);
+  //     }
+  //   },
+  //   init : function() {
+  //     Ti.API.debug("called FB.init()");
+  //   },
+  //   login : function() {
+  //     Ti.API.debug("called FB.login()");
+  //   },
+  //   logout : function() {
+  //     Ti.API.debug("called FB.logout()");
+  //   }
+  // };
 
 	/**
 	 Save Eventually - Work in Progress!
@@ -181,21 +247,67 @@ var TiParse = function(options) {
 	    }
 	};
 
+  /**
+  * promise run & error helper
+  * @param {Number} _options.retry : retry limit
+  */
+  Parse.pCloud = {
+    initialize: function () {
+
+    },
+    run: function (_fnName, _arguments, _options) {
+      _options || (_options = {});
+      var deferred = require('q').defer();
+      _options.deferred = deferred;
+      // retryLeft
+      _options.retryLeft = _.isNumber(_options.retry) ? _options.retry : REQUEST_ATTEMPT_LIMIT;
+
+      // require("core").log('debug', 'Parse.hCloud.run / ' + _fnName + ' : ' + JSON.stringify(_arguments));
+      this.runner(_fnName, _arguments, _options);
+
+      return deferred.promise;
+    },
+    runner: function(_fnName, _arguments, _options) {
+      var that = this;
+      var deferred = _options.deferred;
+
+      Parse.Cloud.run(_fnName, _arguments, {
+        success: function (result) {
+          // require("core").log('debug', 'Parse.hCloud.run / ' + _fnName + ' : ' + JSON.stringify(result));
+          _options && _.isFunction(_options.success) && _options.success(result);
+          deferred.resolve(result);
+        },
+        error: function (error) {
+          require("core").log('error', 'Parse.hCloud.run / ' + _fnName + ' / retry left ' + _options.retryLeft + ' : ' + JSON.stringify(error));
+          if (!_options.retryLeft || _options.retryLeft <= 0) {
+            _options && _.isFunction(_options.error) && _options.error(error);
+            deferred.reject(error);
+          } else {
+            // retry
+            _options.retryLeft--;
+            that.runner(_fnName, _arguments, _options);
+          }
+        }
+      });
+    }
+  };
+
 
   //
   // Enter appropriate parameters for initializing Parse
   //
-  // options.applicationId, options.javascriptkey);
+  // _options.applicationId, _options.javascriptkey);
   //
-  Parse.initialize(options.applicationId, options.javascriptkey);
+  Parse.initialize(_options.applicationId, _options.javascriptkey);
+  Parse.serverURL = Ti.App.Properties.getString('Parse_ServerUrl');
 
   //Use Custom Server
   //Parse.serverURL = 'http://offroadtrailguide-parse.elasticbeanstalk.com';
 
-  //
-  // IF the appid was set for facebook then initialize facebook. if you are going
-  // to use Facebook, set the appid at the top of this file
-  //
+  // //
+  // // IF the appid was set for facebook then initialize facebook. if you are going
+  // // to use Facebook, set the appid at the top of this file
+  // //
   // if (TiFacebook.appid) {
   //   Parse.FacebookUtils.init({
   //     appId : TiFacebook.appid, // Facebook App ID

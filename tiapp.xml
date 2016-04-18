@@ -111,6 +111,7 @@
   <property name="Parse_RestKey" type="string"></property>
   <property name="Parse_JsKey" type="string"></property>
   <property name="Parse_PwdFix" type="string"></property>
+  <property name="Parse_ServerUrl" type="string">https://api.parse.com/1</property>
   <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
     <property name="ti.android.bug2373.skipAlert" type="bool">true</property>
 </ti:app>

@@ -10,7 +10,7 @@ module.exports = require('./lib/browser/Parse.js');
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 /**
@@ -98,7 +98,7 @@ _CoreManager2['default'].setAnalyticsController({
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -208,7 +208,7 @@ _CoreManager2['default'].setCloudController({
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -734,7 +734,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -799,7 +799,7 @@ module.exports = {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -1120,7 +1120,7 @@ module.exports = Parse;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -1493,7 +1493,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -2212,7 +2212,7 @@ module.exports = exports["default"];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -2488,7 +2488,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -2713,7 +2713,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -2764,7 +2764,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -4657,7 +4657,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -5772,7 +5772,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -6920,7 +6920,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -7087,7 +7087,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 /**
@@ -7261,7 +7261,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 /**
@@ -7417,7 +7417,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -8456,7 +8456,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -8548,7 +8548,7 @@ _CoreManager2['default'].setPushController({
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -8586,39 +8586,47 @@ var RESTController = {
       var handled = false;
 
       var xhr = Ti.Network.createHTTPClient({
-        timeout: 15000
-      });
-      xhr.onreadystatechange = function () {
-        if (4 === xhr.readyState) {
-          if (handled) return;
-          handled = !0;
+	      timeout : 15000
+	    });
+	    xhr.onload = function(e) {
+        if (handled)
+          return;
+        handled = !0;
 
-          if (xhr.status >= 200 && xhr.status < 300) {
-            var response;
-            try {
-              response = JSON.parse(xhr.responseText);
-            } catch (e) {
-              promise.reject(e.toString());
-            }
-            if (response) {
-              promise.resolve(response, xhr.status, xhr);
-            }
-          } else if (xhr.status >= 500 || xhr.status === 0) {
-            // retry on 5XX or node-xmlhttprequest error
-            if (++attempts < _CoreManager2['default'].get('REQUEST_ATTEMPT_LIMIT')) {
-              // Exponentially-growing random delay
-              var delay = Math.round(Math.random() * 125 * Math.pow(2, attempts));
-              setTimeout(dispatch, delay);
-            } else if (xhr.status === 0) {
-              promise.reject('Unable to connect to the Parse API');
-            } else {
-              // After the retry limit is reached, fail
-              promise.reject(xhr);
-            }
+        if (xhr.status >= 200 && xhr.status < 300) {
+          var response;
+          try {
+            response = JSON.parse(xhr.responseText);
+          } catch (e) {
+            // promise.reject(e.toString());
+            promise.resolve(xhr.responseText, xhr.status, xhr);
+          }
+          if (response) {
+            promise.resolve(response, xhr.status, xhr);
+          }
+        } else if (xhr.status >= 500 || xhr.status === 0) { // retry on 5XX or node-xmlhttprequest error
+          if (++attempts < CoreManager.get('REQUEST_ATTEMPT_LIMIT')) {
+            // Exponentially-growing random delay
+            var delay = Math.round(
+              Math.random() * 125 * Math.pow(2, attempts)
+            );
+            setTimeout(dispatch, delay);
+          } else if (xhr.status === 0) {
+            promise.reject('Unable to connect to the Parse API');
           } else {
+            // After the retry limit is reached, fail
             promise.reject(xhr);
           }
+        } else {
+          promise.reject(xhr);
         }
+	    };
+      xhr.onerror = function(e) {
+        if (handled)
+          return;
+        handled = !0;
+
+        promise.reject(xhr);
       };
       xhr.open(method, url, !0);
       xhr.setRequestHeader("Content-Type", "text/plain");
@@ -8734,7 +8742,7 @@ module.exports = RESTController;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -8882,7 +8890,7 @@ function clearAllState() {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -8982,7 +8990,7 @@ _CoreManager2['default'].setStorageController(require('./StorageController.titan
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 "use strict";
@@ -9022,7 +9030,7 @@ module.exports = {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9095,7 +9103,7 @@ module.exports = (function () {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9252,7 +9260,7 @@ function clearAllState() {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9290,7 +9298,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9369,7 +9377,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9458,7 +9466,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9635,7 +9643,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9668,7 +9676,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9692,7 +9700,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9730,7 +9738,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
@@ -9776,7 +9784,7 @@ module.exports = exports['default'];
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
+ *
  */
 
 'use strict';
