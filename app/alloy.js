@@ -22,20 +22,20 @@ Alloy.Globals.stopWaiting = function cancel() {
 };
 Alloy.Globals.startWaiting = function load(msg) {
   var defaultLoadingMsg = L('c_waitingMsgDefault');
-  var loadingMessage = L(msg) || defaultLoadingMsg;
+  var loadingMessage = L(msg, msg) || defaultLoadingMsg;
   Alloy.Globals.loading.show(loadingMessage, false);
 };
 
 // toast widget
 Alloy.Globals.toast = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
-  var toastMessage = L(msg) || defaultToastMsg;
+  var toastMessage = L(msg, msg) || defaultToastMsg;
   Alloy.createWidget('nl.fokkezb.toast', 'global', {
   }).show(toastMessage);   // same as toast.info
 }
 Alloy.Globals.error = function(msg) {
     var defaultToastMsg = L('c_waitingMsgDefault');
-  var toastMessage = L(msg) || defaultToastMsg;
+  var toastMessage = L(msg, msg) || defaultToastMsg;
   Alloy.createWidget('nl.fokkezb.toast', 'global', {
   }).error(toastMessage);   // applies the 'error' theme
 }
